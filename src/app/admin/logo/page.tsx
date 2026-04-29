@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function LogoUploadPage() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [preview, setPreview] = useState<string | null>(null);
-  const [current, setCurrent] = useState('/logo.svg');
+  const [current, setCurrent] = useState('/DroneLogo.png');
   const [status, setStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
   const [uploading, setUploading] = useState(false);
 

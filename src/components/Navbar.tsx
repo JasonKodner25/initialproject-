@@ -45,7 +45,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-10 h-10 lg:w-12 lg:h-12 flex-shrink-0">
               <Image
-                src="/logo.svg"
+                src="/DroneLogo.png"
                 alt="Kodner Aerial Services"
                 fill
                 className="object-contain"
