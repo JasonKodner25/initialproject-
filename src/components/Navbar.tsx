@@ -35,7 +35,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#05080f]/95 backdrop-blur-md border-b border-[#1a3354] shadow-lg shadow-black/40'
+          ? 'bg-[#05080f]/95 backdrop-blur-md border-b border-[#3d2010] shadow-lg shadow-black/40'
           : 'bg-transparent'
       }`}
     >
@@ -52,10 +52,10 @@ export default function Navbar() {
               />
             </div>
             <div className="hidden sm:block">
-              <div className="text-white font-bold text-lg leading-tight tracking-wide group-hover:text-[#38bdf8] transition-colors">
+              <div className="text-white font-bold text-lg leading-tight tracking-wide group-hover:text-[#f4952a] transition-colors">
                 KODNER
               </div>
-              <div className="text-[#1a8fe3] text-xs tracking-[0.2em] font-medium uppercase">
+              <div className="text-[#e8701a] text-xs tracking-[0.2em] font-medium uppercase">
                 Aerial Services
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-4 py-2 text-sm font-medium tracking-wide rounded transition-all duration-200 ${
                   pathname === link.href
-                    ? 'text-[#1a8fe3] border-b-2 border-[#1a8fe3]'
+                    ? 'text-[#e8701a] border-b-2 border-[#e8701a]'
                     : 'text-[#7a99b8] hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -78,7 +78,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/contact"
-              className="ml-4 px-5 py-2 bg-[#1a8fe3] text-white text-sm font-semibold rounded tracking-wide hover:bg-[#38bdf8] transition-colors glow-blue"
+              className="ml-4 px-5 py-2 bg-[#e8701a] text-white text-sm font-semibold rounded tracking-wide hover:bg-[#f4952a] transition-colors glow-blue"
             >
               Book Now
             </Link>
@@ -101,14 +101,14 @@ export default function Navbar() {
           isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="bg-[#0a1220]/98 backdrop-blur-md border-t border-[#1a3354] px-4 py-4 space-y-1">
+        <div className="bg-[#0a1220]/98 backdrop-blur-md border-t border-[#3d2010] px-4 py-4 space-y-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={`block px-4 py-3 text-sm font-medium rounded transition-all ${
                 pathname === link.href
-                  ? 'text-[#1a8fe3] bg-[#1a8fe3]/10 border-l-2 border-[#1a8fe3]'
+                  ? 'text-[#e8701a] bg-[#e8701a]/10 border-l-2 border-[#e8701a]'
                   : 'text-[#7a99b8] hover:text-white hover:bg-white/5'
               }`}
             >
@@ -117,7 +117,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="block mt-3 px-4 py-3 bg-[#1a8fe3] text-white text-sm font-semibold rounded text-center hover:bg-[#38bdf8] transition-colors"
+            className="block mt-3 px-4 py-3 bg-[#e8701a] text-white text-sm font-semibold rounded text-center hover:bg-[#f4952a] transition-colors"
           >
             Book Now
           </Link>
