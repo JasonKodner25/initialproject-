@@ -22,13 +22,13 @@ export default function HomePage() {
           className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
-              'linear-gradient(#1a8fe3 1px, transparent 1px), linear-gradient(90deg, #1a8fe3 1px, transparent 1px)',
+              'linear-gradient(#e8701a 1px, transparent 1px), linear-gradient(90deg, #e8701a 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
 
         {/* Radial glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#1a8fe3]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#e8701a]/10 rounded-full blur-[120px] pointer-events-none" />
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 max-w-5xl mx-auto">
@@ -44,7 +44,7 @@ export default function HomePage() {
           </div>
 
           {/* Tagline */}
-          <div className="text-[#1a8fe3] text-xs sm:text-sm tracking-[0.4em] uppercase font-medium mb-4">
+          <div className="text-[#e8701a] text-xs sm:text-sm tracking-[0.4em] uppercase font-medium mb-4">
             AIR · LAND · VIEW
           </div>
 
@@ -60,13 +60,13 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 items-center">
             <Link
               href="/services"
-              className="px-8 py-4 bg-[#1a8fe3] text-white font-bold tracking-wide rounded hover:bg-[#38bdf8] transition-all glow-blue text-sm sm:text-base"
+              className="px-8 py-4 bg-[#e8701a] text-white font-bold tracking-wide rounded hover:bg-[#f4952a] transition-all glow-blue text-sm sm:text-base"
             >
               Explore Services
             </Link>
             <Link
               href="/gallery"
-              className="flex items-center gap-2 px-8 py-4 border border-[#1a3354] text-[#7a99b8] font-semibold rounded hover:border-[#1a8fe3] hover:text-white transition-all text-sm sm:text-base"
+              className="flex items-center gap-2 px-8 py-4 border border-[#3d2010] text-[#7a99b8] font-semibold rounded hover:border-[#e8701a] hover:text-white transition-all text-sm sm:text-base"
             >
               <Play size={16} />
               View Gallery
@@ -76,8 +76,8 @@ export default function HomePage() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-          <span className="text-[#3d5a78] text-xs tracking-widest uppercase">Scroll</span>
-          <ChevronDown size={16} className="text-[#3d5a78]" />
+          <span className="text-[#4a3018] text-xs tracking-widest uppercase">Scroll</span>
+          <ChevronDown size={16} className="text-[#4a3018]" />
         </div>
       </section>
 
@@ -87,7 +87,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             {/* Text */}
             <div>
-              <div className="text-[#1a8fe3] text-xs tracking-[0.3em] uppercase font-medium mb-3">
+              <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">
                 Welcome
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">
@@ -104,7 +104,7 @@ export default function HomePage() {
               </div>
               <Link
                 href="/about"
-                className="inline-block mt-8 px-6 py-3 border border-[#1a8fe3] text-[#1a8fe3] text-sm font-semibold rounded hover:bg-[#1a8fe3] hover:text-white transition-all"
+                className="inline-block mt-8 px-6 py-3 border border-[#e8701a] text-[#e8701a] text-sm font-semibold rounded hover:bg-[#e8701a] hover:text-white transition-all"
               >
                 Learn More About Me
               </Link>
@@ -115,9 +115,9 @@ export default function HomePage() {
               {highlights.map(({ icon: Icon, label, desc }) => (
                 <div
                   key={label}
-                  className="bg-[#0d1628] border border-[#1a3354] rounded-lg p-6 hover:border-[#1a8fe3]/50 transition-all group"
+                  className="bg-[#0d1628] border border-[#3d2010] rounded-lg p-6 hover:border-[#e8701a]/50 transition-all group"
                 >
-                  <Icon size={28} className="text-[#1a8fe3] mb-3 group-hover:scale-110 transition-transform" />
+                  <Icon size={28} className="text-[#e8701a] mb-3 group-hover:scale-110 transition-transform" />
                   <div className="text-white font-bold text-base mb-1">{label}</div>
                   <div className="text-[#7a99b8] text-xs">{desc}</div>
                 </div>
@@ -131,7 +131,7 @@ export default function HomePage() {
       <section className="py-20 bg-[#0a1220]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="text-[#1a8fe3] text-xs tracking-[0.3em] uppercase font-medium mb-3">Portfolio</div>
+            <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Portfolio</div>
             <h2 className="text-3xl sm:text-4xl font-black text-white">Recent Work</h2>
             <div className="section-divider mx-auto mt-4" />
           </div>
@@ -140,16 +140,16 @@ export default function HomePage() {
             {[...Array(6)].map((_, i) => (
               <div
                 key={i}
-                className={`relative overflow-hidden rounded-lg bg-[#0d1628] border border-[#1a3354] group cursor-pointer ${
+                className={`relative overflow-hidden rounded-lg bg-[#0d1628] border border-[#3d2010] group cursor-pointer ${
                   i === 0 ? 'col-span-2 md:col-span-2' : ''
                 }`}
                 style={{ aspectRatio: i === 0 ? '16/7' : '4/3' }}
               >
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-[#3d5a78] text-xs">Photo Placeholder {i + 1}</span>
+                  <span className="text-[#4a3018] text-xs">Photo Placeholder {i + 1}</span>
                 </div>
-                <div className="absolute inset-0 bg-[#1a8fe3]/0 group-hover:bg-[#1a8fe3]/10 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <Camera size={28} className="text-[#1a8fe3]" />
+                <div className="absolute inset-0 bg-[#e8701a]/0 group-hover:bg-[#e8701a]/10 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <Camera size={28} className="text-[#e8701a]" />
                 </div>
               </div>
             ))}
@@ -158,7 +158,7 @@ export default function HomePage() {
           <div className="text-center mt-10">
             <Link
               href="/gallery"
-              className="inline-block px-8 py-3 bg-[#1a8fe3] text-white text-sm font-bold rounded hover:bg-[#38bdf8] transition-all glow-blue tracking-wide"
+              className="inline-block px-8 py-3 bg-[#e8701a] text-white text-sm font-bold rounded hover:bg-[#f4952a] transition-all glow-blue tracking-wide"
             >
               View Full Gallery
             </Link>
@@ -167,7 +167,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA Banner ───────────────────────────────────────────────── */}
-      <section className="py-20 bg-[#05080f] border-y border-[#1a3354]">
+      <section className="py-20 bg-[#05080f] border-y border-[#3d2010]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
             Ready to See the World{' '}
@@ -178,7 +178,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block px-10 py-4 bg-[#1a8fe3] text-white font-bold tracking-wide rounded hover:bg-[#38bdf8] transition-all glow-blue text-sm sm:text-base"
+            className="inline-block px-10 py-4 bg-[#e8701a] text-white font-bold tracking-wide rounded hover:bg-[#f4952a] transition-all glow-blue text-sm sm:text-base"
           >
             Book a Session
           </Link>
