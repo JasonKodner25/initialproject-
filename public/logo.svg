@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Outer ring -->
+  <circle cx="200" cy="200" r="190" fill="#05080f" stroke="#1a8fe3" stroke-width="4"/>
+  <circle cx="200" cy="200" r="182" fill="none" stroke="#3d5a78" stroke-width="1.5"/>
+
+  <!-- Sky gradient background upper half -->
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#f97316;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#05080f;stop-opacity:1" />
+    </linearGradient>
+    <clipPath id="circle">
+      <circle cx="200" cy="200" r="180"/>
+    </clipPath>
+    <linearGradient id="bannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0a1220;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#0d1f3c;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#0d1f3c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a1220;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background fill -->
+  <circle cx="200" cy="200" r="180" fill="#05080f" clip-path="url(#circle)"/>
+
+  <!-- Upper sky -->
+  <rect x="20" y="20" width="360" height="200" fill="url(#skyGrad)" clip-path="url(#circle)"/>
+
+  <!-- Drone body (simplified) -->
+  <rect x="165" y="58" width="70" height="40" rx="8" fill="#2a2a3a" stroke="#4a4a6a" stroke-width="1.5"/>
+  <!-- Drone camera lens -->
+  <circle cx="200" cy="78" r="10" fill="#111" stroke="#1a8fe3" stroke-width="1.5"/>
+  <circle cx="200" cy="78" r="5" fill="#1a8fe3" opacity="0.6"/>
+
+  <!-- Drone arms -->
+  <line x1="165" y1="68" x2="120" y2="52" stroke="#3a3a5a" stroke-width="4" stroke-linecap="round"/>
+  <line x1="235" y1="68" x2="280" y2="52" stroke="#3a3a5a" stroke-width="4" stroke-linecap="round"/>
+  <line x1="165" y1="88" x2="120" y2="104" stroke="#3a3a5a" stroke-width="4" stroke-linecap="round"/>
+  <line x1="235" y1="88" x2="280" y2="104" stroke="#3a3a5a" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Rotors -->
+  <ellipse cx="115" cy="50" rx="28" ry="6" fill="none" stroke="#f97316" stroke-width="2.5" opacity="0.85"/>
+  <ellipse cx="285" cy="50" rx="28" ry="6" fill="none" stroke="#f97316" stroke-width="2.5" opacity="0.85"/>
+  <ellipse cx="115" cy="106" rx="28" ry="6" fill="none" stroke="#1a8fe3" stroke-width="2.5" opacity="0.85"/>
+  <ellipse cx="285" cy="106" rx="28" ry="6" fill="none" stroke="#1a8fe3" stroke-width="2.5" opacity="0.85"/>
+
+  <!-- Landing dots -->
+  <circle cx="115" cy="50" r="4" fill="#f97316"/>
+  <circle cx="285" cy="50" r="4" fill="#f97316"/>
+  <circle cx="115" cy="106" r="4" fill="#1a8fe3"/>
+  <circle cx="285" cy="106" r="4" fill="#1a8fe3"/>
+
+  <!-- Main banner background -->
+  <rect x="22" y="185" width="356" height="90" fill="url(#bannerGrad)" clip-path="url(#circle)"/>
+  <rect x="22" y="185" width="356" height="90" fill="#0d1f3c" opacity="0.9" clip-path="url(#circle)"/>
+
+  <!-- Banner border lines -->
+  <line x1="30" y1="188" x2="370" y2="188" stroke="#1a8fe3" stroke-width="1.5"/>
+  <line x1="30" y1="273" x2="370" y2="273" stroke="#1a8fe3" stroke-width="1.5"/>
+
+  <!-- KODNER text -->
+  <text x="200" y="245" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="52" fill="white" letter-spacing="2">KODNER</text>
+
+  <!-- AERIAL SERVICES text -->
+  <text x="200" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="16" fill="#1a8fe3" letter-spacing="5">AERIAL SERVICES</text>
+
+  <!-- Lower landscape section -->
+  <!-- Ground / hills -->
+  <ellipse cx="200" cy="340" rx="180" ry="60" fill="#0a1a10" clip-path="url(#circle)"/>
+  <ellipse cx="120" cy="330" rx="90" ry="45" fill="#0d2010" clip-path="url(#circle)"/>
+  <ellipse cx="300" cy="335" rx="80" ry="40" fill="#0d2010" clip-path="url(#circle)"/>
+
+  <!-- Trees silhouette -->
+  <polygon points="80,310 95,275 110,310" fill="#154a20" clip-path="url(#circle)"/>
+  <polygon points="100,315 118,270 136,315" fill="#1a5c28" clip-path="url(#circle)"/>
+  <polygon points="270,308 285,272 300,308" fill="#154a20" clip-path="url(#circle)"/>
+  <polygon points="290,312 308,268 326,312" fill="#1a5c28" clip-path="url(#circle)"/>
+
+  <!-- River -->
+  <path d="M 140,370 Q 175,330 200,350 Q 225,370 260,340" stroke="#1a8fe3" stroke-width="6" fill="none" opacity="0.7" clip-path="url(#circle)"/>
+
+  <!-- AIR · LAND · VIEW text -->
+  <text x="200" y="375" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="13" fill="#7a99b8" letter-spacing="6">AIR · LAND · VIEW</text>
+
+  <!-- Decorative dots in banner -->
+  <circle cx="88" cy="230" r="2.5" fill="#1a8fe3"/>
+  <circle cx="312" cy="230" r="2.5" fill="#1a8fe3"/>
+</svg>

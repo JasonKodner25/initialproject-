@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #05080f;
+  --bg-secondary: #0a1220;
+  --bg-card: #0d1628;
+  --accent-blue: #1a8fe3;
+  --accent-blue-light: #38bdf8;
+  --accent-orange: #f97316;
+  --border-color: #1a3354;
+  --text-primary: #f0f4f8;
+  --text-secondary: #7a99b8;
+  --text-muted: #3d5a78;
+}
+
+@theme inline {
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), 'Inter', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-blue);
+  border-radius: 3px;
+}
+
+/* Selection highlight */
+::selection {
+  background: rgba(26, 143, 227, 0.3);
+  color: #fff;
+}
+
+/* Masonry grid for gallery */
+.masonry-grid {
+  columns: 4 220px;
+  column-gap: 1rem;
+}
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+    columns: 2 150px;
+  }
+}
+@media (max-width: 480px) {
+  .masonry-grid {
+    columns: 1;
+  }
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #1a8fe3, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #f97316, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effects */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(26, 143, 227, 0.3);
+}
+.glow-blue:hover {
+  box-shadow: 0 0 35px rgba(26, 143, 227, 0.5);
+}
+
+/* Section divider */
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #1a8fe3, #38bdf8);
+  border-radius: 2px;
+}
