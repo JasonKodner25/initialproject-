@@ -48,7 +48,7 @@ export default function Navbar() {
                 src="/DroneLogo.png"
                 alt="Kodner Aerial Services"
                 fill
-                className="object-contain"
+                className="object-contain mix-blend-multiply"
               />
             </div>
             <div className="hidden sm:block">
