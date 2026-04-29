@@ -4,13 +4,13 @@
   --bg-primary: #05080f;
   --bg-secondary: #0a1220;
   --bg-card: #0d1628;
-  --accent-blue: #1a8fe3;
-  --accent-blue-light: #38bdf8;
-  --accent-orange: #f97316;
-  --border-color: #1a3354;
+  --accent-primary: #e8701a;
+  --accent-primary-light: #f4952a;
+  --accent-blue: #1a6cb5;
+  --border-color: #3d2010;
   --text-primary: #f0f4f8;
   --text-secondary: #7a99b8;
-  --text-muted: #3d5a78;
+  --text-muted: #4a3018;
 }
 
 @theme inline {
@@ -43,13 +43,13 @@ body {
   background: var(--bg-secondary);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-blue);
+  background: var(--accent-primary);
   border-radius: 3px;
 }
 
 /* Selection highlight */
 ::selection {
-  background: rgba(26, 143, 227, 0.3);
+  background: rgba(232, 112, 26, 0.3);
   color: #fff;
 }
 
@@ -76,7 +76,7 @@ body {
 
 /* Gradient text utility */
 .gradient-text {
-  background: linear-gradient(135deg, #1a8fe3, #38bdf8);
+  background: linear-gradient(135deg, #e8701a, #f4952a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -91,16 +91,16 @@ body {
 
 /* Glow effects */
 .glow-blue {
-  box-shadow: 0 0 20px rgba(26, 143, 227, 0.3);
+  box-shadow: 0 0 20px rgba(232, 112, 26, 0.3);
 }
 .glow-blue:hover {
-  box-shadow: 0 0 35px rgba(26, 143, 227, 0.5);
+  box-shadow: 0 0 35px rgba(232, 112, 26, 0.5);
 }
 
 /* Section divider */
 .section-divider {
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #1a8fe3, #38bdf8);
+  background: linear-gradient(90deg, #e8701a, #f4952a);
   border-radius: 2px;
 }
