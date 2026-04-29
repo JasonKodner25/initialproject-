@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
-/* Inline SVG social icons — replace with branded icons as needed */
 const YoutubeIcon = () => (
   <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
     <path d="M23.5 6.2s-.3-1.9-1.1-2.7c-1-.8-2.1-.8-2.6-.9C16.8 2.4 12 2.4 12 2.4s-4.8 0-7.8.2c-.5.1-1.6.1-2.6.9C.8 4.3.5 6.2.5 6.2S.2 8.3.2 10.5v2c0 2.2.3 4.3.3 4.3s.3 1.9 1.1 2.7c1 .8 2.3.8 2.9.9C6.3 20.6 12 20.6 12 20.6s4.8 0 7.8-.2c.5-.1 1.6-.1 2.6-.9.8-.8 1.1-2.7 1.1-2.7s.3-2.1.3-4.3v-2c0-2.2-.3-4.3-.3-4.3zM9.7 15V8.6l7 3.2-7 3.2z"/>
@@ -42,17 +41,17 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a1220] border-t border-[#1a3354]">
+    <footer className="bg-[#0a1220] border-t border-[#3d2010]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-4">
               <div className="text-white font-bold text-2xl tracking-wider">KODNER</div>
-              <div className="text-[#1a8fe3] text-xs tracking-[0.3em] font-medium uppercase mt-0.5">
+              <div className="text-[#e8701a] text-xs tracking-[0.3em] font-medium uppercase mt-0.5">
                 Aerial Services
               </div>
-              <div className="text-[#3d5a78] text-xs tracking-[0.2em] mt-0.5">
+              <div className="text-[#4a3018] text-xs tracking-[0.2em] mt-0.5">
                 AIR · LAND · VIEW
               </div>
             </div>
@@ -71,7 +70,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[#7a99b8] text-sm hover:text-[#1a8fe3] transition-colors"
+                    className="text-[#7a99b8] text-sm hover:text-[#e8701a] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -87,15 +86,15 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-[#7a99b8] text-sm">
-                <Mail size={15} className="text-[#1a8fe3] flex-shrink-0 mt-0.5" />
+                <Mail size={15} className="text-[#e8701a] flex-shrink-0 mt-0.5" />
                 <span>info@kodneraerialservices.com</span>
               </li>
               <li className="flex items-start gap-2 text-[#7a99b8] text-sm">
-                <Phone size={15} className="text-[#1a8fe3] flex-shrink-0 mt-0.5" />
+                <Phone size={15} className="text-[#e8701a] flex-shrink-0 mt-0.5" />
                 <span>(555) 000-0000</span>
               </li>
               <li className="flex items-start gap-2 text-[#7a99b8] text-sm">
-                <MapPin size={15} className="text-[#1a8fe3] flex-shrink-0 mt-0.5" />
+                <MapPin size={15} className="text-[#e8701a] flex-shrink-0 mt-0.5" />
                 <span>Your Location Here</span>
               </li>
             </ul>
@@ -114,25 +113,25 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-10 h-10 flex items-center justify-center rounded border border-[#1a3354] text-[#7a99b8] hover:text-[#1a8fe3] hover:border-[#1a8fe3] hover:bg-[#1a8fe3]/10 transition-all"
+                  className="w-10 h-10 flex items-center justify-center rounded border border-[#3d2010] text-[#7a99b8] hover:text-[#e8701a] hover:border-[#e8701a] hover:bg-[#e8701a]/10 transition-all"
                 >
                   <Icon />
                 </a>
               ))}
             </div>
-            <p className="text-[#3d5a78] text-xs mt-5 leading-relaxed">
+            <p className="text-[#4a3018] text-xs mt-5 leading-relaxed">
               Subscribe to our YouTube channel for the latest aerial footage and behind-the-scenes content.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-[#1a3354]">
+      <div className="border-t border-[#3d2010]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[#3d5a78] text-xs">
+          <p className="text-[#4a3018] text-xs">
             &copy; {new Date().getFullYear()} Kodner Aerial Services. All rights reserved.
           </p>
-          <p className="text-[#3d5a78] text-xs">
+          <p className="text-[#4a3018] text-xs">
             AIR · LAND · VIEW
           </p>
         </div>
