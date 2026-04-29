@@ -39,7 +39,7 @@ export default function HomePage() {
               alt="Kodner Aerial Services"
               fill
               priority
-              className="object-contain"
+              className="object-contain mix-blend-multiply"
             />
           </div>
 
