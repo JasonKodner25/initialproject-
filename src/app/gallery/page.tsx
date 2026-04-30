@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Camera, X } from 'lucide-react';
+import { Camera, X, Images, Tag, ChevronLeft } from 'lucide-react';
 
 type Category = 'All' | 'Landscape' | 'Real Estate' | 'Construction' | 'Events' | 'Wildlife';
+type View = 'categories' | 'albums';
 
 const categories: Category[] = ['All', 'Landscape', 'Real Estate', 'Construction', 'Events', 'Wildlife'];
 
@@ -16,6 +17,7 @@ interface GalleryItem {
   date?: string;
   src?: string;
   aspect: string;
+  album?: string;
 }
 
 const galleryItems: GalleryItem[] = [
@@ -27,6 +29,7 @@ const galleryItems: GalleryItem[] = [
     date: 'April 16, 2026',
     src: '/DJI_20260416065653_0188_D.jpeg',
     aspect: 'aspect-[16/9]',
+    album: 'Santa Cruz 4/16/26',
   },
   {
     id: 2,
@@ -36,6 +39,7 @@ const galleryItems: GalleryItem[] = [
     date: 'April 16, 2026',
     src: '/DJI_20260416070936_0204_D.jpeg',
     aspect: 'aspect-[4/3]',
+    album: 'Santa Cruz 4/16/26',
   },
   {
     id: 3,
@@ -45,6 +49,7 @@ const galleryItems: GalleryItem[] = [
     date: 'April 16, 2026',
     src: '/DJI_20260416071343_0209_D.jpeg',
     aspect: 'aspect-[4/3]',
+    album: 'Santa Cruz 4/16/26',
   },
   {
     id: 4,
@@ -54,6 +59,7 @@ const galleryItems: GalleryItem[] = [
     date: 'April 16, 2026',
     src: '/DJI_20260416072131_0221_D.jpeg',
     aspect: 'aspect-[16/9]',
+    album: 'Santa Cruz 4/16/26',
   },
   {
     id: 5,
@@ -63,6 +69,7 @@ const galleryItems: GalleryItem[] = [
     date: 'April 16, 2026',
     src: '/IMG_3322.jpeg',
     aspect: 'aspect-[4/3]',
+    album: 'Santa Cruz 4/16/26',
   },
   {
     id: 6,
@@ -72,6 +79,7 @@ const galleryItems: GalleryItem[] = [
     date: 'April 16, 2026',
     src: '/IMG_3510.jpeg',
     aspect: 'aspect-square',
+    album: 'Santa Cruz 4/16/26',
   },
   {
     id: 7,
@@ -81,6 +89,7 @@ const galleryItems: GalleryItem[] = [
     date: 'April 16, 2026',
     src: '/IMG_3512.jpeg',
     aspect: 'aspect-[4/3]',
+    album: 'Santa Cruz 4/16/26',
   },
   {
     id: 8,
@@ -90,19 +99,37 @@ const galleryItems: GalleryItem[] = [
     date: 'April 16, 2026',
     src: '/IMG_3513.jpeg',
     aspect: 'aspect-[3/4]',
+    album: 'Santa Cruz 4/16/26',
   },
-  { id: 9,  category: 'Real Estate',   label: 'Luxury Home Exterior',   aspect: 'aspect-[4/3]' },
-  { id: 10, category: 'Real Estate',   label: 'Lakefront Property',     aspect: 'aspect-[3/4]' },
-  { id: 11, category: 'Construction',  label: 'Commercial Site Survey', aspect: 'aspect-[4/3]' },
-  { id: 12, category: 'Events',        label: 'Outdoor Wedding',        aspect: 'aspect-[4/3]' },
-  { id: 13, category: 'Wildlife',      label: 'Coastal Shoreline',      aspect: 'aspect-[16/9]' },
+  { id: 9,  category: 'Real Estate',  label: 'Luxury Home Exterior',   aspect: 'aspect-[4/3]' },
+  { id: 10, category: 'Real Estate',  label: 'Lakefront Property',     aspect: 'aspect-[3/4]' },
+  { id: 11, category: 'Construction', label: 'Commercial Site Survey', aspect: 'aspect-[4/3]' },
+  { id: 12, category: 'Events',       label: 'Outdoor Wedding',        aspect: 'aspect-[4/3]' },
+  { id: 13, category: 'Wildlife',     label: 'Coastal Shoreline',      aspect: 'aspect-[16/9]' },
 ];
 
+function getAlbums() {
+  const map = new Map<string, GalleryItem[]>();
+  for (const item of galleryItems) {
+    if (item.album) {
+      const existing = map.get(item.album) ?? [];
+      map.set(item.album, [...existing, item]);
+    }
+  }
+  return map;
+}
+
+const albums = getAlbums();
+
 export default function GalleryPage() {
+  const [view, setView] = useState<View>('categories');
   const [active, setActive] = useState<Category>('All');
+  const [openAlbum, setOpenAlbum] = useState<string | null>(null);
   const [lightbox, setLightbox] = useState<number | null>(null);
 
-  const filtered = active === 'All' ? galleryItems : galleryItems.filter((i) => i.category === active);
+  const filteredByCategory = active === 'All' ? galleryItems : galleryItems.filter((i) => i.category === active);
+  const albumItems = openAlbum ? (albums.get(openAlbum) ?? []) : [];
+  const displayItems = view === 'categories' ? filteredByCategory : albumItems;
   const lightboxItem = galleryItems.find((i) => i.id === lightbox);
 
   return (
@@ -119,91 +146,158 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* ── Filter Bar ──────────────────────────────────────────────── */}
-      <section className="py-8 bg-[#05080f] border-b border-[#3d2010] sticky top-16 lg:top-20 z-30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-2 flex-wrap">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActive(cat)}
-                className={`px-4 py-2 rounded text-xs sm:text-sm font-semibold tracking-wide transition-all ${
-                  active === cat
-                    ? 'bg-[#e8701a] text-white shadow-lg shadow-[#e8701a]/20'
-                    : 'bg-[#0d1628] border border-[#3d2010] text-[#7a99b8] hover:text-white hover:border-[#e8701a]/50'
-                }`}
-              >
-                {cat}
-                {cat !== 'All' && (
-                  <span className="ml-1.5 text-xs opacity-60">
-                    ({galleryItems.filter((i) => i.category === cat).length})
-                  </span>
-                )}
-              </button>
-            ))}
+      {/* ── View Toggle + Filters ────────────────────────────────────── */}
+      <section className="py-6 bg-[#05080f] border-b border-[#3d2010] sticky top-16 lg:top-20 z-30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          {/* View switcher */}
+          <div className="flex gap-2">
+            <button
+              onClick={() => { setView('categories'); setOpenAlbum(null); }}
+              className={`flex items-center gap-1.5 px-4 py-2 rounded text-xs font-semibold tracking-wide transition-all ${
+                view === 'categories'
+                  ? 'bg-[#e8701a] text-white'
+                  : 'bg-[#0d1628] border border-[#3d2010] text-[#7a99b8] hover:text-white hover:border-[#e8701a]/50'
+              }`}
+            >
+              <Tag size={13} />
+              By Category
+            </button>
+            <button
+              onClick={() => { setView('albums'); setOpenAlbum(null); }}
+              className={`flex items-center gap-1.5 px-4 py-2 rounded text-xs font-semibold tracking-wide transition-all ${
+                view === 'albums'
+                  ? 'bg-[#e8701a] text-white'
+                  : 'bg-[#0d1628] border border-[#3d2010] text-[#7a99b8] hover:text-white hover:border-[#e8701a]/50'
+              }`}
+            >
+              <Images size={13} />
+              Albums
+            </button>
           </div>
-        </div>
-      </section>
 
-      {/* ── Masonry Grid ────────────────────────────────────────────── */}
-      <section className="py-12 bg-[#05080f]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="masonry-grid">
-            {filtered.map((item) => (
-              <div
-                key={item.id}
-                className={`masonry-item relative overflow-hidden rounded-lg border border-[#3d2010] cursor-pointer group hover:border-[#e8701a]/50 transition-all ${item.aspect} ${item.src ? 'bg-black' : 'bg-[#0d1628]'}`}
-                onClick={() => setLightbox(item.id)}
-              >
-                {item.src ? (
-                  <Image
-                    src={item.src}
-                    alt={item.label}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                    <Camera size={24} className="text-[#4a3018]" />
-                    <span className="text-[#4a3018] text-xs text-center px-2">{item.label}</span>
-                    <span className="text-[#3d2010] text-[10px] border border-[#3d2010] px-2 py-0.5 rounded">
-                      {item.category}
+          {/* Category filters (only in category view) */}
+          {view === 'categories' && (
+            <div className="flex gap-2 flex-wrap">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActive(cat)}
+                  className={`px-4 py-1.5 rounded text-xs font-semibold tracking-wide transition-all ${
+                    active === cat
+                      ? 'bg-[#e8701a] text-white shadow-lg shadow-[#e8701a]/20'
+                      : 'bg-[#0d1628] border border-[#3d2010] text-[#7a99b8] hover:text-white hover:border-[#e8701a]/50'
+                  }`}
+                >
+                  {cat}
+                  {cat !== 'All' && (
+                    <span className="ml-1.5 opacity-60">
+                      ({galleryItems.filter((i) => i.category === cat).length})
                     </span>
-                  </div>
-                )}
+                  )}
+                </button>
+              ))}
+            </div>
+          )}
 
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all" />
-
-                {/* Info on hover */}
-                <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-black/80 to-transparent">
-                  <div className="text-white text-xs font-semibold">{item.label}</div>
-                  {item.location && <div className="text-[#e8701a] text-[10px] mt-0.5">{item.location}</div>}
-                </div>
-
-                {/* Category badge */}
-                <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="px-2 py-1 bg-[#05080f]/80 backdrop-blur-sm text-[#e8701a] text-[10px] rounded font-medium border border-[#e8701a]/30">
-                    {item.category}
-                  </span>
-                </div>
-
-                {/* Expand icon */}
-                <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="w-7 h-7 bg-[#e8701a] rounded flex items-center justify-center">
-                    <Camera size={13} className="text-white" />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {filtered.length === 0 && (
-            <div className="text-center py-20 text-[#4a3018]">No photos in this category yet.</div>
+          {/* Album breadcrumb */}
+          {view === 'albums' && openAlbum && (
+            <button
+              onClick={() => setOpenAlbum(null)}
+              className="flex items-center gap-1.5 text-[#7a99b8] hover:text-white text-xs transition-colors"
+            >
+              <ChevronLeft size={14} />
+              All Albums
+            </button>
           )}
         </div>
       </section>
+
+      {/* ── Albums Grid ─────────────────────────────────────────────── */}
+      {view === 'albums' && !openAlbum && (
+        <section className="py-12 bg-[#05080f]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {Array.from(albums.entries()).map(([name, items]) => {
+                const cover = items.find((i) => i.src);
+                return (
+                  <button
+                    key={name}
+                    onClick={() => setOpenAlbum(name)}
+                    className="group relative overflow-hidden rounded-xl border border-[#3d2010] hover:border-[#e8701a]/60 transition-all text-left bg-[#0d1628]"
+                  >
+                    {/* Cover photo */}
+                    <div className="relative aspect-[16/9] overflow-hidden">
+                      {cover?.src ? (
+                        <Image
+                          src={cover.src}
+                          alt={name}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          sizes="(max-width: 640px) 100vw, 50vw"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center bg-[#0a1220]">
+                          <Images size={32} className="text-[#4a3018]" />
+                        </div>
+                      )}
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all" />
+                    </div>
+
+                    {/* Album info */}
+                    <div className="p-4">
+                      <div className="text-white font-bold text-base">{name}</div>
+                      <div className="text-[#e8701a] text-xs mt-1">{items.length} photos</div>
+                      {items[0]?.location && (
+                        <div className="text-[#7a99b8] text-xs mt-0.5">{items[0].location}</div>
+                      )}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            {albums.size === 0 && (
+              <div className="text-center py-20 text-[#4a3018]">No albums yet.</div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* ── Album Photo Grid ────────────────────────────────────────── */}
+      {view === 'albums' && openAlbum && (
+        <section className="py-12 bg-[#05080f]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-8">
+              <h2 className="text-2xl font-black text-white">{openAlbum}</h2>
+              <div className="text-[#e8701a] text-sm mt-1">{albumItems.length} photos</div>
+              {albumItems[0]?.location && (
+                <div className="text-[#7a99b8] text-xs mt-0.5">{albumItems[0].location}</div>
+              )}
+            </div>
+            <div className="masonry-grid">
+              {displayItems.map((item) => (
+                <PhotoCard key={item.id} item={item} onOpen={() => setLightbox(item.id)} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Category Grid ───────────────────────────────────────────── */}
+      {view === 'categories' && (
+        <section className="py-12 bg-[#05080f]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="masonry-grid">
+              {filteredByCategory.map((item) => (
+                <PhotoCard key={item.id} item={item} onOpen={() => setLightbox(item.id)} />
+              ))}
+            </div>
+            {filteredByCategory.length === 0 && (
+              <div className="text-center py-20 text-[#4a3018]">No photos in this category yet.</div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* ── Lightbox ────────────────────────────────────────────────── */}
       {lightbox !== null && lightboxItem && (
@@ -247,10 +341,59 @@ export default function GalleryPage() {
               {lightboxItem.date && (
                 <div className="text-[#7a99b8] text-xs mt-1">{lightboxItem.date}</div>
               )}
+              {lightboxItem.album && (
+                <div className="text-[#4a3018] text-xs mt-1">Album: {lightboxItem.album}</div>
+              )}
             </div>
           </div>
         </div>
       )}
     </main>
+  );
+}
+
+function PhotoCard({ item, onOpen }: { item: GalleryItem; onOpen: () => void }) {
+  return (
+    <div
+      className={`masonry-item relative overflow-hidden rounded-lg border border-[#3d2010] cursor-pointer group hover:border-[#e8701a]/50 transition-all ${item.aspect} ${item.src ? 'bg-black' : 'bg-[#0d1628]'}`}
+      onClick={onOpen}
+    >
+      {item.src ? (
+        <Image
+          src={item.src}
+          alt={item.label}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 768px) 50vw, 25vw"
+        />
+      ) : (
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+          <Camera size={24} className="text-[#4a3018]" />
+          <span className="text-[#4a3018] text-xs text-center px-2">{item.label}</span>
+          <span className="text-[#3d2010] text-[10px] border border-[#3d2010] px-2 py-0.5 rounded">
+            {item.category}
+          </span>
+        </div>
+      )}
+
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all" />
+
+      <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-black/80 to-transparent">
+        <div className="text-white text-xs font-semibold">{item.label}</div>
+        {item.location && <div className="text-[#e8701a] text-[10px] mt-0.5">{item.location}</div>}
+      </div>
+
+      <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity">
+        <span className="px-2 py-1 bg-[#05080f]/80 backdrop-blur-sm text-[#e8701a] text-[10px] rounded font-medium border border-[#e8701a]/30">
+          {item.category}
+        </span>
+      </div>
+
+      <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="w-7 h-7 bg-[#e8701a] rounded flex items-center justify-center">
+          <Camera size={13} className="text-white" />
+        </div>
+      </div>
+    </div>
   );
 }
