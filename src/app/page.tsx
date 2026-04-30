@@ -35,7 +35,7 @@ export default function HomePage() {
           {/* Logo */}
           <div className="relative w-44 h-44 sm:w-56 sm:h-56 mb-8 drop-shadow-2xl">
             <Image
-              src="/DroneLogo.png"
+              src="/kodneraeriallogoofficial.png"
               alt="Kodner Aerial Services"
               fill
               priority
