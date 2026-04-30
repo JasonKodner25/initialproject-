@@ -49,8 +49,8 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-none mb-4">
-            THE WORLD&nbsp;
-            <span className="gradient-text">FROM ABOVE</span>
+            Precision Imaging&nbsp;
+            <span className="gradient-text">From Above</span>
           </h1>
 
           <p className="text-[#7a99b8] text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
