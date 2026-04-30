@@ -33,7 +33,7 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { href: 'https://youtube.com/@kodneraerialservices', Icon: YoutubeIcon, label: 'YouTube' },
+  { href: 'https://www.youtube.com/@KodnerAerial', Icon: YoutubeIcon, label: 'YouTube' },
   { href: 'https://instagram.com/kodneraerialservices', Icon: InstagramIcon, label: 'Instagram' },
   { href: 'https://facebook.com/kodneraerialservices', Icon: FacebookIcon, label: 'Facebook' },
   { href: 'https://twitter.com/kodneraerialservices', Icon: XIcon, label: 'Twitter / X' },
