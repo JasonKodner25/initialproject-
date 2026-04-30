@@ -6,6 +6,8 @@ const YoutubeIcon = ({ size = 18 }: { size?: number }) => (
   </svg>
 );
 
+const YOUTUBE_URL = 'https://www.youtube.com/@KodnerAerial';
+
 const placeholderVideos = [
   { id: 1, title: 'Coastal Aerial Tour — 4K Cinematic',     views: '—', duration: '0:00', category: 'Landscape' },
   { id: 2, title: 'Real Estate Showcase — Luxury Estate',   views: '—', duration: '0:00', category: 'Real Estate' },
@@ -19,10 +21,10 @@ export default function YoutubePage() {
   return (
     <main className="pt-20">
       {/* ── Page Header ─────────────────────────────────────────────── */}
-      <section className="py-16 bg-gradient-to-b from-[#0a1220] to-[#05080f] border-b border-[#1a3354]">
+      <section className="py-16 bg-gradient-to-b from-[#0a1220] to-[#05080f] border-b border-[#3d2010]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-end gap-6 justify-between">
           <div>
-            <div className="flex items-center gap-2 text-[#1a8fe3] text-xs tracking-[0.3em] uppercase font-medium mb-3">
+            <div className="flex items-center gap-2 text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">
               <YoutubeIcon size={14} />
               <span>Video Content</span>
             </div>
@@ -30,7 +32,7 @@ export default function YoutubePage() {
             <div className="section-divider mt-4" />
           </div>
           <a
-            href="https://youtube.com/@kodneraerialservices"
+            href={YOUTUBE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-red-600 text-white font-bold text-sm rounded hover:bg-red-500 transition-colors flex-shrink-0"
@@ -48,40 +50,39 @@ export default function YoutubePage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
             {/* Main embed placeholder */}
             <div className="lg:col-span-3">
-              <div className="text-[#1a8fe3] text-xs tracking-[0.3em] uppercase font-medium mb-4">
+              <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-4">
                 Featured Video
               </div>
-              <div className="relative w-full aspect-video bg-[#0d1628] border border-[#1a3354] rounded-xl overflow-hidden flex items-center justify-center group">
+              <div className="relative w-full aspect-video bg-[#0d1628] border border-[#3d2010] rounded-xl overflow-hidden flex items-center justify-center group">
                 <div className="flex flex-col items-center gap-4 text-center px-6">
                   <div className="w-20 h-20 bg-red-600/20 border border-red-600/40 rounded-full flex items-center justify-center">
                     <Play size={32} className="text-red-500 ml-1" fill="currentColor" />
                   </div>
                   <div className="text-white font-semibold">YouTube Embed Placeholder</div>
                   <p className="text-[#7a99b8] text-sm max-w-sm">
-                    Replace this block with your YouTube embed code. Paste the <code className="text-[#1a8fe3] bg-[#1a8fe3]/10 px-1 rounded text-xs">&lt;iframe&gt;</code> from YouTube Share → Embed here.
+                    Replace this block with your YouTube embed code. Paste the <code className="text-[#e8701a] bg-[#e8701a]/10 px-1 rounded text-xs">&lt;iframe&gt;</code> from YouTube Share → Embed here.
                   </p>
                 </div>
-                {/* Corner accents */}
-                <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#1a8fe3]/30 rounded-tl-xl" />
-                <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#1a8fe3]/30 rounded-br-xl" />
+                <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#e8701a]/30 rounded-tl-xl" />
+                <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#e8701a]/30 rounded-br-xl" />
               </div>
             </div>
 
             {/* Channel info */}
             <div className="lg:col-span-2 space-y-5">
-              <div className="bg-[#0d1628] border border-[#1a3354] rounded-xl p-6">
+              <div className="bg-[#0d1628] border border-[#3d2010] rounded-xl p-6">
                 <div className="flex items-center gap-4 mb-5">
                   <div className="w-14 h-14 bg-red-600/20 border border-red-600/40 rounded-full flex items-center justify-center flex-shrink-0">
                     <YoutubeIcon size={24} />
                   </div>
                   <div>
-                    <div className="text-white font-bold text-base">Kodner Aerial Services</div>
-                    <div className="text-[#7a99b8] text-xs">@kodneraerialservices</div>
+                    <div className="text-white font-bold text-base">Kodner Aerial</div>
+                    <div className="text-[#7a99b8] text-xs">@KodnerAerial</div>
                   </div>
                 </div>
 
                 <p className="text-[#7a99b8] text-sm leading-relaxed mb-5">
-                  [Channel description placeholder — describe what viewers can expect from your channel. Talk about the types of videos you post, how often you upload, and what makes your content unique. Include any specialties like 4K cinematic drone footage, tutorials, BTS content, or local area tours.]
+                  [Channel description placeholder — describe what viewers can expect from your channel. Talk about the types of videos you post, how often you upload, and what makes your content unique.]
                 </p>
 
                 <div className="grid grid-cols-2 gap-3 mb-5">
@@ -91,16 +92,16 @@ export default function YoutubePage() {
                     { label: 'Videos', value: '—' },
                     { label: 'Upload Frequency', value: 'Weekly' },
                   ].map(({ label, value }) => (
-                    <div key={label} className="bg-[#0a1220] border border-[#1a3354] rounded-lg p-3 text-center">
+                    <div key={label} className="bg-[#0a1220] border border-[#3d2010] rounded-lg p-3 text-center">
                       <div className="text-white font-bold text-base">{value}</div>
-                      <div className="text-[#3d5a78] text-xs mt-0.5">{label}</div>
+                      <div className="text-[#4a3018] text-xs mt-0.5">{label}</div>
                     </div>
                   ))}
                 </div>
 
                 <div className="flex flex-col gap-2">
                   <a
-                    href="https://youtube.com/@kodneraerialservices"
+                    href={YOUTUBE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 w-full py-3 bg-red-600 text-white text-sm font-bold rounded hover:bg-red-500 transition-colors"
@@ -109,10 +110,10 @@ export default function YoutubePage() {
                     Subscribe &amp; Hit the Bell
                   </a>
                   <a
-                    href="https://youtube.com/@kodneraerialservices"
+                    href={YOUTUBE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full py-3 border border-[#1a3354] text-[#7a99b8] text-sm font-semibold rounded hover:border-[#1a8fe3] hover:text-white transition-all"
+                    className="flex items-center justify-center gap-2 w-full py-3 border border-[#3d2010] text-[#7a99b8] text-sm font-semibold rounded hover:border-[#e8701a] hover:text-white transition-all"
                   >
                     <ExternalLink size={15} />
                     Visit Channel
@@ -125,10 +126,10 @@ export default function YoutubePage() {
       </section>
 
       {/* ── Video Grid ──────────────────────────────────────────────── */}
-      <section className="py-16 bg-[#0a1220] border-t border-[#1a3354]">
+      <section className="py-16 bg-[#0a1220] border-t border-[#3d2010]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <div className="text-[#1a8fe3] text-xs tracking-[0.3em] uppercase font-medium mb-3">
+            <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">
               Recent Uploads
             </div>
             <h2 className="text-3xl font-black text-white">Latest Videos</h2>
@@ -139,11 +140,10 @@ export default function YoutubePage() {
             {placeholderVideos.map((video) => (
               <div
                 key={video.id}
-                className="bg-[#0d1628] border border-[#1a3354] rounded-xl overflow-hidden hover:border-[#1a8fe3]/40 transition-all group cursor-pointer"
+                className="bg-[#0d1628] border border-[#3d2010] rounded-xl overflow-hidden hover:border-[#e8701a]/40 transition-all group cursor-pointer"
               >
-                {/* Thumbnail placeholder */}
                 <div className="relative w-full aspect-video bg-[#0a1220] flex items-center justify-center">
-                  <div className="flex flex-col items-center gap-2 text-[#3d5a78]">
+                  <div className="flex flex-col items-center gap-2 text-[#4a3018]">
                     <Play size={28} className="group-hover:text-red-500 transition-colors" />
                     <span className="text-xs">Video Thumbnail</span>
                   </div>
@@ -151,16 +151,16 @@ export default function YoutubePage() {
                     {video.duration}
                   </div>
                   <div className="absolute top-2 left-2">
-                    <span className="px-2 py-0.5 bg-[#1a8fe3]/20 border border-[#1a8fe3]/30 text-[#1a8fe3] text-[10px] rounded">
+                    <span className="px-2 py-0.5 bg-[#e8701a]/20 border border-[#e8701a]/30 text-[#e8701a] text-[10px] rounded">
                       {video.category}
                     </span>
                   </div>
                 </div>
                 <div className="p-4">
-                  <h3 className="text-white font-semibold text-sm leading-snug mb-2 group-hover:text-[#1a8fe3] transition-colors">
+                  <h3 className="text-white font-semibold text-sm leading-snug mb-2 group-hover:text-[#e8701a] transition-colors">
                     {video.title}
                   </h3>
-                  <div className="text-[#3d5a78] text-xs">{video.views} views</div>
+                  <div className="text-[#4a3018] text-xs">{video.views} views</div>
                 </div>
               </div>
             ))}
@@ -168,7 +168,7 @@ export default function YoutubePage() {
 
           <div className="text-center mt-10">
             <a
-              href="https://youtube.com/@kodneraerialservices"
+              href={YOUTUBE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3 bg-red-600 text-white text-sm font-bold rounded hover:bg-red-500 transition-colors"
