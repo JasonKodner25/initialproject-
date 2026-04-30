@@ -33,7 +33,7 @@ export default function HomePage() {
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 max-w-5xl mx-auto">
           {/* Logo */}
-          <div className="relative w-44 h-44 sm:w-56 sm:h-56 mb-8 drop-shadow-2xl">
+          <div className="relative w-64 h-64 sm:w-80 sm:h-80 mb-8 drop-shadow-2xl">
             <Image
               src="/kodneraeriallogoofficial.png"
               alt="Kodner Aerial Services"
@@ -41,11 +41,6 @@ export default function HomePage() {
               priority
               className="object-contain mix-blend-multiply"
             />
-          </div>
-
-          {/* Tagline */}
-          <div className="text-[#e8701a] text-xs sm:text-sm tracking-[0.4em] uppercase font-medium mb-4">
-            AIR · LAND · VIEW
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-none mb-4">
