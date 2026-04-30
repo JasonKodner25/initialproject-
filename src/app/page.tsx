@@ -43,8 +43,8 @@ export default function HomePage() {
             />
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-none mb-4">
-            THE WORLD&nbsp;
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-none mb-4">
+            PRECISE IMAGING&nbsp;
             <span className="gradient-text">FROM ABOVE</span>
           </h1>
 
