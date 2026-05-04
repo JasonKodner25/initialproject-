@@ -17,6 +17,13 @@ const collections = [
     cover: '/DJI_20260416065653_0188_D.jpeg',
     count: 8,
   },
+  {
+    name: 'Calibazas Bike Park',
+    description: 'Calibazas Bike Park Photoshoot',
+    date: 'April 29, 2026',
+    cover: '/caliphoto5.jpg',
+    count: 4,
+  },
 ];
 
 export default function HomePage() {
@@ -107,7 +114,6 @@ export default function HomePage() {
                 href="/gallery"
                 className="group relative overflow-hidden rounded-xl border border-[#3d2010] hover:border-[#e8701a]/60 transition-all bg-[#0d1628] block"
               >
-                {/* Cover photo */}
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src={col.cover}
@@ -117,13 +123,10 @@ export default function HomePage() {
                     sizes="(max-width: 640px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all" />
-                  {/* Photo count badge */}
                   <div className="absolute top-3 right-3 px-2.5 py-1 bg-[#05080f]/80 backdrop-blur-sm border border-[#e8701a]/40 rounded text-[#e8701a] text-xs font-semibold">
                     {col.count} photos
                   </div>
                 </div>
-
-                {/* Info */}
                 <div className="p-5">
                   <div className="text-white font-black text-xl mb-1 group-hover:text-[#e8701a] transition-colors">{col.name}</div>
                   <div className="text-[#7a99b8] text-sm">{col.description}</div>
