@@ -5,7 +5,6 @@ interface Service {
   icon: React.ElementType;
   title: string;
   tagline: string;
-  description: string;
   features: string[];
   accent: string;
 }
@@ -14,33 +13,29 @@ const services: Service[] = [
   {
     icon: Compass,
     title: 'Landscape Photography',
-    tagline: 'Nature from 400 feet up',
-    description: 'From coastal cliffs to mountain ridgelines, I capture California’s terrain the way it was meant to be seen. Aerial stills that give you a sense of scale no ground-level shot can match.',
+    tagline: 'Capturing California\'s terrain from coastal cliffs to mountainline ridges',
     features: ['4K aerial stills', 'Golden hour shoots', 'RAW file delivery', 'Print-ready resolution'],
     accent: '#e8701a',
   },
   {
     icon: Home,
     title: 'Real Estate Photography',
-    tagline: 'Make every property shine',
-    description: 'A strong aerial shot can be the difference between a listing that gets clicks and one that gets passed over. I work fast and deliver clean, MLS-ready images within 24–48 hours.',
-    features: ['Exterior & aerial stills', 'MLS-ready delivery', '24–48 hr turnaround', 'Virtual tour support'],
+    tagline: 'Exterior aerial stills',
+    features: ['MLS-ready delivery', '24–48 hr turnaround', 'Virtual tour support'],
     accent: '#1a8fbf',
   },
   {
     icon: Video,
     title: 'Aerial Videography',
     tagline: 'Cinematic motion from the sky',
-    description: 'Whether it’s a slow pull-back over a ridgeline or a low tracking shot through open terrain, I shoot footage that actually looks cinematic. Color graded and ready to drop into your edit.',
     features: ['4K / 6K video', 'Color graded delivery', 'Cinematic LUT styling', 'Custom music sync'],
     accent: '#e8701a',
   },
   {
     icon: Camera,
     title: 'Events Coverage',
-    tagline: 'Your big moments, from above',
-    description: 'Weddings, races, festivals — if it’s happening outside, I can put a camera above it. You get shots that no photographer on the ground could ever pull off.',
-    features: ['Weddings & festivals', 'Same-day highlights', 'Photo & video combo', 'Fully licensed & insured'],
+    tagline: 'Capturing memorable events',
+    features: ['In-progress', 'Part 107 rules followed strictly in this domain'],
     accent: '#1a8fbf',
   },
 ];
@@ -54,9 +49,6 @@ export default function ServicesPage() {
           <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">What I Offer</div>
           <h1 className="text-4xl sm:text-5xl font-black text-white">Services</h1>
           <div className="section-divider mt-4" />
-          <p className="text-[#7a99b8] text-sm sm:text-base mt-4 max-w-xl">
-            Professional aerial solutions tailored to your project. All services performed by an FAA Part 107 licensed, fully insured operator.
-          </p>
         </div>
       </section>
 
@@ -70,7 +62,6 @@ export default function ServicesPage() {
                 <div
                   key={svc.title}
                   className="bg-[#0d1628] border border-[#0d3d54] rounded-xl overflow-hidden hover:border-opacity-60 transition-all group flex flex-col"
-                  style={{ ['--hover-border' as string]: svc.accent }}
                 >
                   <div
                     className="h-1 w-full"
@@ -88,15 +79,11 @@ export default function ServicesPage() {
                     <h3 className="text-white font-black text-xl mb-1 group-hover:text-[#1a8fbf] transition-colors">
                       {svc.title}
                     </h3>
-                    <div className="text-xs font-medium mb-4" style={{ color: svc.accent }}>
+                    <div className="text-xs font-medium mb-5" style={{ color: svc.accent }}>
                       {svc.tagline}
                     </div>
 
-                    <p className="text-[#7a99b8] text-sm leading-relaxed mb-5 flex-1">
-                      {svc.description}
-                    </p>
-
-                    <ul className="space-y-2 mb-6">
+                    <ul className="space-y-2 mb-6 flex-1">
                       {svc.features.map((f) => (
                         <li key={f} className="flex items-center gap-2 text-xs text-[#7a99b8]">
                           <div

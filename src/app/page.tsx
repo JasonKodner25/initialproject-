@@ -232,7 +232,7 @@ export default function HomePage() {
       <section className="py-10 bg-[#0a1220] border-t border-[#0d3d54]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <p className="text-[#7a99b8] text-sm sm:text-base font-bold mb-5">
-            Let&apos;s capture your next project from above. Get in touch to discuss your vision.
+            Interested in a booking? Get in touch to discuss further details.
           </p>
           <Link href="/contact" className="inline-block px-8 py-3 bg-[#e8701a] text-white text-sm font-bold tracking-wide rounded hover:bg-[#f4952a] transition-all glow-blue">
             Book a Session
