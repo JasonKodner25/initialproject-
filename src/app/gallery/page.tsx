@@ -32,11 +32,11 @@ const galleryItems: GalleryItem[] = [
   { id: 8,  category: 'Landscape', label: 'Santa Cruz Shore',         location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3513.jpeg',                  aspect: 'aspect-[3/4]',  album: 'Santa Cruz 4/16/26' },
 
   // Calibazas Bike Park 4/29/26
-  { id: 14, category: 'Events', label: 'Bike Park Shot 1', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/caliphoto5.jpg',  aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
-  { id: 15, category: 'Events', label: 'Bike Park Shot 2', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/caliphoto1.jfif', aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
-  { id: 16, category: 'Events', label: 'Bike Park Shot 3', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/caliphoto2.jfif', aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
-  { id: 17, category: 'Events', label: 'Bike Park Shot 4', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/caliphoto3.jfif', aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
-  { id: 18, category: 'Events', label: 'Bike Park Shot 5', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/caliphoto4.jfif', aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
+  { id: 14, category: 'Events', label: 'Bike Park Shot 1', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/caliphoto5.jpg', aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
+  { id: 15, category: 'Events', label: 'Bike Park Shot 2', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/calip1.jpg',       aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
+  { id: 16, category: 'Events', label: 'Bike Park Shot 3', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/calip2.jpg',       aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
+  { id: 17, category: 'Events', label: 'Bike Park Shot 4', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/calip3.jpg',       aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
+  { id: 18, category: 'Events', label: 'Bike Park Shot 5', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/calip4.jpg',       aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
 
   // Placeholders
   { id: 9,  category: 'Real Estate',  label: 'Luxury Home Exterior',   aspect: 'aspect-[4/3]' },
