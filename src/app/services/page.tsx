@@ -15,7 +15,7 @@ const services: Service[] = [
     icon: Compass,
     title: 'Landscape Photography',
     tagline: 'Nature from 400 feet up',
-    description: '[Service description placeholder — describe your landscape aerial photography service. What types of landscapes do you shoot? Mountains, rivers, forests, coastlines? What makes your landscape shots stand out?]',
+    description: 'From coastal cliffs to mountain ridgelines, I capture California’s terrain the way it was meant to be seen. Aerial stills that give you a sense of scale no ground-level shot can match.',
     features: ['4K aerial stills', 'Golden hour shoots', 'RAW file delivery', 'Print-ready resolution'],
     accent: '#e8701a',
   },
@@ -23,7 +23,7 @@ const services: Service[] = [
     icon: Home,
     title: 'Real Estate Photography',
     tagline: 'Make every property shine',
-    description: '[Service description placeholder — describe your real estate drone photography service. How does aerial photography help sell properties? What turnaround time do you offer? Do you work with realtors, developers, or homeowners?]',
+    description: 'A strong aerial shot can be the difference between a listing that gets clicks and one that gets passed over. I work fast and deliver clean, MLS-ready images within 24–48 hours.',
     features: ['Exterior & aerial stills', 'MLS-ready delivery', '24–48 hr turnaround', 'Virtual tour support'],
     accent: '#f4952a',
   },
@@ -31,7 +31,7 @@ const services: Service[] = [
     icon: Video,
     title: 'Aerial Videography',
     tagline: 'Cinematic motion from the sky',
-    description: '[Service description placeholder — describe your aerial video production service. What formats do you deliver? Do you offer color grading, music licensing, or edited final cuts? What industries do you serve?]',
+    description: 'Whether it’s a slow pull-back over a ridgeline or a low tracking shot through open terrain, I shoot footage that actually looks cinematic. Color graded and ready to drop into your edit.',
     features: ['4K / 6K video', 'Color graded delivery', 'Cinematic LUT styling', 'Custom music sync'],
     accent: '#e8701a',
   },
@@ -39,7 +39,7 @@ const services: Service[] = [
     icon: Camera,
     title: 'Events Coverage',
     tagline: 'Your big moments, from above',
-    description: '[Service description placeholder — describe your events aerial coverage service. Weddings, festivals, sports events, corporate gatherings? What do you deliver and how quickly?]',
+    description: 'Weddings, races, festivals — if it’s happening outside, I can put a camera above it. You get shots that no photographer on the ground could ever pull off.',
     features: ['Weddings & festivals', 'Same-day highlights', 'Photo & video combo', 'Fully licensed & insured'],
     accent: '#f4952a',
   },
@@ -48,7 +48,7 @@ const services: Service[] = [
 export default function ServicesPage() {
   return (
     <main className="pt-20">
-      {/* ── Page Header ─────────────────────────────────────────────── */}
+      {/* ── Page Header */}
       <section className="py-16 bg-gradient-to-b from-[#0a1220] to-[#05080f] border-b border-[#3d2010]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">What I Offer</div>
@@ -60,19 +60,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ── Notice Banner ────────────────────────────────────────────── */}
-      <div className="bg-[#e8701a]/10 border-b border-[#e8701a]/20 py-3">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#7a99b8] text-xs text-center">
-            <span className="text-[#e8701a] font-semibold">Note:</span> Service descriptions and pricing are placeholder content — fill in your details and pricing to complete these cards.
-          </p>
-        </div>
-      </div>
-
-      {/* ── Services Grid ────────────────────────────────────────────── */}
+      {/* ── Services Grid */}
       <section className="py-16 sm:py-20 bg-[#05080f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {services.map((svc) => {
               const Icon = svc.icon;
               return (
@@ -80,14 +71,12 @@ export default function ServicesPage() {
                   key={svc.title}
                   className="bg-[#0d1628] border border-[#3d2010] rounded-xl overflow-hidden hover:border-[#e8701a]/40 transition-all group flex flex-col"
                 >
-                  {/* Header strip */}
                   <div
                     className="h-1 w-full"
                     style={{ background: `linear-gradient(90deg, ${svc.accent}, transparent)` }}
                   />
 
                   <div className="p-7 flex flex-col flex-1">
-                    {/* Icon */}
                     <div
                       className="w-12 h-12 rounded-lg flex items-center justify-center mb-5"
                       style={{ background: `${svc.accent}15`, border: `1px solid ${svc.accent}30` }}
@@ -106,7 +95,6 @@ export default function ServicesPage() {
                       {svc.description}
                     </p>
 
-                    {/* Features */}
                     <ul className="space-y-2 mb-6">
                       {svc.features.map((f) => (
                         <li key={f} className="flex items-center gap-2 text-xs text-[#7a99b8]">
@@ -119,7 +107,6 @@ export default function ServicesPage() {
                       ))}
                     </ul>
 
-                    {/* Pricing placeholder */}
                     <div className="border-t border-[#3d2010] pt-4 mt-auto flex items-center justify-between">
                       <div>
                         <div className="text-[#4a3018] text-xs">Starting from</div>
@@ -141,7 +128,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ── Custom Work Banner ───────────────────────────────────────── */}
+      {/* ── Custom Work Banner */}
       <section className="py-16 bg-[#0a1220] border-t border-[#3d2010]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-3xl font-black text-white mb-4">
