@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronDown, Play, Award, Camera, Video, Map } from 'lucide-react';
+import { ChevronDown, Play, Award, Camera, Video } from 'lucide-react';
 
 const highlights = [
   { icon: Camera, label: 'Photography', desc: 'Stunning aerial stills' },
   { icon: Video, label: 'Videography', desc: 'Cinematic aerial footage' },
-  { icon: Map, label: 'Mapping', desc: 'Precision aerial mapping' },
   { icon: Award, label: 'Licensed', desc: 'FAA Part 107 certified' },
 ];
 
@@ -70,8 +69,22 @@ export default function HomePage() {
       </section>
 
       {/* ── Intro / About Snippet */}
-      <section className="py-20 sm:py-28 bg-[#05080f]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 sm:py-28 bg-[#05080f] overflow-hidden">
+        {/* Subtle drone silhouette background */}
+        <div className="absolute inset-0 flex items-center justify-end pointer-events-none">
+          <div className="relative w-[55%] h-full opacity-[0.055]" style={{ filter: 'brightness(0) invert(1)' }}>
+            <Image
+              src="/air3s.webp"
+              alt=""
+              fill
+              className="object-contain object-center"
+              sizes="55vw"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <div>
               <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Welcome</div>
