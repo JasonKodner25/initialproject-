@@ -81,13 +81,7 @@ export default function AboutPage() {
 
               <div className="space-y-5 text-[#7a99b8] text-sm sm:text-base leading-relaxed">
                 <p>
-                  [Bio paragraph 1 — introduce yourself, your background, and how you got started in drone photography. Share your journey from first learning to fly to turning it into a professional service.]
-                </p>
-                <p>
-                  [Bio paragraph 2 — describe your training, certifications, and professional experience. Mention any notable projects, clients, or achievements that define your work.]
-                </p>
-                <p>
-                  [Bio paragraph 3 — share what makes your approach unique. Talk about your artistic vision, technical skills, and commitment to delivering outstanding results for every client.]
+                  Hello! My name is Jason Kodner, a Bay Area native and Aviation Management graduate from San Jose State University. I am deeply fascinated by several domains of aviation, including aircraft design, propulsion systems, real-world operations, and the rapidly evolving world of autonomous flight. I hold both a Private Pilot Certificate and a Part 107 Remote Pilot Certificate, and I am driven by a long-term goal of contributing meaningfully to the future of autonomous aviation.
                 </p>
               </div>
             </div>
