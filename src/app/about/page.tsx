@@ -39,12 +39,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
             {/* Profile photo */}
             <div className="flex flex-col items-center lg:items-start gap-6">
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl border-2 border-[#3d2010] overflow-hidden">
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl border-2 border-[#3d2010] overflow-hidden bg-[#0d1628]">
                 <Image
-                  src="/IMG_3415.jpeg"
+                  src="/kodneraeriallogoofficial.png"
                   alt="Jason Kodner"
                   fill
-                  className="object-cover"
+                  className="object-contain mix-blend-multiply"
                   priority
                 />
                 {/* Corner accents */}
@@ -107,7 +107,6 @@ export default function AboutPage() {
             </h2>
             <div className="section-divider mx-auto mb-8" />
 
-            {/* Mission block */}
             <div className="max-w-3xl mx-auto bg-[#0d1628] border border-[#3d2010] rounded-2xl p-8 sm:p-12 relative overflow-hidden">
               <div className="absolute top-4 left-6 text-[#e8701a]/10 text-[8rem] font-serif leading-none select-none">
                 &ldquo;
