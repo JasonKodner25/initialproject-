@@ -77,20 +77,6 @@ export default function ContactPage() {
                   </div>
                 ))}
               </div>
-
-              <div className="bg-[#0d1628] border border-[#0d3d54] rounded-xl p-5">
-                <div className="text-white font-bold text-sm mb-2">Service Area</div>
-                <p className="text-[#7a99b8] text-xs leading-relaxed">
-                  [Service area placeholder — describe the geographic area you serve. Include any travel fees or radius limits.]
-                </p>
-              </div>
-
-              <div className="flex items-center gap-3 bg-[#1a8fbf]/10 border border-[#1a8fbf]/20 rounded-xl px-5 py-4">
-                <CheckCircle size={18} className="text-[#1a8fbf] flex-shrink-0" />
-                <div className="text-[#7a99b8] text-xs">
-                  <span className="text-white font-semibold">Typical response time:</span> within 24 hours
-                </div>
-              </div>
             </div>
 
             {/* Form */}
