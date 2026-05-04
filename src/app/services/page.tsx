@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Camera, Home, Video, Search, Layers, Compass, ArrowRight } from 'lucide-react';
+import { Camera, Home, Video, Compass, ArrowRight } from 'lucide-react';
 
 interface Service {
   icon: React.ElementType;
@@ -33,22 +33,6 @@ const services: Service[] = [
     tagline: 'Cinematic motion from the sky',
     description: '[Service description placeholder — describe your aerial video production service. What formats do you deliver? Do you offer color grading, music licensing, or edited final cuts? What industries do you serve?]',
     features: ['4K / 6K video', 'Color graded delivery', 'Cinematic LUT styling', 'Custom music sync'],
-    accent: '#e8701a',
-  },
-  {
-    icon: Search,
-    title: 'Inspections',
-    tagline: 'See what the eye cannot reach',
-    description: '[Service description placeholder — describe your aerial inspection service. What structures do you inspect? Roofs, cell towers, bridges, solar panels? What reporting format do you provide?]',
-    features: ['High-res zoom imaging', 'Detailed written report', 'GPS-tagged imagery', 'Safe, no-access needed'],
-    accent: '#f4952a',
-  },
-  {
-    icon: Layers,
-    title: 'Mapping & Surveying',
-    tagline: 'Precision data from above',
-    description: '[Service description placeholder — describe your aerial mapping and surveying service. Do you provide orthomosaic maps, 3D models, or topographic data? What industries benefit — construction, agriculture, land management?]',
-    features: ['Orthomosaic mapping', '3D point cloud data', 'GIS-compatible outputs', 'Acreage calculation'],
     accent: '#e8701a',
   },
   {
@@ -88,7 +72,7 @@ export default function ServicesPage() {
       {/* ── Services Grid ────────────────────────────────────────────── */}
       <section className="py-16 sm:py-20 bg-[#05080f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {services.map((svc) => {
               const Icon = svc.icon;
               return (
