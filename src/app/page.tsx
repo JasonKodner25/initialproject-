@@ -44,11 +44,13 @@ export default function HomePage() {
           className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
-              'linear-gradient(#e8701a 1px, transparent 1px), linear-gradient(90deg, #e8701a 1px, transparent 1px)',
+              'linear-gradient(#1a8fbf 1px, transparent 1px), linear-gradient(90deg, #1a8fbf 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#e8701a]/10 rounded-full blur-[120px] pointer-events-none" />
+        {/* Dual glow: orange right + lake blue left */}
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#e8701a]/10 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#1a8fbf]/10 rounded-full blur-[130px] pointer-events-none" />
 
         <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 max-w-5xl mx-auto">
           <div className="relative w-64 h-64 sm:w-80 sm:h-80 mb-8 drop-shadow-2xl">
@@ -64,7 +66,7 @@ export default function HomePage() {
             <Link href="/services" className="px-8 py-4 bg-[#e8701a] text-white font-bold tracking-wide rounded hover:bg-[#f4952a] transition-all glow-blue text-sm sm:text-base">
               Explore Services
             </Link>
-            <Link href="/gallery" className="flex items-center gap-2 px-8 py-4 border border-[#3d2010] text-[#7a99b8] font-semibold rounded hover:border-[#e8701a] hover:text-white transition-all text-sm sm:text-base">
+            <Link href="/gallery" className="flex items-center gap-2 px-8 py-4 border border-[#0d3d54] text-[#7a99b8] font-semibold rounded hover:border-[#1a8fbf] hover:text-white transition-all text-sm sm:text-base">
               <Play size={16} />
               View Gallery
             </Link>
@@ -72,8 +74,8 @@ export default function HomePage() {
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-          <span className="text-[#4a3018] text-xs tracking-widest uppercase">Scroll</span>
-          <ChevronDown size={16} className="text-[#4a3018]" />
+          <span className="text-[#1a4a5c] text-xs tracking-widest uppercase">Scroll</span>
+          <ChevronDown size={16} className="text-[#1a4a5c]" />
         </div>
       </section>
 
@@ -84,11 +86,12 @@ export default function HomePage() {
           className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
-              'linear-gradient(#e8701a 1px, transparent 1px), linear-gradient(90deg, #e8701a 1px, transparent 1px)',
+              'linear-gradient(#1a8fbf 1px, transparent 1px), linear-gradient(90deg, #1a8fbf 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#e8701a]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#e8701a]/10 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#1a8fbf]/10 rounded-full blur-[130px] pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
@@ -106,8 +109,8 @@ export default function HomePage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {highlights.map(({ icon: Icon, label, desc }) => (
-                <div key={label} className="bg-[#0d1628] border border-[#3d2010] rounded-lg p-6 hover:border-[#e8701a]/50 transition-all group">
-                  <Icon size={28} className="text-[#e8701a] mb-3 group-hover:scale-110 transition-transform" />
+                <div key={label} className="bg-[#0d1628] border border-[#0d3d54] rounded-lg p-6 hover:border-[#1a8fbf]/60 transition-all group">
+                  <Icon size={28} className="text-[#1a8fbf] mb-3 group-hover:scale-110 transition-transform" />
                   <div className="text-white font-bold text-base mb-1">{label}</div>
                   <div className="text-[#7a99b8] text-xs">{desc}</div>
                 </div>
@@ -118,10 +121,10 @@ export default function HomePage() {
       </section>
 
       {/* ── Equipment */}
-      <section className="py-20 sm:py-28 bg-[#0a1220] border-y border-[#3d2010]">
+      <section className="py-20 sm:py-28 bg-[#0a1220] border-y border-[#0d3d54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-            <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#3d2010]">
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#0d3d54]">
               <Image
                 src="/air3s.webp"
                 alt="DJI Air 3S"
@@ -131,7 +134,7 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a1220]/60 to-transparent" />
               <div className="absolute bottom-4 left-4 flex gap-2">
-                <span className="flex items-center gap-1 px-2.5 py-1 bg-[#05080f]/80 backdrop-blur-sm border border-[#e8701a]/40 text-[#e8701a] text-xs font-semibold rounded">
+                <span className="flex items-center gap-1 px-2.5 py-1 bg-[#05080f]/80 backdrop-blur-sm border border-[#1a8fbf]/40 text-[#1a8fbf] text-xs font-semibold rounded">
                   <Video size={10} /> 4K Video
                 </span>
                 <span className="flex items-center gap-1 px-2.5 py-1 bg-[#05080f]/80 backdrop-blur-sm border border-[#e8701a]/40 text-[#e8701a] text-xs font-semibold rounded">
@@ -141,9 +144,9 @@ export default function HomePage() {
             </div>
 
             <div>
-              <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">The Equipment</div>
+              <div className="text-[#1a8fbf] text-xs tracking-[0.3em] uppercase font-medium mb-3">The Equipment</div>
               <div className="flex items-center gap-3 mb-2">
-                <Radio size={22} className="text-[#e8701a]" />
+                <Radio size={22} className="text-[#1a8fbf]" />
                 <h2 className="text-3xl sm:text-4xl font-black text-white">Equipment</h2>
               </div>
               <div className="section-divider mb-6" />
@@ -152,13 +155,13 @@ export default function HomePage() {
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
                 {airSpecs.map(({ label, value }) => (
-                  <div key={label} className="bg-[#0d1628] border border-[#3d2010] rounded-lg px-4 py-3">
-                    <div className="text-[#4a3018] text-[10px] uppercase tracking-widest mb-1">{label}</div>
+                  <div key={label} className="bg-[#0d1628] border border-[#0d3d54] rounded-lg px-4 py-3">
+                    <div className="text-[#1a4a5c] text-[10px] uppercase tracking-widest mb-1">{label}</div>
                     <div className="text-white font-bold text-sm">{value}</div>
                   </div>
                 ))}
               </div>
-              <Link href="/equipment" className="inline-block px-6 py-3 border border-[#e8701a] text-[#e8701a] text-sm font-semibold rounded hover:bg-[#e8701a] hover:text-white transition-all">
+              <Link href="/equipment" className="inline-block px-6 py-3 border border-[#1a8fbf] text-[#1a8fbf] text-sm font-semibold rounded hover:bg-[#1a8fbf] hover:text-white transition-all">
                 View Full Equipment List
               </Link>
             </div>
@@ -198,7 +201,7 @@ export default function HomePage() {
                 <div className="p-5">
                   <div className="text-white font-black text-xl mb-1 group-hover:text-[#e8701a] transition-colors">{col.name}</div>
                   <div className="text-[#7a99b8] text-sm">{col.description}</div>
-                  <div className="text-[#4a3018] text-xs mt-1">{col.date}</div>
+                  <div className="text-[#1a4a5c] text-xs mt-1">{col.date}</div>
                 </div>
               </Link>
             ))}
@@ -213,9 +216,9 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA Banner */}
-      <section className="py-10 bg-[#0a1220] border-t border-[#3d2010]">
+      <section className="py-10 bg-[#0a1220] border-t border-[#0d3d54]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-[#7a99b8] text-sm sm:text-base mb-5">
+          <p className="text-[#7a99b8] text-sm sm:text-base font-bold mb-5">
             Let&apos;s capture your next project from above. Get in touch to discuss your vision.
           </p>
           <Link href="/contact" className="inline-block px-8 py-3 bg-[#e8701a] text-white text-sm font-bold tracking-wide rounded hover:bg-[#f4952a] transition-all glow-blue">

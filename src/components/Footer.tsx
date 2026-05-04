@@ -41,7 +41,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a1220] border-t border-[#3d2010]">
+    <footer className="bg-[#0a1220] border-t border-[#0d3d54]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
@@ -51,7 +51,7 @@ export default function Footer() {
               <div className="text-[#e8701a] text-xs tracking-[0.3em] font-medium uppercase mt-0.5">
                 Aerial Services
               </div>
-              <div className="text-[#4a3018] text-xs tracking-[0.2em] mt-0.5">
+              <div className="text-[#1a4a5c] text-xs tracking-[0.2em] mt-0.5">
                 AIR · LAND · VIEW
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[#7a99b8] text-sm hover:text-[#e8701a] transition-colors"
+                    className="text-[#7a99b8] text-sm hover:text-[#1a8fbf] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -86,16 +86,17 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-[#7a99b8] text-sm">
-                <Mail size={15} className="text-[#e8701a] flex-shrink-0 mt-0.5" />
+                <Mail size={15} className="text-[#1a8fbf] flex-shrink-0 mt-0.5" />
                 <span>info@kodneraerialservices.com</span>
               </li>
               <li className="flex items-start gap-2 text-[#7a99b8] text-sm">
-                <Phone size={15} className="text-[#e8701a] flex-shrink-0 mt-0.5" />
+                <Mail size={15} className="text-[#1a8fbf] flex-shrink-0 mt-0.5" style={{visibility:'hidden'}} />
+                <Phone size={15} className="text-[#1a8fbf] flex-shrink-0 mt-0.5 -ml-[15px]" />
                 <span>(555) 000-0000</span>
               </li>
               <li className="flex items-start gap-2 text-[#7a99b8] text-sm">
                 <MapPin size={15} className="text-[#e8701a] flex-shrink-0 mt-0.5" />
-                <span>Your Location Here</span>
+                <span>Bay Area, CA</span>
               </li>
             </ul>
           </div>
@@ -113,25 +114,25 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-10 h-10 flex items-center justify-center rounded border border-[#3d2010] text-[#7a99b8] hover:text-[#e8701a] hover:border-[#e8701a] hover:bg-[#e8701a]/10 transition-all"
+                  className="w-10 h-10 flex items-center justify-center rounded border border-[#0d3d54] text-[#7a99b8] hover:text-[#1a8fbf] hover:border-[#1a8fbf] hover:bg-[#1a8fbf]/10 transition-all"
                 >
                   <Icon />
                 </a>
               ))}
             </div>
-            <p className="text-[#4a3018] text-xs mt-5 leading-relaxed">
+            <p className="text-[#1a4a5c] text-xs mt-5 leading-relaxed">
               Subscribe to our YouTube channel for the latest aerial footage and behind-the-scenes content.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-[#3d2010]">
+      <div className="border-t border-[#0d3d54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[#4a3018] text-xs">
+          <p className="text-[#1a4a5c] text-xs">
             &copy; {new Date().getFullYear()} Kodner Aerial Services. All rights reserved.
           </p>
-          <p className="text-[#4a3018] text-xs">
+          <p className="text-[#1a4a5c] text-xs">
             AIR · LAND · VIEW
           </p>
         </div>

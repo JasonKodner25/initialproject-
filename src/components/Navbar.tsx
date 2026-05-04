@@ -35,7 +35,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#05080f]/95 backdrop-blur-md border-b border-[#3d2010] shadow-lg shadow-black/40'
+          ? 'bg-[#05080f]/95 backdrop-blur-md border-b border-[#0d3d54] shadow-lg shadow-black/40'
           : 'bg-transparent'
       }`}
     >
@@ -69,7 +69,7 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-4 py-2 text-sm font-medium tracking-wide rounded transition-all duration-200 ${
                   pathname === link.href
-                    ? 'text-[#e8701a] border-b-2 border-[#e8701a]'
+                    ? 'text-[#1a8fbf] border-b-2 border-[#1a8fbf]'
                     : 'text-[#7a99b8] hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -101,14 +101,14 @@ export default function Navbar() {
           isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="bg-[#0a1220]/98 backdrop-blur-md border-t border-[#3d2010] px-4 py-4 space-y-1">
+        <div className="bg-[#0a1220]/98 backdrop-blur-md border-t border-[#0d3d54] px-4 py-4 space-y-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={`block px-4 py-3 text-sm font-medium rounded transition-all ${
                 pathname === link.href
-                  ? 'text-[#e8701a] bg-[#e8701a]/10 border-l-2 border-[#e8701a]'
+                  ? 'text-[#1a8fbf] bg-[#1a8fbf]/10 border-l-2 border-[#1a8fbf]'
                   : 'text-[#7a99b8] hover:text-white hover:bg-white/5'
               }`}
             >

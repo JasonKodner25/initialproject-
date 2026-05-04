@@ -25,7 +25,7 @@ const services: Service[] = [
     tagline: 'Make every property shine',
     description: 'A strong aerial shot can be the difference between a listing that gets clicks and one that gets passed over. I work fast and deliver clean, MLS-ready images within 24–48 hours.',
     features: ['Exterior & aerial stills', 'MLS-ready delivery', '24–48 hr turnaround', 'Virtual tour support'],
-    accent: '#f4952a',
+    accent: '#1a8fbf',
   },
   {
     icon: Video,
@@ -41,7 +41,7 @@ const services: Service[] = [
     tagline: 'Your big moments, from above',
     description: 'Weddings, races, festivals — if it’s happening outside, I can put a camera above it. You get shots that no photographer on the ground could ever pull off.',
     features: ['Weddings & festivals', 'Same-day highlights', 'Photo & video combo', 'Fully licensed & insured'],
-    accent: '#f4952a',
+    accent: '#1a8fbf',
   },
 ];
 
@@ -49,7 +49,7 @@ export default function ServicesPage() {
   return (
     <main className="pt-20">
       {/* ── Page Header */}
-      <section className="py-16 bg-gradient-to-b from-[#0a1220] to-[#05080f] border-b border-[#3d2010]">
+      <section className="py-16 bg-gradient-to-b from-[#0a1220] to-[#05080f] border-b border-[#0d3d54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">What I Offer</div>
           <h1 className="text-4xl sm:text-5xl font-black text-white">Services</h1>
@@ -69,7 +69,8 @@ export default function ServicesPage() {
               return (
                 <div
                   key={svc.title}
-                  className="bg-[#0d1628] border border-[#3d2010] rounded-xl overflow-hidden hover:border-[#e8701a]/40 transition-all group flex flex-col"
+                  className="bg-[#0d1628] border border-[#0d3d54] rounded-xl overflow-hidden hover:border-opacity-60 transition-all group flex flex-col"
+                  style={{ ['--hover-border' as string]: svc.accent }}
                 >
                   <div
                     className="h-1 w-full"
@@ -84,7 +85,7 @@ export default function ServicesPage() {
                       <Icon size={22} style={{ color: svc.accent }} />
                     </div>
 
-                    <h3 className="text-white font-black text-xl mb-1 group-hover:text-[#e8701a] transition-colors">
+                    <h3 className="text-white font-black text-xl mb-1 group-hover:text-[#1a8fbf] transition-colors">
                       {svc.title}
                     </h3>
                     <div className="text-xs font-medium mb-4" style={{ color: svc.accent }}>
@@ -107,9 +108,9 @@ export default function ServicesPage() {
                       ))}
                     </ul>
 
-                    <div className="border-t border-[#3d2010] pt-4 mt-auto flex items-center justify-between">
+                    <div className="border-t border-[#0d3d54] pt-4 mt-auto flex items-center justify-between">
                       <div>
-                        <div className="text-[#4a3018] text-xs">Starting from</div>
+                        <div className="text-[#1a4a5c] text-xs">Starting from</div>
                         <div className="text-white font-bold text-lg">— / project</div>
                       </div>
                       <Link
@@ -129,7 +130,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ── Custom Work Banner */}
-      <section className="py-16 bg-[#0a1220] border-t border-[#3d2010]">
+      <section className="py-16 bg-[#0a1220] border-t border-[#0d3d54]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-3xl font-black text-white mb-4">
             Need Something Custom?
