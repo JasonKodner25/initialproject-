@@ -71,17 +71,19 @@ export default function HomePage() {
       {/* ── Intro / About Snippet */}
       <section className="relative py-20 sm:py-28 bg-[#05080f] overflow-hidden">
         {/* Subtle drone silhouette background */}
-        <div className="absolute inset-0 flex items-center justify-end pointer-events-none">
-          <div className="relative w-[55%] h-full opacity-[0.055]" style={{ filter: 'brightness(0) invert(1)' }}>
-            <Image
-              src="/air3s.webp"
-              alt=""
-              fill
-              className="object-contain object-center"
-              sizes="55vw"
-              aria-hidden="true"
-            />
-          </div>
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ opacity: 0.18 }}
+        >
+          <Image
+            src="/air3s.webp"
+            alt=""
+            fill
+            className="object-contain object-right"
+            sizes="100vw"
+            aria-hidden="true"
+            style={{ filter: 'brightness(0) invert(1)' }}
+          />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
