@@ -53,6 +53,7 @@ const equipment: EquipItem[] = [
     description:
       'Dual-lens imaging system integrated into the DJI Air 3S — a 1-inch CMOS wide sensor paired with a 1/1.3-inch tele sensor, delivering 50 MP stills and cinema-quality 4K/6K video.',
     icon: Camera,
+    src: '/djicamera.jpg',
     specs: [],
     specGroups: [
       {
@@ -73,6 +74,7 @@ const equipment: EquipItem[] = [
     description:
       '[Controller placeholder] — extended-range controller providing real-time HD monitoring and precise aircraft control.',
     icon: Cpu,
+    src: '/djiremote.jpg',
     specs: ['Display: — inch', 'Range: — km', 'Battery: — min', 'Transmission: —'],
   },
   {
@@ -80,8 +82,9 @@ const equipment: EquipItem[] = [
     name: 'Editing Software',
     category: 'Software',
     description:
-      '[Software placeholder — e.g., Adobe Premiere Pro, DaVinci Resolve, Lightroom] — professional post-processing pipeline for color grading and final delivery.',
+      'DaVinci Resolve is a professional-grade color grading and video editing platform used to deliver polished, cinema-quality footage from every shoot.',
     icon: Cpu,
+    src: '/davinciresolve.avif',
     specs: ['Color Grading: Yes', 'LUT Support: Yes', 'RAW Editing: Yes', 'Export: 4K+'],
   },
 ];
