@@ -117,16 +117,37 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right: vertical video */}
-            <div className="flex justify-center lg:justify-end">
-              <video
-                src="/kodnervideo.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="max-h-[75vh] w-auto rounded-xl border border-[#0d3d54]"
-              />
+            {/* Right: vertical video with styled frame */}
+            <div className="relative flex justify-center lg:justify-end">
+              {/* Ambient glow blobs */}
+              <div className="absolute bottom-8 right-0 w-64 h-64 bg-[#e8701a]/25 rounded-full blur-[70px] pointer-events-none" />
+              <div className="absolute top-8 left-0 w-56 h-56 bg-[#1a8fbf]/25 rounded-full blur-[60px] pointer-events-none" />
+
+              {/* Gradient border frame */}
+              <div
+                className="relative p-[2px] rounded-2xl shadow-2xl"
+                style={{ background: 'linear-gradient(145deg, #e8701a 0%, #0a1220 50%, #1a8fbf 100%)' }}
+              >
+                {/* Corner accents */}
+                <div className="absolute -top-1 -left-1 w-5 h-5 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl z-10" />
+                <div className="absolute -bottom-1 -right-1 w-5 h-5 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-2xl z-10" />
+
+                <div className="bg-[#05080f] rounded-[14px] overflow-hidden">
+                  <video
+                    src="/kodnervideo.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="max-h-[75vh] w-auto block"
+                  />
+                </div>
+              </div>
+
+              {/* Floating badge */}
+              <div className="absolute bottom-4 left-0 lg:-left-4 px-3 py-1.5 bg-[#05080f]/90 backdrop-blur-sm border border-[#e8701a]/40 rounded-full text-[#e8701a] text-[10px] font-semibold tracking-widest uppercase shadow-lg">
+                @kodner.aerial
+              </div>
             </div>
 
           </div>
