@@ -48,7 +48,6 @@ export default function HomePage() {
             backgroundSize: '60px 60px',
           }}
         />
-        {/* Dual glow: orange right + lake blue left */}
         <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#e8701a]/10 rounded-full blur-[130px] pointer-events-none" />
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#1a8fbf]/10 rounded-full blur-[130px] pointer-events-none" />
 
@@ -57,7 +56,7 @@ export default function HomePage() {
             <Image src="/kodneraeriallogoofficial.png" alt="Kodner Aerial Services" fill priority className="object-contain mix-blend-multiply" />
           </div>
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-none mb-4">
-            PRECISE IMAGING&nbsp;<span className="gradient-text">FROM ABOVE</span>
+            PRECISE IMAGING&nbsp;<span className="text-[#e8701a]">FROM ABOVE</span>
           </h1>
           <p className="text-[#7a99b8] text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
             Professional drone photography &amp; videography — capturing breathtaking perspectives for real estate, landscapes, events, and beyond.
@@ -74,8 +73,8 @@ export default function HomePage() {
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-          <span className="text-[#1a4a5c] text-xs tracking-widest uppercase">Scroll</span>
-          <ChevronDown size={16} className="text-[#1a4a5c]" />
+          <span className="text-[#e8701a] text-xs tracking-widest uppercase">Scroll</span>
+          <ChevronDown size={16} className="text-[#e8701a]" />
         </div>
       </section>
 
@@ -134,13 +133,13 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a1220]/60 to-transparent" />
               <div className="absolute bottom-4 left-4 flex gap-2">
-                <span className="flex items-center gap-1 px-2.5 py-1 bg-[#05080f]/80 backdrop-blur-sm border border-[#1a8fbf]/40 text-[#1a8fbf] text-xs font-semibold rounded">
+                <span className="flex items-center gap-1 px-2.5 py-1 bg-[#05080f]/80 backdrop-blur-sm border border-[#e8701a]/40 text-[#e8701a] text-xs font-semibold rounded">
                   <Video size={10} /> 4K Video
                 </span>
                 <span className="flex items-center gap-1 px-2.5 py-1 bg-[#05080f]/80 backdrop-blur-sm border border-[#e8701a]/40 text-[#e8701a] text-xs font-semibold rounded">
                   <Shield size={10} /> Obstacle Detection
                 </span>
-              </div>
+          </div>
             </div>
 
             <div>
