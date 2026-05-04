@@ -1,6 +1,12 @@
-import { Camera, Cpu, Radio, Battery, Package } from 'lucide-react';
+import Image from 'next/image';
+import { Camera, Cpu, Radio, Battery, Package, Shield, Video } from 'lucide-react';
 
 type EquipCategory = 'Drone' | 'Camera' | 'Accessory' | 'Software';
+
+interface SpecGroup {
+  title: string;
+  specs: string[];
+}
 
 interface EquipItem {
   id: number;
@@ -9,22 +15,52 @@ interface EquipItem {
   description: string;
   icon: React.ElementType;
   specs: string[];
+  specGroups?: SpecGroup[];
+  src?: string;
+  badges?: string[];
 }
 
 const equipment: EquipItem[] = [
   {
     id: 1,
-    name: 'Primary Drone',
+    name: 'DJI Air 3S',
     category: 'Drone',
-    description: '[Drone name placeholder — e.g., DJI Mavic 3 Pro, Air 3, Mini 4 Pro, etc.] — describe your primary flight platform and what makes it ideal for professional aerial work.',
+    description:
+      'The primary flight platform for Kodner Aerial Services. The Air 3S delivers professional dual-lens imaging with a 1-inch CMOS sensor, capturing cinema-quality 4K video and 50MP stills. Omnidirectional obstacle detection ensures safe, confident operation in complex environments.',
     icon: Radio,
-    specs: ['Flight Time: — min', 'Max Range: — km', 'Wind Resistance: Level —', 'Weight: — g'],
+    src: '/air3s.webp',
+    badges: ['4K Video', 'Obstacle Detection'],
+    specs: [],
+    specGroups: [
+      {
+        title: 'Aircraft',
+        specs: [
+          'Max Speed: 47 mph (60 mph w/ tailwind)',
+          'Ascent / Descent: 22 mph',
+          'Max Altitude: 19,700 ft (6,000 m)',
+          'Flight Time: 41 min / ~2 hrs (3 batteries)',
+          'Max Range: 19.8 miles (32 km)',
+          'GPS: GPS + Galileo + BeiDou',
+          'Onboard Storage: 42 GB',
+        ],
+      },
+      {
+        title: 'Camera',
+        specs: [
+          'Wide: 1\" CMOS · 50 MP · 24mm f/1.8',
+          'Tele: 1/1.3\" CMOS · 48 MP · 70mm f/2.8',
+          'Wide FOV: 84° · Focus: 0.5 m – ∞',
+          'Tele FOV: 35° · Focus: 3 m – ∞',
+        ],
+      },
+    ],
   },
   {
     id: 2,
     name: 'Secondary / Backup Drone',
     category: 'Drone',
-    description: '[Second drone placeholder] — your backup or specialized platform for specific shooting scenarios.',
+    description:
+      '[Second drone placeholder] — your backup or specialized platform for specific shooting scenarios.',
     icon: Radio,
     specs: ['Flight Time: — min', 'Max Range: — km', 'Camera: — MP', 'Weight: — g'],
   },
@@ -32,7 +68,8 @@ const equipment: EquipItem[] = [
     id: 3,
     name: 'Primary Camera System',
     category: 'Camera',
-    description: '[Camera name placeholder] — the imaging system mounted to your primary drone. Describe the sensor, resolution, and image quality.',
+    description:
+      '[Camera name placeholder] — the imaging system mounted to your primary drone. Describe the sensor, resolution, and image quality.',
     icon: Camera,
     specs: ['Resolution: — MP / — K', 'Sensor: —', 'Aperture: f/—', 'ISO Range: —'],
   },
@@ -40,7 +77,8 @@ const equipment: EquipItem[] = [
     id: 4,
     name: 'Ground Camera',
     category: 'Camera',
-    description: '[Ground camera placeholder — e.g., Sony Alpha, Canon EOS, DJI Osmo Pocket] — used for ground-level and close-up photography to complement aerial shots.',
+    description:
+      '[Ground camera placeholder — e.g., Sony Alpha, Canon EOS, DJI Osmo Pocket] — used for ground-level and close-up photography to complement aerial shots.',
     icon: Camera,
     specs: ['Resolution: — MP', 'Video: — K / — fps', 'Lens: —', 'Stabilization: —'],
   },
@@ -48,7 +86,8 @@ const equipment: EquipItem[] = [
     id: 5,
     name: 'Intelligent Batteries',
     category: 'Accessory',
-    description: '[Battery system placeholder] — high-capacity intelligent flight batteries that extend your operational window on-site.',
+    description:
+      '[Battery system placeholder] — high-capacity intelligent flight batteries that extend your operational window on-site.',
     icon: Battery,
     specs: ['Capacity: — mAh', 'Voltage: — V', 'Charge Time: — min', 'Quantity: — units'],
   },
@@ -56,7 +95,8 @@ const equipment: EquipItem[] = [
     id: 6,
     name: 'Remote Controller',
     category: 'Accessory',
-    description: '[Controller placeholder] — extended-range controller providing real-time HD monitoring and precise aircraft control.',
+    description:
+      '[Controller placeholder] — extended-range controller providing real-time HD monitoring and precise aircraft control.',
     icon: Cpu,
     specs: ['Display: — inch', 'Range: — km', 'Battery: — min', 'Transmission: —'],
   },
@@ -64,7 +104,8 @@ const equipment: EquipItem[] = [
     id: 7,
     name: 'ND Filter Kit',
     category: 'Accessory',
-    description: '[Filter kit placeholder] — neutral density filters essential for maintaining correct exposure and motion blur in varying lighting conditions.',
+    description:
+      '[Filter kit placeholder] — neutral density filters essential for maintaining correct exposure and motion blur in varying lighting conditions.',
     icon: Package,
     specs: ['ND4, ND8, ND16, ND32', 'Polarized options', 'Material: —', 'Compatibility: —'],
   },
@@ -72,7 +113,8 @@ const equipment: EquipItem[] = [
     id: 8,
     name: 'Editing Software',
     category: 'Software',
-    description: '[Software placeholder — e.g., Adobe Premiere Pro, DaVinci Resolve, Lightroom] — professional post-processing pipeline for color grading and final delivery.',
+    description:
+      '[Software placeholder — e.g., Adobe Premiere Pro, DaVinci Resolve, Lightroom] — professional post-processing pipeline for color grading and final delivery.',
     icon: Cpu,
     specs: ['Color Grading: Yes', 'LUT Support: Yes', 'RAW Editing: Yes', 'Export: 4K+'],
   },
@@ -104,10 +146,7 @@ export default function EquipmentPage() {
       <section className="py-6 bg-[#0a1220] border-b border-[#3d2010]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap gap-3">
           {(Object.keys(categoryColors) as EquipCategory[]).map((cat) => (
-            <span
-              key={cat}
-              className={`px-3 py-1.5 border rounded text-xs font-semibold ${categoryColors[cat]}`}
-            >
+            <span key={cat} className={`px-3 py-1.5 border rounded text-xs font-semibold ${categoryColors[cat]}`}>
               {cat}
             </span>
           ))}
@@ -125,20 +164,43 @@ export default function EquipmentPage() {
                   key={item.id}
                   className="bg-[#0d1628] border border-[#3d2010] rounded-xl overflow-hidden hover:border-[#e8701a]/40 transition-all group flex flex-col"
                 >
-                  {/* Photo placeholder */}
-                  <div className="relative w-full aspect-[4/3] bg-[#0a1220] border-b border-[#3d2010] flex flex-col items-center justify-center gap-2">
-                    <Icon
-                      size={36}
-                      strokeWidth={1.5}
-                      className="text-[#4a3018] group-hover:text-[#e8701a] transition-colors"
-                    />
-                    <span className="text-[#4a3018] text-xs">Equipment Photo</span>
+                  {/* Photo */}
+                  <div className="relative w-full aspect-[4/3] bg-[#0a1220] border-b border-[#3d2010] flex flex-col items-center justify-center gap-2 overflow-hidden">
+                    {item.src ? (
+                      <Image
+                        src={item.src}
+                        alt={item.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                      />
+                    ) : (
+                      <>
+                        <Icon size={36} strokeWidth={1.5} className="text-[#4a3018] group-hover:text-[#e8701a] transition-colors" />
+                        <span className="text-[#4a3018] text-xs">Equipment Photo</span>
+                      </>
+                    )}
                     {/* Category badge */}
                     <div className="absolute top-3 right-3">
                       <span className={`px-2 py-0.5 border rounded text-[10px] font-semibold ${categoryColors[item.category]}`}>
                         {item.category}
                       </span>
                     </div>
+                    {/* Feature badges */}
+                    {item.badges && (
+                      <div className="absolute bottom-3 left-3 flex gap-1.5 flex-wrap">
+                        {item.badges.map((badge) => (
+                          <span
+                            key={badge}
+                            className="flex items-center gap-1 px-2 py-0.5 bg-[#05080f]/80 backdrop-blur-sm border border-[#e8701a]/40 text-[#e8701a] text-[10px] rounded font-semibold"
+                          >
+                            {badge === '4K Video' && <Video size={10} />}
+                            {badge === 'Obstacle Detection' && <Shield size={10} />}
+                            {badge}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   {/* Content */}
@@ -146,19 +208,39 @@ export default function EquipmentPage() {
                     <h3 className="text-white font-bold text-base mb-2 group-hover:text-[#e8701a] transition-colors">
                       {item.name}
                     </h3>
-                    <p className="text-[#7a99b8] text-xs leading-relaxed mb-4 flex-1">
+                    <p className="text-[#7a99b8] text-xs leading-relaxed mb-4">
                       {item.description}
                     </p>
 
-                    {/* Specs */}
-                    <div className="space-y-1.5 mt-auto">
-                      {item.specs.map((spec) => (
-                        <div key={spec} className="flex items-center gap-2 text-xs">
-                          <div className="w-1 h-1 bg-[#e8701a] rounded-full flex-shrink-0" />
-                          <span className="text-[#7a99b8]">{spec}</span>
-                        </div>
-                      ))}
-                    </div>
+                    {/* Grouped specs */}
+                    {item.specGroups ? (
+                      <div className="space-y-4 mt-auto">
+                        {item.specGroups.map((group) => (
+                          <div key={group.title}>
+                            <div className="text-[#e8701a] text-[10px] font-bold uppercase tracking-widest mb-2">
+                              {group.title}
+                            </div>
+                            <div className="space-y-1.5">
+                              {group.specs.map((spec) => (
+                                <div key={spec} className="flex items-start gap-2 text-xs">
+                                  <div className="w-1 h-1 bg-[#e8701a] rounded-full flex-shrink-0 mt-1.5" />
+                                  <span className="text-[#7a99b8]">{spec}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="space-y-1.5 mt-auto">
+                        {item.specs.map((spec) => (
+                          <div key={spec} className="flex items-center gap-2 text-xs">
+                            <div className="w-1 h-1 bg-[#e8701a] rounded-full flex-shrink-0" />
+                            <span className="text-[#7a99b8]">{spec}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               );
