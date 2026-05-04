@@ -93,7 +93,8 @@ export default function HomePage() {
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#1a8fbf]/10 rounded-full blur-[130px] pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          {/* Top row: heading + text left, cards right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center mb-12">
             <div>
               <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Welcome</div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">Kodner Aerial Services</h2>
@@ -116,6 +117,16 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+
+          {/* Full-width video below */}
+          <video
+            src="/kodnervideo.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full rounded-xl border border-[#0d3d54]"
+          />
         </div>
       </section>
 
