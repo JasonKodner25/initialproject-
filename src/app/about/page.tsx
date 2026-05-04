@@ -22,18 +22,16 @@ const values = [
 export default function AboutPage() {
   return (
     <main className="pt-20">
-      {/* ── Page Header ─────────────────────────────────────────────── */}
+      {/* ── Page Header */}
       <section className="py-16 bg-gradient-to-b from-[#0a1220] to-[#05080f] border-b border-[#3d2010]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">
-            Get to Know Me
-          </div>
+          <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Get to Know Me</div>
           <h1 className="text-4xl sm:text-5xl font-black text-white">About Me</h1>
           <div className="section-divider mt-4" />
         </div>
       </section>
 
-      {/* ── Profile Section ─────────────────────────────────────────── */}
+      {/* ── Profile Section */}
       <section className="py-20 bg-[#05080f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -41,13 +39,7 @@ export default function AboutPage() {
             {/* LEFT — portrait photo */}
             <div className="flex justify-center lg:justify-start">
               <div className="relative w-72 sm:w-96 aspect-[3/4] rounded-2xl border-2 border-[#3d2010] overflow-hidden bg-[#0d1628]">
-                <Image
-                  src="/kodneraboutme.JPG"
-                  alt="Jason Kodner"
-                  fill
-                  className="object-cover"
-                  priority
-                />
+                <Image src="/kodneraboutme.JPG" alt="Jason Kodner" fill className="object-cover" priority />
                 <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl" />
                 <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#e8701a] rounded-br-2xl" />
               </div>
@@ -62,10 +54,7 @@ export default function AboutPage() {
                 <div className="text-[#e8701a] text-sm font-medium mb-4">Founder &amp; Lead Pilot</div>
                 <div className="flex flex-wrap gap-2 mb-5">
                   {['FAA Part 107', 'Private Pilot', 'Fully Insured'].map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 bg-[#e8701a]/10 border border-[#e8701a]/30 text-[#e8701a] text-xs rounded-full font-medium"
-                    >
+                    <span key={tag} className="px-3 py-1 bg-[#e8701a]/10 border border-[#e8701a]/30 text-[#e8701a] text-xs rounded-full font-medium">
                       {tag}
                     </span>
                   ))}
@@ -84,20 +73,10 @@ export default function AboutPage() {
               </p>
 
               {/* Cessna photo */}
-              <div>
-                <div className="relative w-full aspect-[16/9] rounded-xl border border-[#3d2010] overflow-hidden bg-[#0d1628]">
-                  <Image
-                    src="/aboutmepart2.jpg"
-                    alt="Jason Kodner in front of a Cessna 172"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#e8701a] rounded-tl-xl" />
-                  <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#e8701a] rounded-br-xl" />
-                </div>
-                <p className="text-[#7a99b8] text-xs mt-2 text-center tracking-wide">
-                  In front of a Cessna 172
-                </p>
+              <div className="relative w-full aspect-[16/9] rounded-xl border border-[#3d2010] overflow-hidden bg-[#0d1628]">
+                <Image src="/aboutmepart2.jpg" alt="Jason Kodner in front of a Cessna 172" fill className="object-cover" />
+                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#e8701a] rounded-tl-xl" />
+                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#e8701a] rounded-br-xl" />
               </div>
             </div>
 
@@ -105,26 +84,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Mission Statement ────────────────────────────────────────── */}
+      {/* ── Mission Statement */}
       <section className="py-20 bg-[#0a1220] border-y border-[#3d2010]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">
-              What Drives Me
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-              My Passion for Aviation
-            </h2>
+            <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">What Drives Me</div>
+            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">My Passion for Aviation</h2>
             <div className="section-divider mx-auto mb-8" />
-
             <div className="max-w-3xl mx-auto bg-[#0d1628] border border-[#3d2010] rounded-2xl p-8 sm:p-12 relative overflow-hidden">
-              <div className="absolute top-4 left-6 text-[#e8701a]/10 text-[8rem] font-serif leading-none select-none">
-                &ldquo;
-              </div>
+              <div className="absolute top-4 left-6 text-[#e8701a]/10 text-[8rem] font-serif leading-none select-none">&ldquo;</div>
               <div className="relative">
                 <p className="text-white text-lg sm:text-xl leading-relaxed italic font-light mb-6">
-                  [Mission statement placeholder — write a powerful, personal statement about why you
-                  are passionate about aerial photography and aviation.]
+                  [Mission statement placeholder — write a powerful, personal statement about why you are passionate about aerial photography and aviation.]
                 </p>
                 <div className="flex items-center justify-center gap-3">
                   <div className="w-10 h-[2px] bg-[#e8701a]" />
@@ -137,23 +108,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Values ──────────────────────────────────────────────────── */}
+      {/* ── Values */}
       <section className="py-20 bg-[#05080f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">
-              Core Values
-            </div>
+            <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Core Values</div>
             <h2 className="text-3xl font-black text-white">How I Work</h2>
             <div className="section-divider mx-auto mt-4" />
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {values.map(({ icon: Icon, title, desc }) => (
-              <div
-                key={title}
-                className="bg-[#0d1628] border border-[#3d2010] rounded-xl p-8 text-center hover:border-[#e8701a]/50 transition-all group"
-              >
+              <div key={title} className="bg-[#0d1628] border border-[#3d2010] rounded-xl p-8 text-center hover:border-[#e8701a]/50 transition-all group">
                 <div className="w-14 h-14 bg-[#e8701a]/10 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:bg-[#e8701a]/20 transition-colors">
                   <Icon size={26} className="text-[#e8701a]" />
                 </div>
