@@ -98,11 +98,15 @@ export default function HomePage() {
               <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Welcome</div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">Kodner Aerial Services</h2>
               <div className="section-divider mb-6" />
-              <div className="space-y-4 text-[#7a99b8] text-sm sm:text-base leading-relaxed">
-                <p>[Intro paragraph placeholder — add your personal story, background, and what drives your passion for aerial photography here.]</p>
-                <p>[Second paragraph placeholder — describe your experience, the areas you serve, and the types of clients and projects you specialize in.]</p>
-              </div>
-              <Link href="/about" className="inline-block mt-8 px-6 py-3 border border-[#e8701a] text-[#e8701a] text-sm font-semibold rounded hover:bg-[#e8701a] hover:text-white transition-all">
+              <video
+                src="/kodnervideo.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full rounded-xl border border-[#0d3d54] mb-8"
+              />
+              <Link href="/about" className="inline-block px-6 py-3 border border-[#e8701a] text-[#e8701a] text-sm font-semibold rounded hover:bg-[#e8701a] hover:text-white transition-all">
                 Learn More About Me
               </Link>
             </div>
@@ -139,7 +143,7 @@ export default function HomePage() {
                 <span className="flex items-center gap-1 px-2.5 py-1 bg-[#05080f]/80 backdrop-blur-sm border border-[#e8701a]/40 text-[#e8701a] text-xs font-semibold rounded">
                   <Shield size={10} /> Obstacle Detection
                 </span>
-          </div>
+              </div>
             </div>
 
             <div>
