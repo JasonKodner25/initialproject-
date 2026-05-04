@@ -41,10 +41,10 @@ export default function AboutPage() {
             <div className="flex flex-col items-center lg:items-start gap-6">
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl border-2 border-[#3d2010] overflow-hidden bg-[#0d1628]">
                 <Image
-                  src="/kodneraeriallogoofficial.png"
+                  src="/kodneraboutme.JPG"
                   alt="Jason Kodner"
                   fill
-                  className="object-contain mix-blend-multiply"
+                  className="object-cover"
                   priority
                 />
                 {/* Corner accents */}
