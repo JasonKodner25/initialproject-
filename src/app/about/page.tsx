@@ -1,4 +1,5 @@
-import { User, Target, Heart, Shield } from 'lucide-react';
+import Image from 'next/image';
+import { Target, Heart, Shield } from 'lucide-react';
 
 const values = [
   {
@@ -36,15 +37,17 @@ export default function AboutPage() {
       <section className="py-20 bg-[#05080f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-            {/* Profile photo placeholder */}
+            {/* Profile photo */}
             <div className="flex flex-col items-center lg:items-start gap-6">
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-[#0d1628] border-2 border-[#3d2010] overflow-hidden flex items-center justify-center">
-                <div className="flex flex-col items-center gap-3 text-[#4a3018]">
-                  <User size={64} strokeWidth={1} />
-                  <span className="text-sm">Profile Photo</span>
-                  <span className="text-xs text-center px-4">Replace with your photo</span>
-                </div>
-                {/* Corner accent */}
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl border-2 border-[#3d2010] overflow-hidden">
+                <Image
+                  src="/IMG_3415.jpeg"
+                  alt="Jason Kodner"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                {/* Corner accents */}
                 <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl" />
                 <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#e8701a] rounded-br-2xl" />
               </div>
@@ -106,7 +109,6 @@ export default function AboutPage() {
 
             {/* Mission block */}
             <div className="max-w-3xl mx-auto bg-[#0d1628] border border-[#3d2010] rounded-2xl p-8 sm:p-12 relative overflow-hidden">
-              {/* Decorative quote mark */}
               <div className="absolute top-4 left-6 text-[#e8701a]/10 text-[8rem] font-serif leading-none select-none">
                 &ldquo;
               </div>
