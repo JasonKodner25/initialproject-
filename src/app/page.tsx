@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronDown, Play, Award, Camera, Video, Map } from 'lucide-react';
+import { ChevronDown, Play, Camera, Video } from 'lucide-react';
 
-const highlights = [
-  { icon: Camera, label: 'Photography', desc: 'Stunning aerial stills' },
-  { icon: Video, label: 'Videography', desc: 'Cinematic aerial footage' },
-  { icon: Map, label: 'Mapping', desc: 'Precision aerial mapping' },
-  { icon: Award, label: 'Licensed', desc: 'FAA Part 107 certified' },
+const services = [
+  { icon: Camera, label: 'Photography', desc: 'Stunning aerial stills capturing landscapes, real estate, and events from breathtaking heights.' },
+  { icon: Video,  label: 'Videography', desc: 'Cinematic aerial footage with professional color grading for film-quality results.' },
 ];
 
 const collections = [
@@ -69,31 +67,50 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Intro / About Snippet */}
+      {/* ── About + Services */}
       <section className="py-20 sm:py-28 bg-[#05080f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+
+            {/* About me */}
             <div>
               <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Welcome</div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">Kodner Aerial Services</h2>
               <div className="section-divider mb-6" />
-              <div className="space-y-4 text-[#7a99b8] text-sm sm:text-base leading-relaxed">
-                <p>[Intro paragraph placeholder — add your personal story, background, and what drives your passion for aerial photography here.]</p>
-                <p>[Second paragraph placeholder — describe your experience, the areas you serve, and the types of clients and projects you specialize in.]</p>
-              </div>
-              <Link href="/about" className="inline-block mt-8 px-6 py-3 border border-[#e8701a] text-[#e8701a] text-sm font-semibold rounded hover:bg-[#e8701a] hover:text-white transition-all">
+              <p className="text-[#7a99b8] text-sm sm:text-base leading-relaxed mb-8">
+                Hello! My name is Jason Kodner, a Bay Area native and Aviation Management graduate from
+                San Jose State University. I am deeply fascinated by several domains of aviation,
+                including aircraft design, propulsion systems, real-world operations, and the rapidly
+                evolving world of autonomous flight. I hold both a Private Pilot Certificate and a
+                Part 107 Remote Pilot Certificate, and I am driven by a long-term goal of contributing
+                meaningfully to the future of autonomous aviation.
+              </p>
+              <Link href="/about" className="inline-block px-6 py-3 border border-[#e8701a] text-[#e8701a] text-sm font-semibold rounded hover:bg-[#e8701a] hover:text-white transition-all">
                 Learn More About Me
               </Link>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {highlights.map(({ icon: Icon, label, desc }) => (
-                <div key={label} className="bg-[#0d1628] border border-[#3d2010] rounded-lg p-6 hover:border-[#e8701a]/50 transition-all group">
-                  <Icon size={28} className="text-[#e8701a] mb-3 group-hover:scale-110 transition-transform" />
-                  <div className="text-white font-bold text-base mb-1">{label}</div>
-                  <div className="text-[#7a99b8] text-xs">{desc}</div>
-                </div>
-              ))}
+
+            {/* Services */}
+            <div className="flex flex-col gap-6">
+              <div>
+                <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">What I Offer</div>
+                <h3 className="text-2xl font-black text-white mb-5">Services</h3>
+                <div className="section-divider mb-6" />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {services.map(({ icon: Icon, label, desc }) => (
+                  <div key={label} className="bg-[#0d1628] border border-[#3d2010] rounded-lg p-6 hover:border-[#e8701a]/50 transition-all group">
+                    <Icon size={28} className="text-[#e8701a] mb-3 group-hover:scale-110 transition-transform" />
+                    <div className="text-white font-bold text-base mb-2">{label}</div>
+                    <div className="text-[#7a99b8] text-xs leading-relaxed">{desc}</div>
+                  </div>
+                ))}
+              </div>
+              <Link href="/services" className="inline-block px-6 py-3 bg-[#e8701a] text-white text-sm font-semibold rounded hover:bg-[#f4952a] transition-all self-start">
+                View All Services
+              </Link>
             </div>
+
           </div>
         </div>
       </section>
