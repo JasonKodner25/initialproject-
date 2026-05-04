@@ -36,11 +36,11 @@ export default function AboutPage() {
       {/* ── Profile Section ─────────────────────────────────────────── */}
       <section className="py-20 bg-[#05080f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-            {/* Photos + name card */}
-            <div className="flex flex-col items-center lg:items-start gap-6">
-              {/* Primary profile photo */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl border-2 border-[#3d2010] overflow-hidden bg-[#0d1628]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+            {/* LEFT — portrait photo */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="relative w-72 sm:w-96 aspect-[3/4] rounded-2xl border-2 border-[#3d2010] overflow-hidden bg-[#0d1628]">
                 <Image
                   src="/kodneraboutme.JPG"
                   alt="Jason Kodner"
@@ -51,55 +51,56 @@ export default function AboutPage() {
                 <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl" />
                 <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#e8701a] rounded-br-2xl" />
               </div>
+            </div>
 
-              {/* Name card */}
-              <div className="bg-[#0d1628] border border-[#3d2010] rounded-xl p-5 w-full max-w-sm">
-                <div className="text-white font-bold text-xl mb-1">Jason Kodner</div>
-                <div className="text-[#e8701a] text-sm font-medium mb-3">Founder &amp; Lead Pilot</div>
-                <div className="flex flex-wrap gap-2">
-                  {['FAA Part 107', 'Licensed Pilot', 'Fully Insured'].map((tag) => (
+            {/* RIGHT — name, bio, cessna photo */}
+            <div className="flex flex-col gap-7">
+              {/* Name + tags */}
+              <div>
+                <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-2">My Story</div>
+                <h2 className="text-3xl sm:text-4xl font-black text-white mb-1">Jason Kodner</h2>
+                <div className="text-[#e8701a] text-sm font-medium mb-4">Founder &amp; Lead Pilot</div>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {['FAA Part 107', 'Private Pilot', 'Fully Insured'].map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-1 bg-[#e8701a]/10 border border-[#e8701a]/30 text-[#e8701a] text-xs rounded font-medium"
+                      className="px-3 py-1 bg-[#e8701a]/10 border border-[#e8701a]/30 text-[#e8701a] text-xs rounded-full font-medium"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
+                <div className="section-divider" />
               </div>
 
-              {/* Secondary photo */}
-              <div className="w-full max-w-sm">
-                <div className="relative w-full aspect-[4/3] rounded-2xl border-2 border-[#3d2010] overflow-hidden bg-[#0d1628]">
+              {/* Bio */}
+              <p className="text-[#7a99b8] text-sm sm:text-base leading-relaxed">
+                Hello! My name is Jason Kodner, a Bay Area native and Aviation Management graduate from
+                San Jose State University. I am deeply fascinated by several domains of aviation,
+                including aircraft design, propulsion systems, real-world operations, and the rapidly
+                evolving world of autonomous flight. I hold both a Private Pilot Certificate and a
+                Part 107 Remote Pilot Certificate, and I am driven by a long-term goal of contributing
+                meaningfully to the future of autonomous aviation.
+              </p>
+
+              {/* Cessna photo */}
+              <div>
+                <div className="relative w-full aspect-[16/9] rounded-xl border border-[#3d2010] overflow-hidden bg-[#0d1628]">
                   <Image
                     src="/aboutmepart2.jpg"
                     alt="Jason Kodner in front of a Cessna 172"
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl" />
-                  <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#e8701a] rounded-br-2xl" />
+                  <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#e8701a] rounded-tl-xl" />
+                  <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#e8701a] rounded-br-xl" />
                 </div>
-                <p className="text-[#7a99b8] text-xs mt-2 text-center">In front of a Cessna 172</p>
-              </div>
-            </div>
-
-            {/* Bio text */}
-            <div>
-              <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">
-                My Story
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-black text-white mb-5">
-                Passion Meets Precision
-              </h2>
-              <div className="section-divider mb-7" />
-
-              <div className="space-y-5 text-[#7a99b8] text-sm sm:text-base leading-relaxed">
-                <p>
-                  Hello! My name is Jason Kodner, a Bay Area native and Aviation Management graduate from San Jose State University. I am deeply fascinated by several domains of aviation, including aircraft design, propulsion systems, real-world operations, and the rapidly evolving world of autonomous flight. I hold both a Private Pilot Certificate and a Part 107 Remote Pilot Certificate, and I am driven by a long-term goal of contributing meaningfully to the future of autonomous aviation.
+                <p className="text-[#7a99b8] text-xs mt-2 text-center tracking-wide">
+                  In front of a Cessna 172
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -122,7 +123,8 @@ export default function AboutPage() {
               </div>
               <div className="relative">
                 <p className="text-white text-lg sm:text-xl leading-relaxed italic font-light mb-6">
-                  [Mission statement placeholder — write a powerful, personal statement about why you are passionate about aerial photography and aviation. What does this work mean to you? What impact do you want to have for your clients?]
+                  [Mission statement placeholder — write a powerful, personal statement about why you
+                  are passionate about aerial photography and aviation.]
                 </p>
                 <div className="flex items-center justify-center gap-3">
                   <div className="w-10 h-[2px] bg-[#e8701a]" />
