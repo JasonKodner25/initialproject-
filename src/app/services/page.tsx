@@ -61,7 +61,7 @@ export default function ServicesPage() {
               return (
                 <div
                   key={svc.title}
-                  className="bg-[#0d1628] border border-[#0d3d54] rounded-xl overflow-hidden hover:border-opacity-60 transition-all group flex flex-col"
+                  className="bg-[#0d1628] border border-[#0d3d54] rounded-xl overflow-hidden transition-all group flex flex-col"
                 >
                   <div
                     className="h-1 w-full"
@@ -95,16 +95,24 @@ export default function ServicesPage() {
                       ))}
                     </ul>
 
-                    <div className="border-t border-[#0d3d54] pt-4 mt-auto flex items-center justify-between">
-                      <div>
-                        <div className="text-[#1a4a5c] text-xs">Starting from</div>
-                        <div className="text-white font-bold text-lg">— / project</div>
-                      </div>
+                    <div className="border-t border-[#0d3d54] pt-4 mt-auto">
                       <Link
                         href="/contact"
-                        className="flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-[#e8701a] border border-[#e8701a]/30 rounded hover:bg-[#e8701a] hover:text-white hover:border-[#e8701a] transition-all"
+                        className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold border rounded transition-all"
+                        style={{
+                          color: svc.accent,
+                          borderColor: `${svc.accent}40`,
+                        } as React.CSSProperties}
+                        onMouseEnter={(e) => {
+                          (e.currentTarget as HTMLElement).style.backgroundColor = svc.accent;
+                          (e.currentTarget as HTMLElement).style.color = '#fff';
+                        }}
+                        onMouseLeave={(e) => {
+                          (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent';
+                          (e.currentTarget as HTMLElement).style.color = svc.accent;
+                        }}
                       >
-                        Book
+                        Contact for Pricing
                         <ArrowRight size={12} />
                       </Link>
                     </div>
