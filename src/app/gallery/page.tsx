@@ -22,21 +22,21 @@ interface GalleryItem {
 
 const galleryItems: GalleryItem[] = [
   // Santa Cruz 4/16/26
-  { id: 1,  category: 'Landscape', label: 'Natural Bridges Aerial',  location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/DJI_20260416065653_0188_D.jpeg', aspect: 'aspect-[16/9]', album: 'Santa Cruz 4/16/26' },
-  { id: 2,  category: 'Landscape', label: 'Coastal Dawn Flight',     location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/DJI_20260416070936_0204_D.jpeg', aspect: 'aspect-[4/3]',  album: 'Santa Cruz 4/16/26' },
-  { id: 3,  category: 'Landscape', label: 'Shoreline from Above',    location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/DJI_20260416071343_0209_D.jpeg', aspect: 'aspect-[4/3]',  album: 'Santa Cruz 4/16/26' },
-  { id: 4,  category: 'Landscape', label: 'Santa Cruz Coastline',    location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/DJI_20260416072131_0221_D.jpeg', aspect: 'aspect-[16/9]', album: 'Santa Cruz 4/16/26' },
-  { id: 5,  category: 'Landscape', label: 'Natural Bridges Beach',   location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3322.jpeg',                  aspect: 'aspect-[4/3]',  album: 'Santa Cruz 4/16/26' },
-  { id: 6,  category: 'Landscape', label: 'Coastal View',            location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3510.jpeg',                  aspect: 'aspect-square', album: 'Santa Cruz 4/16/26' },
-  { id: 7,  category: 'Landscape', label: 'Beach at Natural Bridges', location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3512.jpeg',                 aspect: 'aspect-[4/3]',  album: 'Santa Cruz 4/16/26' },
-  { id: 8,  category: 'Landscape', label: 'Santa Cruz Shore',        location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3513.jpeg',                  aspect: 'aspect-[3/4]',  album: 'Santa Cruz 4/16/26' },
+  { id: 1,  category: 'Landscape', label: 'Natural Bridges Aerial',   location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/DJI_20260416065653_0188_D.jpeg', aspect: 'aspect-[16/9]', album: 'Santa Cruz 4/16/26' },
+  { id: 2,  category: 'Landscape', label: 'Coastal Dawn Flight',      location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/DJI_20260416070936_0204_D.jpeg', aspect: 'aspect-[4/3]',  album: 'Santa Cruz 4/16/26' },
+  { id: 3,  category: 'Landscape', label: 'Shoreline from Above',     location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/DJI_20260416071343_0209_D.jpeg', aspect: 'aspect-[4/3]',  album: 'Santa Cruz 4/16/26' },
+  { id: 4,  category: 'Landscape', label: 'Santa Cruz Coastline',     location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/DJI_20260416072131_0221_D.jpeg', aspect: 'aspect-[16/9]', album: 'Santa Cruz 4/16/26' },
+  { id: 5,  category: 'Landscape', label: 'Natural Bridges Beach',    location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3322.jpeg',                  aspect: 'aspect-[4/3]',  album: 'Santa Cruz 4/16/26' },
+  { id: 6,  category: 'Landscape', label: 'Coastal View',             location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3510.jpeg',                  aspect: 'aspect-square', album: 'Santa Cruz 4/16/26' },
+  { id: 7,  category: 'Landscape', label: 'Beach at Natural Bridges',  location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3512.jpeg',                 aspect: 'aspect-[4/3]',  album: 'Santa Cruz 4/16/26' },
+  { id: 8,  category: 'Landscape', label: 'Santa Cruz Shore',         location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3513.jpeg',                  aspect: 'aspect-[3/4]',  album: 'Santa Cruz 4/16/26' },
 
   // Calibazas Bike Park 4/29/26
-  { id: 14, category: 'Events', label: 'Bike Park Shot 1', location: 'Calibazas Bike Park', date: 'April 29, 2026', src: '/caliphoto5.jpg',  aspect: 'aspect-[4/3]',  album: 'Calibazas Bike Park Photoshoot' },
-  { id: 15, category: 'Events', label: 'Bike Park Shot 2', location: 'Calibazas Bike Park', date: 'April 29, 2026', src: '/caliphoto1.jfif', aspect: 'aspect-[4/3]',  album: 'Calibazas Bike Park Photoshoot' },
-  { id: 16, category: 'Events', label: 'Bike Park Shot 3', location: 'Calibazas Bike Park', date: 'April 29, 2026', src: '/caliphoto2.jfif', aspect: 'aspect-[4/3]',  album: 'Calibazas Bike Park Photoshoot' },
-  { id: 17, category: 'Events', label: 'Bike Park Shot 4', location: 'Calibazas Bike Park', date: 'April 29, 2026', src: '/caliphoto3.jfif', aspect: 'aspect-[4/3]',  album: 'Calibazas Bike Park Photoshoot' },
-  { id: 18, category: 'Events', label: 'Bike Park Shot 5', location: 'Calibazas Bike Park', date: 'April 29, 2026', src: '/caliphoto4.jfif', aspect: 'aspect-[4/3]',  album: 'Calibazas Bike Park Photoshoot' },
+  { id: 14, category: 'Events', label: 'Bike Park Shot 1', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/caliphoto5.jpg',  aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
+  { id: 15, category: 'Events', label: 'Bike Park Shot 2', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/caliphoto1.jfif', aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
+  { id: 16, category: 'Events', label: 'Bike Park Shot 3', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/caliphoto2.jfif', aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
+  { id: 17, category: 'Events', label: 'Bike Park Shot 4', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/caliphoto3.jfif', aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
+  { id: 18, category: 'Events', label: 'Bike Park Shot 5', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/caliphoto4.jfif', aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
 
   // Placeholders
   { id: 9,  category: 'Real Estate',  label: 'Luxury Home Exterior',   aspect: 'aspect-[4/3]' },
@@ -156,7 +156,6 @@ export default function GalleryPage() {
                     <div className="p-4">
                       <div className="text-white font-bold text-base">{name}</div>
                       <div className="text-[#e8701a] text-xs mt-1">{items.length} photos</div>
-                      {items[0]?.location && <div className="text-[#7a99b8] text-xs mt-0.5">{items[0].location}</div>}
                       {items[0]?.date && <div className="text-[#4a3018] text-xs mt-0.5">{items[0].date}</div>}
                     </div>
                   </button>
@@ -174,8 +173,7 @@ export default function GalleryPage() {
             <div className="mb-8">
               <h2 className="text-2xl font-black text-white">{openAlbum}</h2>
               <div className="text-[#e8701a] text-sm mt-1">{albumItems.length} photos</div>
-              {albumItems[0]?.location && <div className="text-[#7a99b8] text-xs mt-0.5">{albumItems[0].location}</div>}
-              {albumItems[0]?.date && <div className="text-[#4a3018] text-xs mt-0.5">{albumItems[0].date}</div>}
+              {albumItems[0]?.date && <div className="text-[#7a99b8] text-xs mt-0.5">{albumItems[0].date}</div>}
             </div>
             <div className="masonry-grid">
               {displayItems.map((item) => (
@@ -223,7 +221,6 @@ export default function GalleryPage() {
               <div className="text-white font-bold text-lg">{lightboxItem.label}</div>
               {lightboxItem.location && <div className="text-[#e8701a] text-sm mt-1">{lightboxItem.location}</div>}
               {lightboxItem.date && <div className="text-[#7a99b8] text-xs mt-1">{lightboxItem.date}</div>}
-              {lightboxItem.album && <div className="text-[#4a3018] text-xs mt-1">Album: {lightboxItem.album}</div>}
             </div>
           </div>
         </div>

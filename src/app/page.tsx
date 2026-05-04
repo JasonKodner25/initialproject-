@@ -19,17 +19,17 @@ const collections = [
   },
   {
     name: 'Calibazas Bike Park',
-    description: 'Calibazas Bike Park Photoshoot',
+    description: 'Photoshoot for Santa Cruz Trails Stewardship Company',
     date: 'April 29, 2026',
     cover: '/caliphoto5.jpg',
-    count: 4,
+    count: 5,
   },
 ];
 
 export default function HomePage() {
   return (
     <main>
-      {/* ── Hero ────────────────────────────────────────────────── */}
+      {/* ── Hero */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#020509] via-[#05080f] to-[#0a1220]" />
         <div
@@ -69,7 +69,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Intro / About Snippet ─────────────────────────────────────── */}
+      {/* ── Intro / About Snippet */}
       <section className="py-20 sm:py-28 bg-[#05080f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
@@ -98,7 +98,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Portfolio Collections ───────────────────────────────────────── */}
+      {/* ── Portfolio Collections */}
       <section className="py-20 bg-[#0a1220]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -144,7 +144,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CTA Banner ───────────────────────────────────────────────── */}
+      {/* ── CTA Banner */}
       <section className="py-20 bg-[#05080f] border-y border-[#3d2010]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
