@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 
 const InstagramIcon = () => (
   <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
@@ -87,11 +87,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-[#7a99b8] text-sm">
                 <Mail size={15} className="text-[#1a8fbf] flex-shrink-0 mt-0.5" />
-                <span>info@kodneraerialservices.com</span>
-              </li>
-              <li className="flex items-start gap-2 text-[#7a99b8] text-sm">
-                <Phone size={15} className="text-[#1a8fbf] flex-shrink-0 mt-0.5" />
-                <span>(555) 000-0000</span>
+                <span>isaackodner@gmail.com</span>
               </li>
               <li className="flex items-start gap-2 text-[#7a99b8] text-sm">
                 <MapPin size={15} className="text-[#e8701a] flex-shrink-0 mt-0.5" />

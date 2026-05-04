@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle } from 'lucide-react';
 
 const services = [
   'Select a service...',
@@ -59,19 +59,12 @@ export default function ContactPage() {
                 <div className="text-[#1a8fbf] text-xs tracking-[0.3em] uppercase font-medium mb-3">
                   Contact Information
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-black text-white mb-5">
-                  Let&apos;s Create<br />Something Amazing
-                </h2>
-                <p className="text-[#7a99b8] text-sm leading-relaxed">
-                  [Contact intro placeholder — add a brief, welcoming message about your response time, service area, and what to expect after submitting the form.]
-                </p>
               </div>
 
               <div className="space-y-4">
                 {[
-                  { icon: Mail,   label: 'Email',    value: 'info@kodneraerialservices.com', color: '#1a8fbf' },
-                  { icon: Phone,  label: 'Phone',    value: '(555) 000-0000',               color: '#1a8fbf' },
-                  { icon: MapPin, label: 'Location', value: 'Bay Area, CA',                 color: '#e8701a' },
+                  { icon: Mail,   label: 'Email',    value: 'isaackodner@gmail.com', color: '#1a8fbf' },
+                  { icon: MapPin, label: 'Location', value: 'Bay Area, CA',          color: '#e8701a' },
                 ].map(({ icon: Icon, label, value, color }) => (
                   <div key={label} className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${color}15`, border: `1px solid ${color}30` }}>

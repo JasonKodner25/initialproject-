@@ -234,7 +234,7 @@ export default function HomePage() {
           <p className="text-[#7a99b8] text-sm sm:text-base font-bold mb-5">
             Interested in a booking? Get in touch to discuss further details.
           </p>
-          <Link href="/contact" className="inline-block px-8 py-3 bg-[#e8701a] text-white text-sm font-bold tracking-wide rounded hover:bg-[#f4952a] transition-all glow-blue">
+          <Link href="/contact" className="inline-block px-8 py-3 bg-[#2d7a50] text-white text-sm font-bold tracking-wide rounded hover:bg-[#3a9463] transition-all tracking-wide">
             Book a Session
           </Link>
         </div>

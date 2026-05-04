@@ -68,15 +68,13 @@ export default function AboutPage() {
       {/* ── Mission Statement */}
       <section className="py-20 bg-[#0a1220] border-y border-[#0d3d54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">What Drives Me</div>
-            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">My Passion for Aviation</h2>
+          <div className="text-center">
             <div className="section-divider mx-auto mb-8" />
             <div className="max-w-3xl mx-auto bg-[#0d1628] border border-[#0d3d54] rounded-2xl p-8 sm:p-12 relative overflow-hidden">
               <div className="absolute top-4 left-6 text-[#1a8fbf]/10 text-[8rem] font-serif leading-none select-none">&ldquo;</div>
               <div className="relative">
                 <p className="text-white text-lg sm:text-xl leading-relaxed italic font-light mb-6">
-                  [Mission statement placeholder — write a powerful, personal statement about why you are passionate about aerial photography and aviation.]
+                  Elevating the role of aerial imaging today, while preparing for a future shaped by autonomous flight.
                 </p>
                 <div className="flex items-center justify-center gap-3">
                   <div className="w-10 h-[2px] bg-[#e8701a]" />

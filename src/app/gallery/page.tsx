@@ -28,7 +28,7 @@ const galleryItems: GalleryItem[] = [
   { id: 4,  category: 'Landscape', label: 'Santa Cruz Coastline',     location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/DJI_20260416072131_0221_D.jpeg', aspect: 'aspect-[16/9]', album: 'Santa Cruz 4/16/26' },
   { id: 5,  category: 'Landscape', label: 'Natural Bridges Beach',    location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3322.jpeg',                  aspect: 'aspect-[4/3]',  album: 'Santa Cruz 4/16/26' },
   { id: 6,  category: 'Landscape', label: 'Coastal View',             location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3510.jpeg',                  aspect: 'aspect-square', album: 'Santa Cruz 4/16/26' },
-  { id: 7,  category: 'Landscape', label: 'Beach at Natural Bridges',  location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3512.jpeg',                 aspect: 'aspect-[4/3]',  album: 'Santa Cruz 4/16/26' },
+  { id: 7,  category: 'Landscape', label: 'Beach at Natural Bridges', location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3512.jpeg',                  aspect: 'aspect-[4/3]',  album: 'Santa Cruz 4/16/26' },
   { id: 8,  category: 'Landscape', label: 'Santa Cruz Shore',         location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3513.jpeg',                  aspect: 'aspect-[3/4]',  album: 'Santa Cruz 4/16/26' },
 
   // Calibazas Bike Park 4/29/26
@@ -77,9 +77,6 @@ export default function GalleryPage() {
           <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Portfolio</div>
           <h1 className="text-4xl sm:text-5xl font-black text-white">Gallery</h1>
           <div className="section-divider mt-4" />
-          <p className="text-[#7a99b8] text-sm sm:text-base mt-4 max-w-xl">
-            Aerial photography and videography across landscapes, real estate, construction sites, and beyond.
-          </p>
         </div>
       </section>
 

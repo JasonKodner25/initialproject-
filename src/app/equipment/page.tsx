@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Camera, Cpu, Radio, Battery, Package, Shield, Video } from 'lucide-react';
+import { Camera, Cpu, Radio, Shield, Video } from 'lucide-react';
 
 type EquipCategory = 'Drone' | 'Camera' | 'Accessory' | 'Software';
 
@@ -26,7 +26,7 @@ const equipment: EquipItem[] = [
     name: 'DJI Air 3S',
     category: 'Drone',
     description:
-      'The primary flight platform for Kodner Aerial Services. The Air 3S delivers professional dual-lens imaging with a 1-inch CMOS sensor, capturing cinema-quality 4K video and 50MP stills. Omnidirectional obstacle detection ensures safe, confident operation in complex environments.',
+      'The primary flight platform for Kodner Aerial Services. Omnidirectional obstacle detection ensures safe, confident operation in complex environments.',
     icon: Radio,
     src: '/air3s.webp',
     badges: ['4K Video', 'Obstacle Detection'],
@@ -44,52 +44,27 @@ const equipment: EquipItem[] = [
           'Onboard Storage: 42 GB',
         ],
       },
-      {
-        title: 'Camera',
-        specs: [
-          'Wide: 1\" CMOS · 50 MP · 24mm f/1.8',
-          'Tele: 1/1.3\" CMOS · 48 MP · 70mm f/2.8',
-          'Wide FOV: 84° · Focus: 0.5 m – ∞',
-          'Tele FOV: 35° · Focus: 3 m – ∞',
-        ],
-      },
     ],
-  },
-  {
-    id: 2,
-    name: 'Secondary / Backup Drone',
-    category: 'Drone',
-    description:
-      '[Second drone placeholder] — your backup or specialized platform for specific shooting scenarios.',
-    icon: Radio,
-    specs: ['Flight Time: — min', 'Max Range: — km', 'Camera: — MP', 'Weight: — g'],
   },
   {
     id: 3,
     name: 'Primary Camera System',
     category: 'Camera',
     description:
-      '[Camera name placeholder] — the imaging system mounted to your primary drone. Describe the sensor, resolution, and image quality.',
+      'Dual-lens imaging system integrated into the DJI Air 3S — a 1-inch CMOS wide sensor paired with a 1/1.3-inch tele sensor, delivering 50 MP stills and cinema-quality 4K/6K video.',
     icon: Camera,
-    specs: ['Resolution: — MP / — K', 'Sensor: —', 'Aperture: f/—', 'ISO Range: —'],
-  },
-  {
-    id: 4,
-    name: 'Ground Camera',
-    category: 'Camera',
-    description:
-      '[Ground camera placeholder — e.g., Sony Alpha, Canon EOS, DJI Osmo Pocket] — used for ground-level and close-up photography to complement aerial shots.',
-    icon: Camera,
-    specs: ['Resolution: — MP', 'Video: — K / — fps', 'Lens: —', 'Stabilization: —'],
-  },
-  {
-    id: 5,
-    name: 'Intelligent Batteries',
-    category: 'Accessory',
-    description:
-      '[Battery system placeholder] — high-capacity intelligent flight batteries that extend your operational window on-site.',
-    icon: Battery,
-    specs: ['Capacity: — mAh', 'Voltage: — V', 'Charge Time: — min', 'Quantity: — units'],
+    specs: [],
+    specGroups: [
+      {
+        title: 'Camera',
+        specs: [
+          'Wide: 1" CMOS · 50 MP · 24mm f/1.8',
+          'Tele: 1/1.3" CMOS · 48 MP · 70mm f/2.8',
+          'Wide FOV: 84° · Focus: 0.5 m – ∞',
+          'Tele FOV: 35° · Focus: 3 m – ∞',
+        ],
+      },
+    ],
   },
   {
     id: 6,
@@ -99,15 +74,6 @@ const equipment: EquipItem[] = [
       '[Controller placeholder] — extended-range controller providing real-time HD monitoring and precise aircraft control.',
     icon: Cpu,
     specs: ['Display: — inch', 'Range: — km', 'Battery: — min', 'Transmission: —'],
-  },
-  {
-    id: 7,
-    name: 'ND Filter Kit',
-    category: 'Accessory',
-    description:
-      '[Filter kit placeholder] — neutral density filters essential for maintaining correct exposure and motion blur in varying lighting conditions.',
-    icon: Package,
-    specs: ['ND4, ND8, ND16, ND32', 'Polarized options', 'Material: —', 'Compatibility: —'],
   },
   {
     id: 8,
@@ -130,7 +96,7 @@ const categoryColors: Record<EquipCategory, string> = {
 export default function EquipmentPage() {
   return (
     <main className="pt-20">
-      {/* ── Page Header ─────────────────────────────────────────────── */}
+      {/* ── Page Header */}
       <section className="py-16 bg-gradient-to-b from-[#0a1220] to-[#05080f] border-b border-[#3d2010]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">The Arsenal</div>
@@ -142,7 +108,7 @@ export default function EquipmentPage() {
         </div>
       </section>
 
-      {/* ── Category Legend ──────────────────────────────────────────── */}
+      {/* ── Category Legend */}
       <section className="py-6 bg-[#0a1220] border-b border-[#3d2010]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap gap-3">
           {(Object.keys(categoryColors) as EquipCategory[]).map((cat) => (
@@ -153,7 +119,7 @@ export default function EquipmentPage() {
         </div>
       </section>
 
-      {/* ── Equipment Grid ───────────────────────────────────────────── */}
+      {/* ── Equipment Grid */}
       <section className="py-16 bg-[#05080f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -180,13 +146,11 @@ export default function EquipmentPage() {
                         <span className="text-[#4a3018] text-xs">Equipment Photo</span>
                       </>
                     )}
-                    {/* Category badge */}
                     <div className="absolute top-3 right-3">
                       <span className={`px-2 py-0.5 border rounded text-[10px] font-semibold ${categoryColors[item.category]}`}>
                         {item.category}
                       </span>
                     </div>
-                    {/* Feature badges */}
                     {item.badges && (
                       <div className="absolute bottom-3 left-3 flex gap-1.5 flex-wrap">
                         {item.badges.map((badge) => (
@@ -212,7 +176,6 @@ export default function EquipmentPage() {
                       {item.description}
                     </p>
 
-                    {/* Grouped specs */}
                     {item.specGroups ? (
                       <div className="space-y-4 mt-auto">
                         {item.specGroups.map((group) => (
@@ -249,7 +212,7 @@ export default function EquipmentPage() {
         </div>
       </section>
 
-      {/* ── CTA ─────────────────────────────────────────────────────── */}
+      {/* ── CTA */}
       <section className="py-16 bg-[#0a1220] border-t border-[#3d2010]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-3xl font-black text-white mb-4">
