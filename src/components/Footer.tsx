@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
-const YoutubeIcon = () => (
-  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-    <path d="M23.5 6.2s-.3-1.9-1.1-2.7c-1-.8-2.1-.8-2.6-.9C16.8 2.4 12 2.4 12 2.4s-4.8 0-7.8.2c-.5.1-1.6.1-2.6.9C.8 4.3.5 6.2.5 6.2S.2 8.3.2 10.5v2c0 2.2.3 4.3.3 4.3s.3 1.9 1.1 2.7c1 .8 2.3.8 2.9.9C6.3 20.6 12 20.6 12 20.6s4.8 0 7.8-.2c.5-.1 1.6-.1 2.6-.9.8-.8 1.1-2.7 1.1-2.7s.3-2.1.3-4.3v-2c0-2.2-.3-4.3-.3-4.3zM9.7 15V8.6l7 3.2-7 3.2z"/>
-  </svg>
-);
 const InstagramIcon = () => (
   <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
     <path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.6 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.3 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zm0-2.2C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9C.3 21.3 2.7 23.7 7.1 23.9 8.3 24 8.7 24 12 24s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9C23.7 2.7 21.3.3 16.9.1 15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/>
+  </svg>
+);
+const YoutubeIcon = () => (
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+    <path d="M23.5 6.2s-.3-1.9-1.1-2.7c-1-.8-2.1-.8-2.6-.9C16.8 2.4 12 2.4 12 2.4s-4.8 0-7.8.2c-.5.1-1.6.1-2.6.9C.8 4.3.5 6.2.5 6.2S.2 8.3.2 10.5v2c0 2.2.3 4.3.3 4.3s.3 1.9 1.1 2.7c1 .8 2.3.8 2.9.9C6.3 20.6 12 20.6 12 20.6s4.8 0 7.8-.2c.5-.1 1.6-.1 2.6-.9.8-.8 1.1-2.7 1.1-2.7s.3-2.1.3-4.3v-2c0-2.2-.3-4.3-.3-4.3zM9.7 15V8.6l7 3.2-7 3.2z"/>
   </svg>
 );
 const FacebookIcon = () => (
@@ -28,13 +28,13 @@ const navLinks = [
   { href: '/gallery', label: 'Gallery' },
   { href: '/services', label: 'Services' },
   { href: '/equipment', label: 'Equipment' },
-  { href: '/youtube', label: 'YouTube' },
+  { href: '/media', label: 'Media' },
   { href: '/contact', label: 'Contact' },
 ];
 
 const socialLinks = [
+  { href: 'https://www.instagram.com/kodner.aerial/', Icon: InstagramIcon, label: 'Instagram' },
   { href: 'https://www.youtube.com/@KodnerAerial', Icon: YoutubeIcon, label: 'YouTube' },
-  { href: 'https://instagram.com/kodneraerialservices', Icon: InstagramIcon, label: 'Instagram' },
   { href: 'https://facebook.com/kodneraerialservices', Icon: FacebookIcon, label: 'Facebook' },
   { href: 'https://twitter.com/kodneraerialservices', Icon: XIcon, label: 'Twitter / X' },
 ];
@@ -90,8 +90,7 @@ export default function Footer() {
                 <span>info@kodneraerialservices.com</span>
               </li>
               <li className="flex items-start gap-2 text-[#7a99b8] text-sm">
-                <Mail size={15} className="text-[#1a8fbf] flex-shrink-0 mt-0.5" style={{visibility:'hidden'}} />
-                <Phone size={15} className="text-[#1a8fbf] flex-shrink-0 mt-0.5 -ml-[15px]" />
+                <Phone size={15} className="text-[#1a8fbf] flex-shrink-0 mt-0.5" />
                 <span>(555) 000-0000</span>
               </li>
               <li className="flex items-start gap-2 text-[#7a99b8] text-sm">
@@ -121,7 +120,7 @@ export default function Footer() {
               ))}
             </div>
             <p className="text-[#1a4a5c] text-xs mt-5 leading-relaxed">
-              Subscribe to our YouTube channel for the latest aerial footage and behind-the-scenes content.
+              Follow <span className="text-[#7a99b8]">@kodner.aerial</span> on Instagram for the latest aerial photos and videos.
             </p>
           </div>
         </div>

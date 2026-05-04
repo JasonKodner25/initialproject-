@@ -12,7 +12,7 @@ const navLinks = [
   { href: '/gallery', label: 'Gallery' },
   { href: '/services', label: 'Services' },
   { href: '/equipment', label: 'Equipment' },
-  { href: '/youtube', label: 'YouTube' },
+  { href: '/media', label: 'Media' },
   { href: '/contact', label: 'Contact' },
 ];
 
