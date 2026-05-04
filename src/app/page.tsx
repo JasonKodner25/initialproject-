@@ -117,7 +117,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── DJI Air 3S */}
+      {/* ── Equipment */}
       <section className="py-20 sm:py-28 bg-[#0a1220] border-y border-[#3d2010]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
@@ -146,11 +146,11 @@ export default function HomePage() {
               <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">The Equipment</div>
               <div className="flex items-center gap-3 mb-2">
                 <Radio size={22} className="text-[#e8701a]" />
-                <h2 className="text-3xl sm:text-4xl font-black text-white">DJI Air 3S</h2>
+                <h2 className="text-3xl sm:text-4xl font-black text-white">Equipment</h2>
               </div>
               <div className="section-divider mb-6" />
               <p className="text-[#7a99b8] text-sm sm:text-base leading-relaxed mb-8">
-                The primary platform for every shoot. The Air 3S packs a 1-inch CMOS sensor and dual-lens system into a compact frame — giving me cinema-quality results without the bulk.
+                The primary platform for every shoot, offering 4K imaging. The Air 3S packs a 1-inch CMOS sensor and dual-lens system into a compact frame — giving cinema-quality results without the bulk.
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
