@@ -93,13 +93,16 @@ export default function HomePage() {
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#1a8fbf]/10 rounded-full blur-[130px] pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Top row: heading left, cards right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <div>
               <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Welcome</div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">Kodner Aerial Services</h2>
               <div className="section-divider mb-6" />
-              <Link href="/about" className="inline-block px-6 py-3 border border-[#e8701a] text-[#e8701a] text-sm font-semibold rounded hover:bg-[#e8701a] hover:text-white transition-all">
+              <div className="space-y-4 text-[#7a99b8] text-sm sm:text-base leading-relaxed">
+                <p>[Intro paragraph placeholder — add your personal story, background, and what drives your passion for aerial photography here.]</p>
+                <p>[Second paragraph placeholder — describe your experience, the areas you serve, and the types of clients and projects you specialize in.]</p>
+              </div>
+              <Link href="/about" className="inline-block mt-8 px-6 py-3 border border-[#e8701a] text-[#e8701a] text-sm font-semibold rounded hover:bg-[#e8701a] hover:text-white transition-all">
                 Learn More About Me
               </Link>
             </div>
@@ -113,16 +116,6 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-
-          {/* Full-width video */}
-          <video
-            src="/kodnervideo.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full rounded-xl border border-[#0d3d54]"
-          />
         </div>
       </section>
 
