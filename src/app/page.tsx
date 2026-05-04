@@ -9,19 +9,20 @@ const highlights = [
   { icon: Award, label: 'Licensed', desc: 'FAA Part 107 certified' },
 ];
 
-const portfolioPhotos = [
-  { src: '/DJI_20260416065653_0188_D.jpeg', label: 'Natural Bridges Aerial', span: 'col-span-2', ratio: '16/7' },
-  { src: '/DJI_20260416070936_0204_D.jpeg', label: 'Coastal Dawn Flight',   span: '',           ratio: '4/3' },
-  { src: '/DJI_20260416071343_0209_D.jpeg', label: 'Shoreline from Above',  span: '',           ratio: '4/3' },
-  { src: '/DJI_20260416072131_0221_D.jpeg', label: 'Santa Cruz Coastline',  span: 'col-span-2', ratio: '16/7' },
-  { src: '/IMG_3322.jpeg',                  label: 'Natural Bridges Beach', span: '',           ratio: '4/3' },
-  { src: '/IMG_3510.jpeg',                  label: 'Coastal View',          span: '',           ratio: '4/3' },
+const collections = [
+  {
+    name: 'Santa Cruz',
+    description: 'Natural Bridges State Beach',
+    date: 'April 16, 2026',
+    cover: '/DJI_20260416065653_0188_D.jpeg',
+    count: 8,
+  },
 ];
 
 export default function HomePage() {
   return (
     <main>
-      {/* ── Hero ──────────────────────────────────────────────────── */}
+      {/* ── Hero ────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#020509] via-[#05080f] to-[#0a1220]" />
         <div
@@ -61,7 +62,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Intro / About Snippet ───────────────────────────────────────── */}
+      {/* ── Intro / About Snippet ─────────────────────────────────────── */}
       <section className="py-20 sm:py-28 bg-[#05080f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
@@ -90,35 +91,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Portfolio / Recent Work ─────────────────────────────────────── */}
+      {/* ── Portfolio Collections ───────────────────────────────────────── */}
       <section className="py-20 bg-[#0a1220]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Portfolio</div>
-            <h2 className="text-3xl sm:text-4xl font-black text-white">Recent Work</h2>
-            <div className="section-divider mx-auto mt-4 mb-2" />
-            <p className="text-[#7a99b8] text-sm mt-3">Natural Bridges State Beach, Santa Cruz · April 16, 2026</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-white">Collections</h2>
+            <div className="section-divider mx-auto mt-4" />
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
-            {portfolioPhotos.map((photo) => (
-              <div
-                key={photo.src}
-                className={`relative overflow-hidden rounded-lg border border-[#3d2010] group cursor-pointer hover:border-[#e8701a]/50 transition-all ${photo.span}`}
-                style={{ aspectRatio: photo.ratio }}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {collections.map((col) => (
+              <Link
+                key={col.name}
+                href="/gallery"
+                className="group relative overflow-hidden rounded-xl border border-[#3d2010] hover:border-[#e8701a]/60 transition-all bg-[#0d1628] block"
               >
-                <Image
-                  src={photo.src}
-                  alt={photo.label}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-black/80 to-transparent">
-                  <div className="text-white text-xs font-semibold">{photo.label}</div>
+                {/* Cover photo */}
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={col.cover}
+                    alt={col.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all" />
+                  {/* Photo count badge */}
+                  <div className="absolute top-3 right-3 px-2.5 py-1 bg-[#05080f]/80 backdrop-blur-sm border border-[#e8701a]/40 rounded text-[#e8701a] text-xs font-semibold">
+                    {col.count} photos
+                  </div>
                 </div>
-              </div>
+
+                {/* Info */}
+                <div className="p-5">
+                  <div className="text-white font-black text-xl mb-1 group-hover:text-[#e8701a] transition-colors">{col.name}</div>
+                  <div className="text-[#7a99b8] text-sm">{col.description}</div>
+                  <div className="text-[#4a3018] text-xs mt-1">{col.date}</div>
+                </div>
+              </Link>
             ))}
           </div>
 
@@ -130,7 +141,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CTA Banner ─────────────────────────────────────────────────── */}
+      {/* ── CTA Banner ───────────────────────────────────────────────── */}
       <section className="py-20 bg-[#05080f] border-y border-[#3d2010]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
