@@ -121,7 +121,6 @@ export default function HomePage() {
       <section className="py-20 sm:py-28 bg-[#0a1220] border-y border-[#3d2010]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-            {/* Image */}
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#3d2010]">
               <Image
                 src="/air3s.webp"
@@ -141,7 +140,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Info */}
             <div>
               <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">The Equipment</div>
               <div className="flex items-center gap-3 mb-2">
@@ -152,7 +150,6 @@ export default function HomePage() {
               <p className="text-[#7a99b8] text-sm sm:text-base leading-relaxed mb-8">
                 The primary platform for every shoot, offering 4K imaging. The Air 3S packs a 1-inch CMOS sensor and dual-lens system into a compact frame — giving cinema-quality results without the bulk.
               </p>
-
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
                 {airSpecs.map(({ label, value }) => (
                   <div key={label} className="bg-[#0d1628] border border-[#3d2010] rounded-lg px-4 py-3">
@@ -161,7 +158,6 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-
               <Link href="/equipment" className="inline-block px-6 py-3 border border-[#e8701a] text-[#e8701a] text-sm font-semibold rounded hover:bg-[#e8701a] hover:text-white transition-all">
                 View Full Equipment List
               </Link>
@@ -217,16 +213,12 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA Banner */}
-      <section className="py-20 bg-[#0a1220] border-t border-[#3d2010]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
-            Ready to See the World{' '}
-            <span className="gradient-text">From a New Angle?</span>
-          </h2>
-          <p className="text-[#7a99b8] text-base sm:text-lg mb-8 max-w-xl mx-auto">
+      <section className="py-10 bg-[#0a1220] border-t border-[#3d2010]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <p className="text-[#7a99b8] text-sm sm:text-base mb-5">
             Let&apos;s capture your next project from above. Get in touch to discuss your vision.
           </p>
-          <Link href="/contact" className="inline-block px-10 py-4 bg-[#e8701a] text-white font-bold tracking-wide rounded hover:bg-[#f4952a] transition-all glow-blue text-sm sm:text-base">
+          <Link href="/contact" className="inline-block px-8 py-3 bg-[#e8701a] text-white text-sm font-bold tracking-wide rounded hover:bg-[#f4952a] transition-all glow-blue">
             Book a Session
           </Link>
         </div>
