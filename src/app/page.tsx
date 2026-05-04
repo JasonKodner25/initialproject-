@@ -118,15 +118,17 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Full-width video below */}
-          <video
-            src="/kodnervideo.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full rounded-xl border border-[#0d3d54]"
-          />
+          {/* Vertical video centered below */}
+          <div className="flex justify-center">
+            <video
+              src="/kodnervideo.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="max-h-[75vh] w-auto rounded-xl border border-[#0d3d54]"
+            />
+          </div>
         </div>
       </section>
 
