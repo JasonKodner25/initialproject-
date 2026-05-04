@@ -93,41 +93,42 @@ export default function HomePage() {
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#1a8fbf]/10 rounded-full blur-[130px] pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Top row: heading + text left, cards right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center mb-12">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+
+            {/* Left: text + icons */}
+            <div className="flex flex-col">
               <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Welcome</div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">Kodner Aerial Services</h2>
               <div className="section-divider mb-6" />
-              <div className="space-y-4 text-[#7a99b8] text-sm sm:text-base leading-relaxed">
-                <p>[Intro paragraph placeholder — add your personal story, background, and what drives your passion for aerial photography here.]</p>
-                <p>[Second paragraph placeholder — describe your experience, the areas you serve, and the types of clients and projects you specialize in.]</p>
-              </div>
-              <Link href="/about" className="inline-block mt-8 px-6 py-3 border border-[#e8701a] text-[#e8701a] text-sm font-semibold rounded hover:bg-[#e8701a] hover:text-white transition-all">
+              <p className="text-[#7a99b8] text-sm sm:text-base leading-relaxed mb-8">
+                22-year-old aviation major based out of the Bay Area, Part 107 certified and private pilot licensed, focused on producing precise aerial photo and video work through hands-on flight experience.
+              </p>
+              <Link href="/about" className="inline-block mb-10 px-6 py-3 border border-[#e8701a] text-[#e8701a] text-sm font-semibold rounded hover:bg-[#e8701a] hover:text-white transition-all self-start">
                 Learn More About Me
               </Link>
+              <div className="grid grid-cols-3 gap-4">
+                {highlights.map(({ icon: Icon, label, desc }) => (
+                  <div key={label} className="bg-[#0d1628] border border-[#0d3d54] rounded-lg p-4 hover:border-[#1a8fbf]/60 transition-all group">
+                    <Icon size={24} className="text-[#1a8fbf] mb-2 group-hover:scale-110 transition-transform" />
+                    <div className="text-white font-bold text-sm mb-1">{label}</div>
+                    <div className="text-[#7a99b8] text-xs">{desc}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {highlights.map(({ icon: Icon, label, desc }) => (
-                <div key={label} className="bg-[#0d1628] border border-[#0d3d54] rounded-lg p-6 hover:border-[#1a8fbf]/60 transition-all group">
-                  <Icon size={28} className="text-[#1a8fbf] mb-3 group-hover:scale-110 transition-transform" />
-                  <div className="text-white font-bold text-base mb-1">{label}</div>
-                  <div className="text-[#7a99b8] text-xs">{desc}</div>
-                </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Vertical video centered below */}
-          <div className="flex justify-center">
-            <video
-              src="/kodnervideo.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="max-h-[75vh] w-auto rounded-xl border border-[#0d3d54]"
-            />
+            {/* Right: vertical video */}
+            <div className="flex justify-center lg:justify-end">
+              <video
+                src="/kodnervideo.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="max-h-[75vh] w-auto rounded-xl border border-[#0d3d54]"
+              />
+            </div>
+
           </div>
         </div>
       </section>
