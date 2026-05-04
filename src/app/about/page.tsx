@@ -37,8 +37,9 @@ export default function AboutPage() {
       <section className="py-20 bg-[#05080f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-            {/* Profile photo */}
+            {/* Photos + name card */}
             <div className="flex flex-col items-center lg:items-start gap-6">
+              {/* Primary profile photo */}
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl border-2 border-[#3d2010] overflow-hidden bg-[#0d1628]">
                 <Image
                   src="/kodneraboutme.JPG"
@@ -47,7 +48,6 @@ export default function AboutPage() {
                   className="object-cover"
                   priority
                 />
-                {/* Corner accents */}
                 <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl" />
                 <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#e8701a] rounded-br-2xl" />
               </div>
@@ -66,6 +66,21 @@ export default function AboutPage() {
                     </span>
                   ))}
                 </div>
+              </div>
+
+              {/* Secondary photo */}
+              <div className="w-full max-w-sm">
+                <div className="relative w-full aspect-[4/3] rounded-2xl border-2 border-[#3d2010] overflow-hidden bg-[#0d1628]">
+                  <Image
+                    src="/aboutmepart2.jpg"
+                    alt="Jason Kodner in front of a Cessna 172"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl" />
+                  <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#e8701a] rounded-br-2xl" />
+                </div>
+                <p className="text-[#7a99b8] text-xs mt-2 text-center">In front of a Cessna 172</p>
               </div>
             </div>
 
