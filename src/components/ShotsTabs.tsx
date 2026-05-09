@@ -36,8 +36,7 @@ export default function ShotsTabs() {
       </div>
 
       {/* Content placeholder */}
-      <div className="relative aspect-[16/7] rounded-xl bg-[#0d1628] border border-[#0d3d54] overflow-hidden flex items-center justify-center group">
-        {/* Subtle grid */}
+      <div className="relative aspect-[16/7] rounded-xl bg-[#0d1628] border border-[#0d3d54] overflow-hidden flex items-center justify-center">
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -46,7 +45,6 @@ export default function ShotsTabs() {
             backgroundSize: '40px 40px',
           }}
         />
-        {/* Glow */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#e8701a]/5 via-transparent to-[#1a8fbf]/5" />
 
         <div className="relative flex flex-col items-center gap-4 select-none">
@@ -57,10 +55,7 @@ export default function ShotsTabs() {
           <div className="text-[#1a3040] text-[10px] tracking-[0.4em] uppercase">Photo / Video Placeholder</div>
         </div>
 
-        {/* Bottom gradient fade */}
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0d1628] to-transparent" />
-
-        {/* Active accent bar at top */}
         <div
           className="absolute top-0 left-0 right-0 h-[2px]"
           style={{ background: 'linear-gradient(90deg, #e8701a, #1a8fbf)' }}

@@ -95,8 +95,6 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-
-            {/* Left: text + icons */}
             <div className="flex flex-col">
               <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Welcome</div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">Why Kodner Aerial?</h2>
@@ -118,11 +116,9 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right: vertical video with styled frame */}
             <div className="relative flex justify-center lg:justify-end">
               <div className="absolute bottom-8 right-0 w-64 h-64 bg-[#e8701a]/25 rounded-full blur-[70px] pointer-events-none" />
               <div className="absolute top-8 left-0 w-56 h-56 bg-[#1a8fbf]/25 rounded-full blur-[60px] pointer-events-none" />
-
               <div
                 className="relative p-[2px] rounded-2xl shadow-2xl"
                 style={{ background: 'linear-gradient(145deg, #e8701a 0%, #0a1220 50%, #1a8fbf 100%)' }}
@@ -130,22 +126,13 @@ export default function HomePage() {
                 <div className="absolute -top-1 -left-1 w-5 h-5 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl z-10" />
                 <div className="absolute -bottom-1 -right-1 w-5 h-5 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-2xl z-10" />
                 <div className="bg-[#05080f] rounded-[14px] overflow-hidden">
-                  <video
-                    src="/kodnervideo.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="max-h-[75vh] w-auto block"
-                  />
+                  <video src="/kodnervideo.mp4" autoPlay loop muted playsInline className="max-h-[75vh] w-auto block" />
                 </div>
               </div>
-
               <div className="absolute bottom-4 left-0 lg:-left-4 px-3 py-1.5 bg-[#05080f]/90 backdrop-blur-sm border border-[#e8701a]/40 rounded-full text-[#e8701a] text-[10px] font-semibold tracking-widest uppercase shadow-lg">
                 @kodner.aerial
               </div>
             </div>
-
           </div>
         </div>
       </section>
