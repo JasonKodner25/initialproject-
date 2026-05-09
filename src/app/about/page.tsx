@@ -28,18 +28,10 @@ export default function AboutPage() {
 
             {/* RIGHT — name, bio, cessna photo */}
             <div className="flex flex-col gap-7">
-              {/* Name + tags */}
               <div>
                 <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-2">My Story</div>
                 <h2 className="text-3xl sm:text-4xl font-black text-white mb-1">Jason Kodner</h2>
-                <div className="text-[#1a8fbf] text-sm font-medium mb-4">Founder &amp; Lead Pilot</div>
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {['FAA Part 107', 'Private Pilot', 'Fully Insured'].map((tag) => (
-                    <span key={tag} className="px-3 py-1 bg-[#1a8fbf]/10 border border-[#1a8fbf]/30 text-[#1a8fbf] text-xs rounded-full font-medium">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <div className="text-[#1a8fbf] text-sm font-medium mb-5">Founder &amp; Lead Pilot</div>
                 <div className="section-divider" />
               </div>
 

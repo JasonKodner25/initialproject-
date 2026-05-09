@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown, Play, Award, Camera, Video, Shield, Radio } from 'lucide-react';
+import ShotsTabs from '@/components/ShotsTabs';
 
 const highlights = [
   { icon: Camera, label: 'Photography', desc: 'Stunning aerial stills' },
-  { icon: Video, label: 'Videography', desc: 'Cinematic aerial footage' },
-  { icon: Award, label: 'Licensed', desc: 'FAA Part 107 certified' },
+  { icon: Video,  label: 'Videography', desc: 'Cinematic aerial footage' },
+  { icon: Award,  label: 'Licensed',    desc: 'FAA Part 107 certified' },
 ];
 
 const collections = [
@@ -26,11 +27,11 @@ const collections = [
 ];
 
 const airSpecs = [
-  { label: 'Flight Time', value: '41 min' },
-  { label: 'Max Speed', value: '47 mph' },
-  { label: 'Main Sensor', value: '1" CMOS · 50 MP' },
-  { label: 'Video', value: '4K / 6K' },
-  { label: 'Range', value: '19.8 miles' },
+  { label: 'Flight Time',        value: '41 min' },
+  { label: 'Max Speed',          value: '47 mph' },
+  { label: 'Main Sensor',        value: '1" CMOS · 50 MP' },
+  { label: 'Video',              value: '4K / 6K' },
+  { label: 'Range',              value: '19.8 miles' },
   { label: 'Obstacle Detection', value: 'Omnidirectional' },
 ];
 
@@ -56,7 +57,7 @@ export default function HomePage() {
             <Image src="/kodneraeriallogoofficial.png" alt="Kodner Aerial Services" fill priority className="object-contain mix-blend-multiply" />
           </div>
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-none mb-4">
-            PRECISE IMAGING&nbsp;<span className="text-[#e8701a]">FROM ABOVE</span>
+            AERIAL PERSPECTIVE,&nbsp;<span className="text-[#e8701a]">CINEMATIC PRECISION</span>
           </h1>
           <p className="text-[#7a99b8] text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
             Professional drone photography &amp; videography — capturing breathtaking perspectives for real estate, landscapes, events, and beyond.
@@ -98,10 +99,10 @@ export default function HomePage() {
             {/* Left: text + icons */}
             <div className="flex flex-col">
               <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Welcome</div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">Kodner Aerial Services</h2>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">Why Kodner Aerial?</h2>
               <div className="section-divider mb-6" />
               <p className="text-[#7a99b8] text-sm sm:text-base leading-relaxed mb-8">
-                22-year-old aviation major based out of the Bay Area, Part 107 certified and private pilot licensed, focused on producing precise aerial photo and video work through hands-on flight experience.
+                Based in the Bay Area, I specialize in cinematic aerial photography and videography, offering a wide range of dynamic drone shots designed to showcase each subject from its most compelling perspective. Backed by both an FAA Part 107 certificate and a Private Pilot License, every project is planned and executed with a strong understanding of airspace, weather, and FAA regulations, with safety and precision at the core of every flight.
               </p>
               <Link href="/about" className="inline-block mb-10 px-6 py-3 border border-[#e8701a] text-[#e8701a] text-sm font-semibold rounded hover:bg-[#e8701a] hover:text-white transition-all self-start">
                 Learn More About Me
@@ -119,19 +120,15 @@ export default function HomePage() {
 
             {/* Right: vertical video with styled frame */}
             <div className="relative flex justify-center lg:justify-end">
-              {/* Ambient glow blobs */}
               <div className="absolute bottom-8 right-0 w-64 h-64 bg-[#e8701a]/25 rounded-full blur-[70px] pointer-events-none" />
               <div className="absolute top-8 left-0 w-56 h-56 bg-[#1a8fbf]/25 rounded-full blur-[60px] pointer-events-none" />
 
-              {/* Gradient border frame */}
               <div
                 className="relative p-[2px] rounded-2xl shadow-2xl"
                 style={{ background: 'linear-gradient(145deg, #e8701a 0%, #0a1220 50%, #1a8fbf 100%)' }}
               >
-                {/* Corner accents */}
                 <div className="absolute -top-1 -left-1 w-5 h-5 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl z-10" />
                 <div className="absolute -bottom-1 -right-1 w-5 h-5 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-2xl z-10" />
-
                 <div className="bg-[#05080f] rounded-[14px] overflow-hidden">
                   <video
                     src="/kodnervideo.mp4"
@@ -144,7 +141,6 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Floating badge */}
               <div className="absolute bottom-4 left-0 lg:-left-4 px-3 py-1.5 bg-[#05080f]/90 backdrop-blur-sm border border-[#e8701a]/40 rounded-full text-[#e8701a] text-[10px] font-semibold tracking-widest uppercase shadow-lg">
                 @kodner.aerial
               </div>
@@ -159,13 +155,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#0d3d54]">
-              <Image
-                src="/air3s.webp"
-                alt="DJI Air 3S"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+              <Image src="/air3s.webp" alt="DJI Air 3S" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a1220]/60 to-transparent" />
               <div className="absolute bottom-4 left-4 flex gap-2">
                 <span className="flex items-center gap-1 px-2.5 py-1 bg-[#05080f]/80 backdrop-blur-sm border border-[#e8701a]/40 text-[#e8701a] text-xs font-semibold rounded">
@@ -176,7 +166,6 @@ export default function HomePage() {
                 </span>
               </div>
             </div>
-
             <div>
               <div className="text-[#1a8fbf] text-xs tracking-[0.3em] uppercase font-medium mb-3">The Equipment</div>
               <div className="flex items-center gap-3 mb-2">
@@ -203,15 +192,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Portfolio Collections */}
+      {/* ── Types of Shots */}
       <section className="py-20 bg-[#05080f]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <div className="text-[#1a8fbf] text-xs tracking-[0.3em] uppercase font-medium mb-3">Cinematography</div>
+            <h2 className="text-3xl sm:text-4xl font-black text-white">Types of Shots</h2>
+            <div className="section-divider mx-auto mt-4" />
+          </div>
+          <ShotsTabs />
+        </div>
+      </section>
+
+      {/* ── Portfolio Collections */}
+      <section className="py-20 bg-[#0a1220] border-t border-[#0d3d54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Portfolio</div>
             <h2 className="text-3xl sm:text-4xl font-black text-white">Collections</h2>
             <div className="section-divider mx-auto mt-4" />
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {collections.map((col) => (
               <Link
@@ -240,7 +240,6 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-
           <div className="text-center mt-10">
             <Link href="/gallery" className="inline-block px-8 py-3 bg-[#e8701a] text-white text-sm font-bold rounded hover:bg-[#f4952a] transition-all glow-blue tracking-wide">
               View Full Gallery
@@ -255,7 +254,7 @@ export default function HomePage() {
           <p className="text-[#7a99b8] text-sm sm:text-base font-bold mb-5">
             Interested in a booking? Get in touch to discuss further details.
           </p>
-          <Link href="/contact" className="inline-block px-8 py-3 bg-[#2d7a50] text-white text-sm font-bold tracking-wide rounded hover:bg-[#3a9463] transition-all tracking-wide">
+          <Link href="/contact" className="inline-block px-8 py-3 bg-[#2d7a50] text-white text-sm font-bold tracking-wide rounded hover:bg-[#3a9463] transition-all">
             Book a Session
           </Link>
         </div>
