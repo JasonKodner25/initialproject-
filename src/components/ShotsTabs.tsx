@@ -37,7 +37,7 @@ export default function ShotsTabs() {
 
       {/* Content panel */}
       {activeShot.video ? (
-        <div className="rounded-xl overflow-hidden border border-[#0d3d54]">
+        <div className="flex justify-center">
           <video
             key={activeShot.video}
             src={activeShot.video}
@@ -45,7 +45,7 @@ export default function ShotsTabs() {
             loop
             muted
             playsInline
-            className="w-full block"
+            className="rounded-xl border border-[#0d3d54] max-w-sm w-full"
           />
         </div>
       ) : (
