@@ -79,7 +79,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Intro / About Snippet */}
+      {/* ── Why Kodner Aerial */}
       <section className="relative py-20 sm:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#020509] via-[#05080f] to-[#0a1220]" />
         <div
@@ -93,46 +93,55 @@ export default function HomePage() {
         <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#e8701a]/10 rounded-full blur-[130px] pointer-events-none" />
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#1a8fbf]/10 rounded-full blur-[130px] pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-            <div className="flex flex-col">
-              <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Welcome</div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">Why Kodner Aerial?</h2>
-              <div className="section-divider mb-6" />
-              <p className="text-[#7a99b8] text-sm sm:text-base leading-relaxed mb-8">
-                Based in the Bay Area, I specialize in cinematic aerial photography and videography, offering a wide range of dynamic drone shots designed to showcase each subject from its most compelling perspective. Backed by both an FAA Part 107 certificate and a Private Pilot License, every project is planned and executed with a strong understanding of airspace, weather, and FAA regulations, with safety and precision at the core of every flight.
-              </p>
-              <Link href="/about" className="inline-block mb-10 px-6 py-3 border border-[#e8701a] text-[#e8701a] text-sm font-semibold rounded hover:bg-[#e8701a] hover:text-white transition-all self-start">
-                Learn More About Me
-              </Link>
-              <div className="grid grid-cols-3 gap-4">
-                {highlights.map(({ icon: Icon, label, desc }) => (
-                  <div key={label} className="bg-[#0d1628] border border-[#0d3d54] rounded-lg p-4 hover:border-[#1a8fbf]/60 transition-all group">
-                    <Icon size={24} className="text-[#1a8fbf] mb-2 group-hover:scale-110 transition-transform" />
-                    <div className="text-white font-bold text-sm mb-1">{label}</div>
-                    <div className="text-[#7a99b8] text-xs">{desc}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Centered heading + description */}
+          <div className="text-center mb-12">
+            <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Welcome</div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">
+              Why Kodner Aerial?
+            </h2>
+            <div className="section-divider mx-auto mb-6" />
+            <p className="text-[#7a99b8] text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mb-8">
+              Based in the Bay Area, I specialize in cinematic aerial photography and videography, offering a wide range of dynamic drone shots designed to showcase each subject from its most compelling perspective. Backed by both an FAA Part 107 certificate and a Private Pilot License, every project is planned and executed with a strong understanding of airspace, weather, and FAA regulations, with safety and precision at the core of every flight.
+            </p>
+            <Link
+              href="/about"
+              className="inline-block px-6 py-3 border border-[#e8701a] text-[#e8701a] text-sm font-semibold rounded hover:bg-[#e8701a] hover:text-white transition-all"
+            >
+              Learn More About Me
+            </Link>
+          </div>
 
-            <div className="relative flex justify-center lg:justify-end">
-              <div className="absolute bottom-8 right-0 w-64 h-64 bg-[#e8701a]/25 rounded-full blur-[70px] pointer-events-none" />
-              <div className="absolute top-8 left-0 w-56 h-56 bg-[#1a8fbf]/25 rounded-full blur-[60px] pointer-events-none" />
-              <div
-                className="relative p-[2px] rounded-2xl shadow-2xl"
-                style={{ background: 'linear-gradient(145deg, #e8701a 0%, #0a1220 50%, #1a8fbf 100%)' }}
-              >
-                <div className="absolute -top-1 -left-1 w-5 h-5 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl z-10" />
-                <div className="absolute -bottom-1 -right-1 w-5 h-5 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-2xl z-10" />
-                <div className="bg-[#05080f] rounded-[14px] overflow-hidden">
-                  <video src="/kodnervideo.mp4" autoPlay loop muted playsInline className="max-h-[75vh] w-auto block" />
-                </div>
-              </div>
-              <div className="absolute bottom-4 left-0 lg:-left-4 px-3 py-1.5 bg-[#05080f]/90 backdrop-blur-sm border border-[#e8701a]/40 rounded-full text-[#e8701a] text-[10px] font-semibold tracking-widest uppercase shadow-lg">
-                @kodner.aerial
+          {/* Centered video */}
+          <div className="flex justify-center mb-14">
+            <div
+              className="relative p-[2px] rounded-2xl shadow-2xl w-full"
+              style={{ background: 'linear-gradient(145deg, #e8701a 0%, #0a1220 50%, #1a8fbf 100%)' }}
+            >
+              <div className="absolute -top-1 -left-1 w-5 h-5 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl z-10" />
+              <div className="absolute -bottom-1 -right-1 w-5 h-5 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-2xl z-10" />
+              <div className="bg-[#05080f] rounded-[14px] overflow-hidden">
+                <video
+                  src="/kodneraerialhomepage.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full block"
+                />
               </div>
             </div>
+          </div>
+
+          {/* Highlight cards */}
+          <div className="grid grid-cols-3 gap-4 max-w-lg mx-auto">
+            {highlights.map(({ icon: Icon, label, desc }) => (
+              <div key={label} className="bg-[#0d1628] border border-[#0d3d54] rounded-lg p-4 hover:border-[#1a8fbf]/60 transition-all group text-center">
+                <Icon size={24} className="text-[#1a8fbf] mb-2 mx-auto group-hover:scale-110 transition-transform" />
+                <div className="text-white font-bold text-sm mb-1">{label}</div>
+                <div className="text-[#7a99b8] text-xs">{desc}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
