@@ -2,16 +2,13 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Camera, X, Images, Tag, ChevronLeft } from 'lucide-react';
+import { Camera, X, Images, ChevronLeft } from 'lucide-react';
 
-type Category = 'All' | 'Landscape' | 'Real Estate' | 'Construction' | 'Events' | 'Wildlife';
-type View = 'categories' | 'albums';
-
-const categories: Category[] = ['All', 'Landscape', 'Real Estate', 'Construction', 'Events', 'Wildlife'];
+type View = 'albums' | 'album-open';
 
 interface GalleryItem {
   id: number;
-  category: Exclude<Category, 'All'>;
+  category: string;
   label: string;
   location?: string;
   date?: string;
@@ -37,12 +34,6 @@ const galleryItems: GalleryItem[] = [
   { id: 16, category: 'Events', label: 'Bike Park Shot 3', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/calip2.jpg',       aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
   { id: 17, category: 'Events', label: 'Bike Park Shot 4', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/calip3.jpg',       aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
   { id: 18, category: 'Events', label: 'Bike Park Shot 5', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/calip4.jpg',       aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
-
-  // Placeholders
-  { id: 9,  category: 'Real Estate',  label: 'Luxury Home Exterior',   aspect: 'aspect-[4/3]' },
-  { id: 10, category: 'Real Estate',  label: 'Lakefront Property',     aspect: 'aspect-[3/4]' },
-  { id: 11, category: 'Construction', label: 'Commercial Site Survey', aspect: 'aspect-[4/3]' },
-  { id: 12, category: 'Wildlife',     label: 'Coastal Shoreline',      aspect: 'aspect-[16/9]' },
 ];
 
 function getAlbums() {
@@ -59,14 +50,10 @@ function getAlbums() {
 const albums = getAlbums();
 
 export default function GalleryPage() {
-  const [view, setView] = useState<View>('categories');
-  const [active, setActive] = useState<Category>('All');
   const [openAlbum, setOpenAlbum] = useState<string | null>(null);
   const [lightbox, setLightbox] = useState<number | null>(null);
 
-  const filteredByCategory = active === 'All' ? galleryItems : galleryItems.filter((i) => i.category === active);
   const albumItems = openAlbum ? (albums.get(openAlbum) ?? []) : [];
-  const displayItems = view === 'categories' ? filteredByCategory : albumItems;
   const lightboxItem = galleryItems.find((i) => i.id === lightbox);
 
   return (
@@ -80,57 +67,19 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* ── View Toggle + Filters */}
-      <section className="py-6 bg-[#05080f] border-b border-[#3d2010] sticky top-16 lg:top-20 z-30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-          <div className="flex gap-2">
-            <button
-              onClick={() => { setView('categories'); setOpenAlbum(null); }}
-              className={`flex items-center gap-1.5 px-4 py-2 rounded text-xs font-semibold tracking-wide transition-all ${
-                view === 'categories' ? 'bg-[#e8701a] text-white' : 'bg-[#0d1628] border border-[#3d2010] text-[#7a99b8] hover:text-white hover:border-[#e8701a]/50'
-              }`}
-            >
-              <Tag size={13} /> By Category
-            </button>
-            <button
-              onClick={() => { setView('albums'); setOpenAlbum(null); }}
-              className={`flex items-center gap-1.5 px-4 py-2 rounded text-xs font-semibold tracking-wide transition-all ${
-                view === 'albums' ? 'bg-[#e8701a] text-white' : 'bg-[#0d1628] border border-[#3d2010] text-[#7a99b8] hover:text-white hover:border-[#e8701a]/50'
-              }`}
-            >
-              <Images size={13} /> Albums
-            </button>
-          </div>
-
-          {view === 'categories' && (
-            <div className="flex gap-2 flex-wrap">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActive(cat)}
-                  className={`px-4 py-1.5 rounded text-xs font-semibold tracking-wide transition-all ${
-                    active === cat
-                      ? 'bg-[#e8701a] text-white shadow-lg shadow-[#e8701a]/20'
-                      : 'bg-[#0d1628] border border-[#3d2010] text-[#7a99b8] hover:text-white hover:border-[#e8701a]/50'
-                  }`}
-                >
-                  {cat}
-                  {cat !== 'All' && <span className="ml-1.5 opacity-60">({galleryItems.filter((i) => i.category === cat).length})</span>}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {view === 'albums' && openAlbum && (
+      {/* ── Back to Albums */}
+      {openAlbum && (
+        <section className="py-4 bg-[#05080f] border-b border-[#3d2010] sticky top-16 lg:top-20 z-30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <button onClick={() => setOpenAlbum(null)} className="flex items-center gap-1.5 text-[#7a99b8] hover:text-white text-xs transition-colors">
               <ChevronLeft size={14} /> All Albums
             </button>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
       {/* ── Albums Grid */}
-      {view === 'albums' && !openAlbum && (
+      {!openAlbum && (
         <section className="py-12 bg-[#05080f]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -164,7 +113,7 @@ export default function GalleryPage() {
       )}
 
       {/* ── Album Photo Grid */}
-      {view === 'albums' && openAlbum && (
+      {openAlbum && (
         <section className="py-12 bg-[#05080f]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8">
@@ -173,26 +122,10 @@ export default function GalleryPage() {
               {albumItems[0]?.date && <div className="text-[#7a99b8] text-xs mt-0.5">{albumItems[0].date}</div>}
             </div>
             <div className="masonry-grid">
-              {displayItems.map((item) => (
+              {albumItems.map((item) => (
                 <PhotoCard key={item.id} item={item} onOpen={() => setLightbox(item.id)} />
               ))}
             </div>
-          </div>
-        </section>
-      )}
-
-      {/* ── Category Grid */}
-      {view === 'categories' && (
-        <section className="py-12 bg-[#05080f]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="masonry-grid">
-              {filteredByCategory.map((item) => (
-                <PhotoCard key={item.id} item={item} onOpen={() => setLightbox(item.id)} />
-              ))}
-            </div>
-            {filteredByCategory.length === 0 && (
-              <div className="text-center py-20 text-[#4a3018]">No photos in this category yet.</div>
-            )}
           </div>
         </section>
       )}
@@ -238,16 +171,12 @@ function PhotoCard({ item, onOpen }: { item: GalleryItem; onOpen: () => void }) 
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
           <Camera size={24} className="text-[#4a3018]" />
           <span className="text-[#4a3018] text-xs text-center px-2">{item.label}</span>
-          <span className="text-[#3d2010] text-[10px] border border-[#3d2010] px-2 py-0.5 rounded">{item.category}</span>
         </div>
       )}
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all" />
       <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-black/80 to-transparent">
         <div className="text-white text-xs font-semibold">{item.label}</div>
         {item.location && <div className="text-[#e8701a] text-[10px] mt-0.5">{item.location}</div>}
-      </div>
-      <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity">
-        <span className="px-2 py-1 bg-[#05080f]/80 backdrop-blur-sm text-[#e8701a] text-[10px] rounded font-medium border border-[#e8701a]/30">{item.category}</span>
       </div>
       <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
         <div className="w-7 h-7 bg-[#e8701a] rounded flex items-center justify-center"><Camera size={13} className="text-white" /></div>

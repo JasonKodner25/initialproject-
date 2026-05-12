@@ -94,7 +94,6 @@ export default function HomePage() {
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#1a8fbf]/10 rounded-full blur-[130px] pointer-events-none" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Centered heading + description */}
           <div className="text-center mb-12">
             <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Welcome</div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">
@@ -188,12 +187,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Types of Shots */}
+      {/* ── Landscape Cinematography */}
       <section className="py-20 bg-[#05080f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <div className="text-[#1a8fbf] text-xs tracking-[0.3em] uppercase font-medium mb-3">Cinematography</div>
-            <h2 className="text-3xl sm:text-4xl font-black text-white">Types of Shots</h2>
+            <div className="text-[#1a8fbf] text-xs tracking-[0.3em] uppercase font-medium mb-3">Portfolio</div>
+            <h2 className="text-3xl sm:text-4xl font-black text-white">Landscape Cinematography</h2>
             <div className="section-divider mx-auto mt-4" />
           </div>
           <ShotsTabs />
