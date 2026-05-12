@@ -33,12 +33,11 @@ export default function AboutPage() {
               </div>
 
               <p className="text-[#7a99b8] text-sm sm:text-base leading-relaxed">
-                Hello! My name is Jason Kodner, a Bay Area native and Aviation Management graduate from
-                San Jose State University. I am deeply fascinated by several domains of aviation,
-                including aircraft design, propulsion systems, real-world operations, and the rapidly
-                evolving world of autonomous flight. I hold both a Private Pilot Certificate and a
-                Part 107 Remote Pilot Certificate, and I am driven by a long-term goal of contributing
-                meaningfully to the future of autonomous aviation.
+                Hello! My name is Jason Kodner, a Bay Area native and Aviation Management graduate from San José State University. Aviation has always been a central passion of mine, from flying fixed-wing aircraft to following the rapid advancement of autonomous flight. That passion naturally led me to aerial photography and videography, where I enjoy combining aviation and visual storytelling to capture scenes from perspectives that are possible from above.
+              </p>
+
+              <p className="text-[#7a99b8] text-sm sm:text-base leading-relaxed">
+                Outside of aviation, I enjoy playing ice hockey, mountain biking, and spending as much time outdoors as possible. I have a deep appreciation for nature and the unique landscapes that continue to inspire both my work and my perspective of the world!
               </p>
 
               <div className="relative w-full aspect-[16/9] rounded-xl border border-[#0d3d54] overflow-hidden bg-[#0d1628]">
