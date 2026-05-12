@@ -145,6 +145,18 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Landscape Cinematography */}
+      <section className="py-20 bg-[#05080f]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <div className="text-[#1a8fbf] text-xs tracking-[0.3em] uppercase font-medium mb-3">Portfolio</div>
+            <h2 className="text-3xl sm:text-4xl font-black text-white">Landscape Cinematography</h2>
+            <div className="section-divider mx-auto mt-4" />
+          </div>
+          <ShotsTabs />
+        </div>
+      </section>
+
       {/* ── Equipment */}
       <section className="py-20 sm:py-28 bg-[#0a1220] border-y border-[#0d3d54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -184,18 +196,6 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── Landscape Cinematography */}
-      <section className="py-20 bg-[#05080f]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <div className="text-[#1a8fbf] text-xs tracking-[0.3em] uppercase font-medium mb-3">Portfolio</div>
-            <h2 className="text-3xl sm:text-4xl font-black text-white">Landscape Cinematography</h2>
-            <div className="section-divider mx-auto mt-4" />
-          </div>
-          <ShotsTabs />
         </div>
       </section>
 
