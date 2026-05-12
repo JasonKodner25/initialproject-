@@ -22,7 +22,7 @@ export default function HomePage() {
   return (
     <main>
       {/* ── Hero */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#020509] via-[#05080f] to-[#0a1220]" />
         <div
           className="absolute inset-0 opacity-[0.04]"
@@ -35,8 +35,8 @@ export default function HomePage() {
         <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#e8701a]/10 rounded-full blur-[130px] pointer-events-none" />
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#1a8fbf]/10 rounded-full blur-[130px] pointer-events-none" />
 
-        <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 max-w-5xl mx-auto">
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 mb-8 drop-shadow-2xl">
+        <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 max-w-5xl mx-auto pt-16">
+          <div className="relative w-56 h-56 sm:w-72 sm:h-72 mb-6 drop-shadow-2xl">
             <Image src="/kodneraeriallogoofficial.png" alt="Kodner Aerial Services" fill priority className="object-contain mix-blend-multiply" />
           </div>
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-none mb-4">
@@ -83,8 +83,8 @@ export default function HomePage() {
               Why Kodner Aerial?
             </h2>
             <div className="section-divider mx-auto mb-6" />
-            <p className="text-[#7a99b8] text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mb-8">
-              Based in the Bay Area, I specialize in cinematic aerial photography and videography, offering a wide range of dynamic drone shots designed to showcase each subject from its most compelling perspective. Backed by both an FAA Part 107 certificate and a Private Pilot License, every project is planned and executed with a strong understanding of airspace, weather, and FAA regulations, with safety and precision at the core of every flight.
+            <p className="text-[#7a99b8] text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mb-8 text-left">
+              Based in the Bay Area, I specialize in cinematic aerial photography and videography, offering a wide range of dynamic drone shots designed to showcase each subject from its most compelling perspective. One of the Bay Area&apos;s only drone operators with both an FAA Part 107 certificate and a Private Pilot License. Every project is planned and executed with a strong understanding of airspace, weather, and FAA regulations, with safety and precision at the core of every flight.
             </p>
             <Link
               href="/about"
