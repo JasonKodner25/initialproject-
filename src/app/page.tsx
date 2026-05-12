@@ -9,23 +9,6 @@ const highlights = [
   { icon: Award,  label: 'Licensed',    desc: 'FAA Part 107 certified' },
 ];
 
-const collections = [
-  {
-    name: 'Santa Cruz',
-    description: 'Natural Bridges State Beach',
-    date: 'April 16, 2026',
-    cover: '/DJI_20260416065653_0188_D.jpeg',
-    count: 8,
-  },
-  {
-    name: 'Calibazas Bike Park',
-    description: 'Photoshoot for Santa Cruz Trails Stewardship Company',
-    date: 'April 29, 2026',
-    cover: '/caliphoto5.jpg',
-    count: 5,
-  },
-];
-
 const airSpecs = [
   { label: 'Flight Time',        value: '41 min' },
   { label: 'Max Speed',          value: '47 mph' },
@@ -195,50 +178,6 @@ export default function HomePage() {
                 View Full Equipment List
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Portfolio Collections */}
-      <section className="py-20 bg-[#0a1220] border-t border-[#0d3d54]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Portfolio</div>
-            <h2 className="text-3xl sm:text-4xl font-black text-white">Collections</h2>
-            <div className="section-divider mx-auto mt-4" />
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {collections.map((col) => (
-              <Link
-                key={col.name}
-                href="/gallery"
-                className="group relative overflow-hidden rounded-xl border border-[#3d2010] hover:border-[#e8701a]/60 transition-all bg-[#0d1628] block"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={col.cover}
-                    alt={col.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all" />
-                  <div className="absolute top-3 right-3 px-2.5 py-1 bg-[#05080f]/80 backdrop-blur-sm border border-[#e8701a]/40 rounded text-[#e8701a] text-xs font-semibold">
-                    {col.count} photos
-                  </div>
-                </div>
-                <div className="p-5">
-                  <div className="text-white font-black text-xl mb-1 group-hover:text-[#e8701a] transition-colors">{col.name}</div>
-                  <div className="text-[#7a99b8] text-sm">{col.description}</div>
-                  <div className="text-[#1a4a5c] text-xs mt-1">{col.date}</div>
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link href="/gallery" className="inline-block px-8 py-3 bg-[#e8701a] text-white text-sm font-bold rounded hover:bg-[#f4952a] transition-all glow-blue tracking-wide">
-              View Full Gallery
-            </Link>
           </div>
         </div>
       </section>
