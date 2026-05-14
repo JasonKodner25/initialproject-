@@ -18,7 +18,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="flex justify-center lg:justify-start">
               <div className="relative w-72 sm:w-96 aspect-[3/4] rounded-2xl border-2 border-[#0d3d54] overflow-hidden bg-[#0d1628]">
-                <Image src="/kodneraboutme.JPG" alt="Jason Kodner" fill className="object-cover" priority />
+                <Image src="/DSC00605.jpeg" alt="Jason Kodner" fill className="object-cover" priority />
                 <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl" />
                 <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-2xl" />
               </div>
