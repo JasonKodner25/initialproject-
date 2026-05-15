@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown, Play, Award, Camera, Video, Shield, Radio } from 'lucide-react';
-import ShotsTabs from '@/components/ShotsTabs';
 
 const highlights = [
   { icon: Camera, label: 'Photography', desc: 'Stunning aerial stills' },
@@ -56,7 +55,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 animate-bounce">
           <span className="text-[#e8701a] text-xs tracking-widest uppercase">Scroll</span>
           <ChevronDown size={16} className="text-[#e8701a]" />
         </div>
@@ -77,7 +76,6 @@ export default function HomePage() {
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#1a8fbf]/10 rounded-full blur-[130px] pointer-events-none" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-
           {/* Video first */}
           <div className="flex justify-center mb-12">
             <div
@@ -87,32 +85,20 @@ export default function HomePage() {
               <div className="absolute -top-1 -left-1 w-5 h-5 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl z-10" />
               <div className="absolute -bottom-1 -right-1 w-5 h-5 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-2xl z-10" />
               <div className="bg-[#05080f] rounded-[14px] overflow-hidden" style={{ aspectRatio: '2/1' }}>
-                <video
-                  src="/edit1.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover block"
-                />
+                <video src="/edit1.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover block" />
               </div>
             </div>
           </div>
 
-          {/* Heading + description below video */}
+          {/* Heading + description */}
           <div className="text-center mb-10">
             <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Welcome</div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">
-              Why Kodner Aerial?
-            </h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">Why Kodner Aerial?</h2>
             <div className="section-divider mx-auto mb-6" />
             <p className="text-[#7a99b8] text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mb-8 text-left">
               Based in the Bay Area, I specialize in cinematic aerial photography and videography, offering a wide range of dynamic drone shots designed to showcase each subject from its most compelling perspective. One of the Bay Area&apos;s only drone operators with both an FAA Part 107 certificate and a Private Pilot License. Every project is planned and executed with a strong understanding of airspace, weather, and FAA regulations, with safety and precision at the core of every flight.
             </p>
-            <Link
-              href="/about"
-              className="inline-block px-6 py-3 border border-[#e8701a] text-[#e8701a] text-sm font-semibold rounded hover:bg-[#e8701a] hover:text-white transition-all"
-            >
+            <Link href="/about" className="inline-block px-6 py-3 border border-[#e8701a] text-[#e8701a] text-sm font-semibold rounded hover:bg-[#e8701a] hover:text-white transition-all">
               Learn More About Me
             </Link>
           </div>
@@ -130,19 +116,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Landscape Cinematography */}
-      <section className="py-20 bg-[#05080f]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <div className="text-[#1a8fbf] text-xs tracking-[0.3em] uppercase font-medium mb-3">Portfolio</div>
-            <h2 className="text-3xl sm:text-4xl font-black text-white">Landscape Cinematography</h2>
-            <div className="section-divider mx-auto mt-4" />
-          </div>
-          <ShotsTabs />
-        </div>
-      </section>
-
-      {/* ── Equipment */}
+      {/* ── What I Use */}
       <section className="py-20 sm:py-28 bg-[#0a1220] border-y border-[#0d3d54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
@@ -159,10 +133,9 @@ export default function HomePage() {
               </div>
             </div>
             <div>
-              <div className="text-[#1a8fbf] text-xs tracking-[0.3em] uppercase font-medium mb-3">The Equipment</div>
               <div className="flex items-center gap-3 mb-2">
                 <Radio size={22} className="text-[#1a8fbf]" />
-                <h2 className="text-3xl sm:text-4xl font-black text-white">Equipment</h2>
+                <h2 className="text-3xl sm:text-4xl font-black text-white">What I Use</h2>
               </div>
               <div className="section-divider mb-6" />
               <p className="text-[#7a99b8] text-sm sm:text-base leading-relaxed mb-8">
