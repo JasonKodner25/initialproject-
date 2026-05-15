@@ -104,7 +104,7 @@ export default function HomePage() {
               <div className="absolute -bottom-1 -right-1 w-5 h-5 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-2xl z-10" />
               <div className="bg-[#05080f] rounded-[14px] overflow-hidden" style={{ aspectRatio: '2/1' }}>
                 <video
-                  src="/kodneraerialhomepage.mp4"
+                  src="/edit1.mp4"
                   autoPlay
                   loop
                   muted
