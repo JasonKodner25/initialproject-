@@ -12,7 +12,7 @@ const domains = [
       { id: 'birdseye',   label: "Bird's Eye",   video: null },
       { id: 'orbital',    label: 'Orbital',       video: '/videoooo.mp4' },
       { id: 'landscape',  label: 'Landscape 3x',  video: '/Aerial_Website0.mp4' },
-      { id: 'hyperlapse', label: 'Hyperlapse',    video: '/firstlapse (1).mp4' },
+      { id: 'hyperlapse', label: 'Hyperlapse',    video: '/firstlapse.mp4' },
     ],
   },
   {

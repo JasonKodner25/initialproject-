@@ -1,67 +1,206 @@
-'use client';
-
-import { useState } from 'react';
+import Image from 'next/image';
 import { Camera, Video, Mountain, Building2 } from 'lucide-react';
-
-type Domain = 'landscape' | 'realestate';
-type MediaType = 'video' | 'photo';
+import Link from 'next/link';
 
 interface Shot {
-  id: string;
   label: string;
+  desc: string;
+  type: 'photo' | 'video';
   media: string | null;
 }
 
-const data: Record<Domain, Record<MediaType, Shot[]>> = {
-  landscape: {
-    video: [
-      { id: 'birdseye',   label: "Bird's Eye",  media: null },
-      { id: 'orbital',    label: 'Orbital',      media: '/videoooo.mp4' },
-      { id: 'landscape',  label: 'Landscape 3x', media: '/Aerial_Website0.mp4' },
-      { id: 'hyperlapse', label: 'Hyperlapse',   media: '/firstlapse (1).mp4' },
-    ],
-    photo: [
-      { id: 'straightdown', label: 'Straight Down',    media: null },
-      { id: 'goldenhour',   label: 'Golden Hour',      media: null },
-      { id: 'facade',       label: 'Facade Approach',  media: null },
-      { id: 'elevated',     label: 'Elevated Context', media: null },
-    ],
+const realEstateShots: Shot[] = [
+  {
+    label: 'Straight Down',
+    type: 'photo',
+    media: '/birdseyephoto.jpg',
+    desc: 'Overhead nadir shot showing the full roof, property footprint, and surrounding lot.',
   },
-  realestate: {
-    video: [
-      { id: 're-approach',    label: 'Facade Approach',     media: null },
-      { id: 're-driveway',    label: 'Driveway Reveal',     media: null },
-      { id: 're-neighborhood',label: 'Neighborhood Context',media: null },
-      { id: 're-twilight',    label: 'Twilight / Blue Hour',media: null },
-    ],
-    photo: [
-      { id: 're-straightdown', label: 'Straight Down',       media: null },
-      { id: 're-sideview',     label: 'Side View',           media: null },
-      { id: 're-lot',          label: 'Elevated Lot View',   media: null },
-      { id: 're-context',      label: 'Neighborhood Context',media: null },
-    ],
+  {
+    label: 'Side View',
+    type: 'photo',
+    media: '/sideshotphoto.jpg',
+    desc: 'Eye-level facade perspective highlighting architectural detail and curb appeal.',
   },
-};
+  {
+    label: 'Elevated Lot View',
+    type: 'photo',
+    media: '/DJI_20260416065653_0188_D.jpeg',
+    desc: 'Mid-altitude angle showing the full lot, landscaping, and immediate surroundings.',
+  },
+  {
+    label: 'Neighborhood Context',
+    type: 'photo',
+    media: '/neighborhood-context.jpg',
+    desc: 'Wide aerial frame placing the property within the surrounding neighborhood.',
+  },
+  {
+    label: 'Facade Approach',
+    type: 'video',
+    media: null,
+    desc: 'Smooth cinematic reveal flying toward and rising up the front of the home.',
+  },
+  {
+    label: 'Driveway Reveal',
+    type: 'video',
+    media: null,
+    desc: 'Low-altitude track following the driveway to the entrance for a dramatic arrival.',
+  },
+  {
+    label: 'Neighborhood Flyover',
+    type: 'video',
+    media: null,
+    desc: 'Sweeping clip showing proximity to streets, parks, and nearby amenities.',
+  },
+  {
+    label: 'Twilight / Blue Hour',
+    type: 'video',
+    media: null,
+    desc: 'Golden or blue-hour footage shot during ideal lighting to make listings stand out.',
+  },
+];
+
+const landscapeShots: Shot[] = [
+  {
+    label: 'Orbital',
+    type: 'video',
+    media: '/videoooo.mp4',
+    desc: 'Smooth 360° circle around a focal point, perfect for dramatic terrain or landmarks.',
+  },
+  {
+    label: 'Cinematic Landscape',
+    type: 'video',
+    media: '/Aerial_Website0.mp4',
+    desc: 'Wide sweeping flyovers capturing coastlines, trails, parks, and open terrain.',
+  },
+  {
+    label: 'Hyperlapse',
+    type: 'video',
+    media: '/firstlapse.mp4',
+    desc: 'Time-compressed aerial movement creating dynamic, high-energy motion sequences.',
+  },
+  {
+    label: "Bird's Eye",
+    type: 'video',
+    media: null,
+    desc: 'Straight-down shot revealing natural patterns and scale from directly above.',
+  },
+  {
+    label: 'Straight Down',
+    type: 'photo',
+    media: '/calip1.jpg',
+    desc: 'Nadir perspective turning land and water into striking abstract compositions.',
+  },
+  {
+    label: 'Golden Hour',
+    type: 'photo',
+    media: '/calip2.jpg',
+    desc: 'Warm-light photography capturing landscapes at sunrise or sunset.',
+  },
+  {
+    label: 'Elevated Panorama',
+    type: 'photo',
+    media: '/calip3.jpg',
+    desc: 'High-altitude wide-angle frames showing sweeping vistas and horizon lines.',
+  },
+  {
+    label: 'Coastal / Trail',
+    type: 'photo',
+    media: '/calip4.jpg',
+    desc: 'Detail shots of coastlines, trails, and terrain features from a compelling angle.',
+  },
+];
+
+function ShotCard({ shot }: { shot: Shot }) {
+  const hasMedia = shot.media !== null;
+  const isVideo = shot.type === 'video';
+
+  return (
+    <div className="bg-[#0d1628] border border-[#0d3d54] rounded-xl overflow-hidden flex flex-col group hover:border-[#1a8fbf]/50 transition-all">
+      {/* Media area */}
+      <div className="relative w-full aspect-[4/3] bg-[#080e1a]">
+        {hasMedia && isVideo ? (
+          <video
+            src={shot.media!}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          />
+        ) : hasMedia ? (
+          <Image
+            src={shot.media!}
+            alt={shot.label}
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          />
+        ) : (
+          <div className="w-full h-full flex flex-col items-center justify-center gap-2">
+            <div
+              className="absolute inset-0 opacity-[0.03]"
+              style={{
+                backgroundImage:
+                  'linear-gradient(#1a8fbf 1px, transparent 1px), linear-gradient(90deg, #1a8fbf 1px, transparent 1px)',
+                backgroundSize: '32px 32px',
+              }}
+            />
+            {isVideo
+              ? <Video size={36} className="text-[#1a3a54]" strokeWidth={1} />
+              : <Camera size={36} className="text-[#1a3a54]" strokeWidth={1} />}
+            <span className="text-[#1a3040] text-[10px] tracking-[0.3em] uppercase relative">Coming Soon</span>
+          </div>
+        )}
+
+        {/* Badge */}
+        <div className={`absolute top-2 right-2 flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold tracking-wide ${
+          isVideo
+            ? 'bg-[#05080f]/80 border border-[#1a8fbf]/50 text-[#1a8fbf]'
+            : 'bg-[#05080f]/80 border border-[#e8701a]/50 text-[#e8701a]'
+        }`}>
+          {isVideo ? <Video size={9} /> : <Camera size={9} />}
+          {isVideo ? 'Video' : 'Photo'}
+        </div>
+      </div>
+
+      {/* Label + description */}
+      <div className="p-4 flex flex-col gap-1">
+        <div className="text-white font-bold text-sm">{shot.label}</div>
+        <div className="text-[#7a99b8] text-xs leading-relaxed">{shot.desc}</div>
+      </div>
+    </div>
+  );
+}
+
+function SectionHeader({
+  icon: Icon,
+  color,
+  label,
+  subtitle,
+}: {
+  icon: React.ElementType;
+  color: string;
+  label: string;
+  subtitle: string;
+}) {
+  return (
+    <div className="flex items-start gap-4 mb-8">
+      <div
+        className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+        style={{ background: `${color}18`, border: `1px solid ${color}30` }}
+      >
+        <Icon size={22} style={{ color }} />
+      </div>
+      <div>
+        <h2 className="text-2xl sm:text-3xl font-black text-white">{label}</h2>
+        <p className="text-[#7a99b8] text-sm mt-1">{subtitle}</p>
+      </div>
+    </div>
+  );
+}
 
 export default function ShotsPage() {
-  const [domain, setDomain]     = useState<Domain>('realestate');
-  const [media, setMedia]       = useState<MediaType>('video');
-  const [activeShot, setActiveShot] = useState('re-approach');
-
-  const shots = data[domain][media];
-  const shot  = shots.find((s) => s.id === activeShot) ?? shots[0];
-
-  function switchDomain(d: Domain) {
-    setDomain(d);
-    setMedia('video');
-    setActiveShot(data[d]['video'][0].id);
-  }
-
-  function switchMedia(m: MediaType) {
-    setMedia(m);
-    setActiveShot(data[domain][m][0].id);
-  }
-
   return (
     <main className="pt-20">
       {/* Page header */}
@@ -69,116 +208,59 @@ export default function ShotsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Portfolio</div>
           <h1 className="text-4xl sm:text-5xl font-black text-white">Types of Shots</h1>
-          <div className="section-divider mt-4" />
+          <div className="section-divider mt-4 mb-6" />
+          <p className="text-[#7a99b8] text-sm sm:text-base max-w-2xl leading-relaxed">
+            Browse every shot type I offer — from real estate photography to cinematic landscape footage. Each card shows a live example or a preview of what&apos;s coming.
+          </p>
         </div>
       </section>
 
-      <section className="py-16 bg-[#05080f]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          {/* Domain tabs */}
-          <div className="flex justify-center gap-3 mb-8">
-            <button
-              onClick={() => switchDomain('realestate')}
-              className={`flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-bold tracking-wide transition-all ${
-                domain === 'realestate'
-                  ? 'bg-[#1a8fbf] text-white shadow-lg shadow-[#1a8fbf]/20'
-                  : 'bg-[#0d1628] border border-[#0d3d54] text-[#7a99b8] hover:text-white hover:border-[#1a8fbf]/40'
-              }`}
-            >
-              <Building2 size={15} /> Real Estate
-            </button>
-            <button
-              onClick={() => switchDomain('landscape')}
-              className={`flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-bold tracking-wide transition-all ${
-                domain === 'landscape'
-                  ? 'bg-[#e8701a] text-white shadow-lg shadow-[#e8701a]/20'
-                  : 'bg-[#0d1628] border border-[#0d3d54] text-[#7a99b8] hover:text-white hover:border-[#e8701a]/40'
-              }`}
-            >
-              <Mountain size={15} /> Landscape
-            </button>
-          </div>
-
-          {/* Media type tabs */}
-          <div className="flex justify-center gap-2 mb-8">
-            <button
-              onClick={() => switchMedia('video')}
-              className={`flex items-center gap-2 px-5 py-2 rounded text-xs font-semibold tracking-wide transition-all ${
-                media === 'video'
-                  ? 'bg-[#0d1628] border border-[#1a8fbf] text-[#1a8fbf]'
-                  : 'bg-[#0d1628] border border-[#0d3d54] text-[#7a99b8] hover:text-white hover:border-[#1a8fbf]/40'
-              }`}
-            >
-              <Video size={13} /> Videography
-            </button>
-            <button
-              onClick={() => switchMedia('photo')}
-              className={`flex items-center gap-2 px-5 py-2 rounded text-xs font-semibold tracking-wide transition-all ${
-                media === 'photo'
-                  ? 'bg-[#0d1628] border border-[#1a8fbf] text-[#1a8fbf]'
-                  : 'bg-[#0d1628] border border-[#0d3d54] text-[#7a99b8] hover:text-white hover:border-[#1a8fbf]/40'
-              }`}
-            >
-              <Camera size={13} /> Photography
-            </button>
-          </div>
-
-          {/* Shot tabs */}
-          <div className="flex gap-2 flex-wrap justify-center mb-8">
-            {shots.map((s) => (
-              <button
-                key={s.id}
-                onClick={() => setActiveShot(s.id)}
-                className={`px-5 py-2 rounded text-xs font-semibold tracking-wide transition-all ${
-                  shot.id === s.id
-                    ? 'bg-[#e8701a] text-white shadow-lg shadow-[#e8701a]/20'
-                    : 'bg-[#0d1628] border border-[#0d3d54] text-[#7a99b8] hover:text-white hover:border-[#e8701a]/40'
-                }`}
-              >
-                {s.label}
-              </button>
+      {/* Real Estate */}
+      <section className="py-16 bg-[#05080f] border-b border-[#0d3d54]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            icon={Building2}
+            color="#1a8fbf"
+            label="Real Estate"
+            subtitle="Exterior photography and video designed to make listings stand out and attract buyers."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {realEstateShots.map((s) => (
+              <ShotCard key={s.label} shot={s} />
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Content panel */}
-          <div className="relative aspect-[16/9] rounded-xl bg-[#0d1628] border border-[#0d3d54] overflow-hidden flex items-center justify-center">
-            {shot.media ? (
-              <video
-                key={shot.media}
-                src={shot.media}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <>
-                <div
-                  className="absolute inset-0 opacity-[0.03]"
-                  style={{
-                    backgroundImage:
-                      'linear-gradient(#e8701a 1px, transparent 1px), linear-gradient(90deg, #e8701a 1px, transparent 1px)',
-                    backgroundSize: '40px 40px',
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#e8701a]/5 via-transparent to-[#1a8fbf]/5" />
-                <div className="relative flex flex-col items-center gap-4 select-none">
-                  {media === 'video'
-                    ? <Video size={52} className="text-[#1a3a54]" strokeWidth={1} />
-                    : <Camera size={52} className="text-[#1a3a54]" strokeWidth={1} />}
-                  <div className="text-[#2a4a68] text-2xl sm:text-4xl font-black tracking-widest uppercase text-center px-4">
-                    {shot.label}
-                  </div>
-                  <div className="text-[#1a3040] text-[10px] tracking-[0.4em] uppercase">Coming Soon</div>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0d1628] to-transparent" />
-                <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: 'linear-gradient(90deg, #e8701a, #1a8fbf)' }} />
-              </>
-            )}
+      {/* Landscape */}
+      <section className="py-16 bg-[#05080f]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            icon={Mountain}
+            color="#e8701a"
+            label="Landscape"
+            subtitle="Sweeping aerial coverage of coastlines, parks, trails, and natural terrain."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {landscapeShots.map((s) => (
+              <ShotCard key={s.label} shot={s} />
+            ))}
           </div>
+        </div>
+      </section>
 
+      {/* CTA */}
+      <section className="py-12 bg-[#0a1220] border-t border-[#0d3d54]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <p className="text-[#7a99b8] text-sm sm:text-base font-bold mb-5">
+            Interested in a specific shot type? Get in touch to discuss your project.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block px-8 py-3 bg-[#2d7a50] text-white text-sm font-bold tracking-wide rounded hover:bg-[#3a9463] transition-all"
+          >
+            Book a Session
+          </Link>
         </div>
       </section>
     </main>
