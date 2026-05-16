@@ -254,7 +254,7 @@ export default function ShotsPage() {
       <section className="py-16 bg-gradient-to-b from-[#0a1220] to-[#05080f] border-b border-[#0d3d54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-[#1a8fbf] text-xs tracking-[0.3em] uppercase font-medium mb-3">Portfolio</div>
-          <h1 className="text-3xl sm:text-4xl font-black text-white">Types of Shots</h1>
+          <h1 className="text-3xl sm:text-4xl font-black text-white">Showcase</h1>
           <div className="section-divider mt-4" />
         </div>
       </section>
