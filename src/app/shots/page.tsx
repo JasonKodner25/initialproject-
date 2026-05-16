@@ -234,7 +234,7 @@ function SectionHeader({
         >
           {isRE ? 'Listings & Properties' : 'Nature & Terrain'}
         </div>
-        <h2 className="text-3xl sm:text-4xl font-black text-white leading-none">
+        <h2 className="text-2xl sm:text-3xl font-black text-white leading-none">
           {isRE ? 'Real Estate' : 'Landscape'}
         </h2>
         <p className="text-[#7a99b8] text-sm mt-2">
@@ -254,7 +254,7 @@ export default function ShotsPage() {
       <section className="py-16 bg-gradient-to-b from-[#0a1220] to-[#05080f] border-b border-[#0d3d54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Portfolio</div>
-          <h1 className="text-4xl sm:text-5xl font-black text-white">Types of Shots</h1>
+          <h1 className="text-3xl sm:text-4xl font-black text-white">Types of Shots</h1>
           <div className="section-divider mt-4" />
         </div>
       </section>
