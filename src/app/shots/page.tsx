@@ -44,9 +44,9 @@ const data: Record<Domain, Record<MediaType, Shot[]>> = {
 };
 
 export default function ShotsPage() {
-  const [domain, setDomain]     = useState<Domain>('landscape');
+  const [domain, setDomain]     = useState<Domain>('realestate');
   const [media, setMedia]       = useState<MediaType>('video');
-  const [activeShot, setActiveShot] = useState('birdseye');
+  const [activeShot, setActiveShot] = useState('re-approach');
 
   const shots = data[domain][media];
   const shot  = shots.find((s) => s.id === activeShot) ?? shots[0];
@@ -79,16 +79,6 @@ export default function ShotsPage() {
           {/* Domain tabs */}
           <div className="flex justify-center gap-3 mb-8">
             <button
-              onClick={() => switchDomain('landscape')}
-              className={`flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-bold tracking-wide transition-all ${
-                domain === 'landscape'
-                  ? 'bg-[#e8701a] text-white shadow-lg shadow-[#e8701a]/20'
-                  : 'bg-[#0d1628] border border-[#0d3d54] text-[#7a99b8] hover:text-white hover:border-[#e8701a]/40'
-              }`}
-            >
-              <Mountain size={15} /> View Landscape
-            </button>
-            <button
               onClick={() => switchDomain('realestate')}
               className={`flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-bold tracking-wide transition-all ${
                 domain === 'realestate'
@@ -96,7 +86,17 @@ export default function ShotsPage() {
                   : 'bg-[#0d1628] border border-[#0d3d54] text-[#7a99b8] hover:text-white hover:border-[#1a8fbf]/40'
               }`}
             >
-              <Building2 size={15} /> View Real Estate
+              <Building2 size={15} /> Real Estate
+            </button>
+            <button
+              onClick={() => switchDomain('landscape')}
+              className={`flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-bold tracking-wide transition-all ${
+                domain === 'landscape'
+                  ? 'bg-[#e8701a] text-white shadow-lg shadow-[#e8701a]/20'
+                  : 'bg-[#0d1628] border border-[#0d3d54] text-[#7a99b8] hover:text-white hover:border-[#e8701a]/40'
+              }`}
+            >
+              <Mountain size={15} /> Landscape
             </button>
           </div>
 

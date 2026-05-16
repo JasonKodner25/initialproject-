@@ -125,6 +125,25 @@ export default function HomePage() {
             <div className="section-divider mx-auto mt-4" />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* Real Estate */}
+            <div className="group bg-[#0d1628] border border-[#0d3d54] rounded-2xl p-8 hover:border-[#1a8fbf]/60 transition-all flex flex-col gap-5">
+              <div className="w-12 h-12 rounded-xl bg-[#1a8fbf]/10 border border-[#1a8fbf]/20 flex items-center justify-center">
+                <Building2 size={24} className="text-[#1a8fbf]" />
+              </div>
+              <div>
+                <h3 className="text-white font-black text-xl mb-2">Real Estate Footage</h3>
+                <p className="text-[#7a99b8] text-sm leading-relaxed">
+                  I shoot a variety of exterior home footage that help real estate agents find their ideal look. Types of shots include facade approaches, elevated lot overviews, neighborhood context, and twilight photography designed to make listings stand out.
+                </p>
+              </div>
+              <Link
+                href="/shots"
+                className="mt-auto flex items-center gap-2 text-[#1a8fbf] text-sm font-semibold hover:gap-3 transition-all"
+              >
+                Explore Shots <ArrowRight size={15} />
+              </Link>
+            </div>
+
             {/* Landscape */}
             <div className="group bg-[#0d1628] border border-[#3d2010] rounded-2xl p-8 hover:border-[#e8701a]/60 transition-all flex flex-col gap-5">
               <div className="w-12 h-12 rounded-xl bg-[#e8701a]/10 border border-[#e8701a]/20 flex items-center justify-center">
@@ -133,31 +152,12 @@ export default function HomePage() {
               <div>
                 <h3 className="text-white font-black text-xl mb-2">Landscape Cinematography</h3>
                 <p className="text-[#7a99b8] text-sm leading-relaxed">
-                  Sweeping aerial coverage of coastlines, parks, trails, and natural terrain. Bird&apos;s eye views, orbital shots, hyperlapse, and cinematic landscape sequences.
+                  Sweeping aerial coverage of coastlines, parks, trails, natural terrain, and much more! Types of shots include Bird&apos;s eye views, orbital shots, hyperlapse, and cinematic landscape sequences.
                 </p>
               </div>
               <Link
                 href="/shots"
                 className="mt-auto flex items-center gap-2 text-[#e8701a] text-sm font-semibold hover:gap-3 transition-all"
-              >
-                Explore Shots <ArrowRight size={15} />
-              </Link>
-            </div>
-
-            {/* Real Estate */}
-            <div className="group bg-[#0d1628] border border-[#0d3d54] rounded-2xl p-8 hover:border-[#1a8fbf]/60 transition-all flex flex-col gap-5">
-              <div className="w-12 h-12 rounded-xl bg-[#1a8fbf]/10 border border-[#1a8fbf]/20 flex items-center justify-center">
-                <Building2 size={24} className="text-[#1a8fbf]" />
-              </div>
-              <div>
-                <h3 className="text-white font-black text-xl mb-2">Real Estate Aerial</h3>
-                <p className="text-[#7a99b8] text-sm leading-relaxed">
-                  Facade approaches, elevated lot overviews, neighborhood context, and twilight photography designed to make listings stand out and attract buyers.
-                </p>
-              </div>
-              <Link
-                href="/shots"
-                className="mt-auto flex items-center gap-2 text-[#1a8fbf] text-sm font-semibold hover:gap-3 transition-all"
               >
                 Explore Shots <ArrowRight size={15} />
               </Link>
