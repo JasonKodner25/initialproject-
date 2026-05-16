@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Camera, Video, Mountain, Building2 } from 'lucide-react';
+import { Camera, Video, Mountain, Building2, Aperture, Clapperboard } from 'lucide-react';
 import Link from 'next/link';
 
 interface Shot {
@@ -9,7 +9,7 @@ interface Shot {
   media: string | null;
 }
 
-const realEstateShots: Shot[] = [
+const realEstatePhotos: Shot[] = [
   {
     label: 'Straight Down',
     type: 'photo',
@@ -34,6 +34,9 @@ const realEstateShots: Shot[] = [
     media: '/neighborhood-context.jpg',
     desc: 'Wide aerial frame placing the property within the surrounding neighborhood.',
   },
+];
+
+const realEstateVideos: Shot[] = [
   {
     label: 'Facade Approach',
     type: 'video',
@@ -60,7 +63,7 @@ const realEstateShots: Shot[] = [
   },
 ];
 
-const landscapeShots: Shot[] = [
+const landscapeVideos: Shot[] = [
   {
     label: 'Orbital',
     type: 'video',
@@ -85,6 +88,9 @@ const landscapeShots: Shot[] = [
     media: null,
     desc: 'Straight-down shot revealing natural patterns and scale from directly above.',
   },
+];
+
+const landscapePhotos: Shot[] = [
   {
     label: 'Straight Down',
     type: 'photo',
@@ -116,8 +122,7 @@ function ShotCard({ shot }: { shot: Shot }) {
   const isVideo = shot.type === 'video';
 
   return (
-    <div className="bg-[#0d1628] border border-[#0d3d54] rounded-xl overflow-hidden flex flex-col group hover:border-[#1a8fbf]/50 transition-all">
-      {/* Media area */}
+    <div className="bg-[#0d1628] border border-[#0d3d54] rounded-xl overflow-hidden flex flex-col group hover:border-[#1a8fbf]/40 transition-all duration-300">
       <div className="relative w-full aspect-[4/3] bg-[#080e1a]">
         {hasMedia && isVideo ? (
           <video
@@ -137,7 +142,7 @@ function ShotCard({ shot }: { shot: Shot }) {
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center gap-2">
+          <div className="w-full h-full flex flex-col items-center justify-center gap-2 relative">
             <div
               className="absolute inset-0 opacity-[0.03]"
               style={{
@@ -147,24 +152,12 @@ function ShotCard({ shot }: { shot: Shot }) {
               }}
             />
             {isVideo
-              ? <Video size={36} className="text-[#1a3a54]" strokeWidth={1} />
-              : <Camera size={36} className="text-[#1a3a54]" strokeWidth={1} />}
-            <span className="text-[#1a3040] text-[10px] tracking-[0.3em] uppercase relative">Coming Soon</span>
+              ? <Video size={32} className="text-[#1a3a54]" strokeWidth={1} />
+              : <Camera size={32} className="text-[#1a3a54]" strokeWidth={1} />}
+            <span className="text-[#1a3040] text-[10px] tracking-[0.3em] uppercase">Coming Soon</span>
           </div>
         )}
-
-        {/* Badge */}
-        <div className={`absolute top-2 right-2 flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold tracking-wide ${
-          isVideo
-            ? 'bg-[#05080f]/80 border border-[#1a8fbf]/50 text-[#1a8fbf]'
-            : 'bg-[#05080f]/80 border border-[#e8701a]/50 text-[#e8701a]'
-        }`}>
-          {isVideo ? <Video size={9} /> : <Camera size={9} />}
-          {isVideo ? 'Video' : 'Photo'}
-        </div>
       </div>
-
-      {/* Label + description */}
       <div className="p-4 flex flex-col gap-1">
         <div className="text-white font-bold text-sm">{shot.label}</div>
         <div className="text-[#7a99b8] text-xs leading-relaxed">{shot.desc}</div>
@@ -173,28 +166,82 @@ function ShotCard({ shot }: { shot: Shot }) {
   );
 }
 
-function SectionHeader({
-  icon: Icon,
-  color,
-  label,
-  subtitle,
-}: {
-  icon: React.ElementType;
-  color: string;
-  label: string;
-  subtitle: string;
-}) {
+function MediaDivider({ type, accentColor }: { type: 'photo' | 'video'; accentColor: string }) {
+  const isPhoto = type === 'photo';
   return (
-    <div className="flex items-start gap-4 mb-8">
+    <div className="flex items-center gap-3 mb-5">
       <div
-        className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
-        style={{ background: `${color}18`, border: `1px solid ${color}30` }}
+        className="flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase"
+        style={{ background: `${accentColor}12`, border: `1px solid ${accentColor}30`, color: accentColor }}
       >
-        <Icon size={22} style={{ color }} />
+        {isPhoto ? <Aperture size={13} /> : <Clapperboard size={13} />}
+        {isPhoto ? 'Photography' : 'Videography'}
       </div>
+      <div className="flex-1 h-px" style={{ background: `linear-gradient(to right, ${accentColor}30, transparent)` }} />
+    </div>
+  );
+}
+
+function SectionHeader({
+  domain,
+}: {
+  domain: 'realestate' | 'landscape';
+}) {
+  const isRE = domain === 'realestate';
+
+  return (
+    <div className="flex items-center gap-6 mb-10">
+      {/* Icon block */}
+      <div className="relative flex-shrink-0">
+        <div
+          className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex items-center justify-center"
+          style={{
+            background: isRE
+              ? 'linear-gradient(135deg, #0d2a3d 0%, #0a1f35 50%, #061525 100%)'
+              : 'linear-gradient(135deg, #2a1400 0%, #1f1000 50%, #150a00 100%)',
+            border: isRE ? '1px solid #1a8fbf40' : '1px solid #e8701a40',
+            boxShadow: isRE
+              ? '0 0 32px #1a8fbf18, inset 0 1px 0 #1a8fbf20'
+              : '0 0 32px #e8701a18, inset 0 1px 0 #e8701a20',
+          }}
+        >
+          {isRE ? (
+            <Building2 size={32} className="sm:hidden" color="#1a8fbf" strokeWidth={1.5} />
+          ) : (
+            <Mountain size={32} className="sm:hidden" color="#e8701a" strokeWidth={1.5} />
+          )}
+          {isRE ? (
+            <Building2 size={38} className="hidden sm:block" color="#1a8fbf" strokeWidth={1.5} />
+          ) : (
+            <Mountain size={38} className="hidden sm:block" color="#e8701a" strokeWidth={1.5} />
+          )}
+        </div>
+        {/* Glow dot */}
+        <div
+          className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full"
+          style={{
+            background: isRE ? '#1a8fbf' : '#e8701a',
+            boxShadow: isRE ? '0 0 8px #1a8fbf' : '0 0 8px #e8701a',
+          }}
+        />
+      </div>
+
+      {/* Text */}
       <div>
-        <h2 className="text-2xl sm:text-3xl font-black text-white">{label}</h2>
-        <p className="text-[#7a99b8] text-sm mt-1">{subtitle}</p>
+        <div
+          className="text-xs tracking-[0.3em] uppercase font-semibold mb-1"
+          style={{ color: isRE ? '#1a8fbf' : '#e8701a' }}
+        >
+          {isRE ? 'Listings & Properties' : 'Nature & Terrain'}
+        </div>
+        <h2 className="text-3xl sm:text-4xl font-black text-white leading-none">
+          {isRE ? 'Real Estate' : 'Landscape'}
+        </h2>
+        <p className="text-[#7a99b8] text-sm mt-2">
+          {isRE
+            ? 'Exterior photography and video designed to make listings stand out.'
+            : 'Sweeping aerial coverage of coastlines, parks, trails, and natural terrain.'}
+        </p>
       </div>
     </div>
   );
@@ -208,26 +255,23 @@ export default function ShotsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Portfolio</div>
           <h1 className="text-4xl sm:text-5xl font-black text-white">Types of Shots</h1>
-          <div className="section-divider mt-4 mb-6" />
-          <p className="text-[#7a99b8] text-sm sm:text-base max-w-2xl leading-relaxed">
-            Browse every shot type I offer — from real estate photography to cinematic landscape footage. Each card shows a live example or a preview of what&apos;s coming.
-          </p>
+          <div className="section-divider mt-4" />
         </div>
       </section>
 
       {/* Real Estate */}
       <section className="py-16 bg-[#05080f] border-b border-[#0d3d54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            icon={Building2}
-            color="#1a8fbf"
-            label="Real Estate"
-            subtitle="Exterior photography and video designed to make listings stand out and attract buyers."
-          />
+          <SectionHeader domain="realestate" />
+
+          <MediaDivider type="photo" accentColor="#1a8fbf" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+            {realEstatePhotos.map((s) => <ShotCard key={s.label} shot={s} />)}
+          </div>
+
+          <MediaDivider type="video" accentColor="#1a8fbf" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {realEstateShots.map((s) => (
-              <ShotCard key={s.label} shot={s} />
-            ))}
+            {realEstateVideos.map((s) => <ShotCard key={s.label} shot={s} />)}
           </div>
         </div>
       </section>
@@ -235,16 +279,16 @@ export default function ShotsPage() {
       {/* Landscape */}
       <section className="py-16 bg-[#05080f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            icon={Mountain}
-            color="#e8701a"
-            label="Landscape"
-            subtitle="Sweeping aerial coverage of coastlines, parks, trails, and natural terrain."
-          />
+          <SectionHeader domain="landscape" />
+
+          <MediaDivider type="video" accentColor="#e8701a" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+            {landscapeVideos.map((s) => <ShotCard key={s.label} shot={s} />)}
+          </div>
+
+          <MediaDivider type="photo" accentColor="#e8701a" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {landscapeShots.map((s) => (
-              <ShotCard key={s.label} shot={s} />
-            ))}
+            {landscapePhotos.map((s) => <ShotCard key={s.label} shot={s} />)}
           </div>
         </div>
       </section>
