@@ -260,7 +260,7 @@ export default function ShotsPage() {
       </section>
 
       {/* Real Estate */}
-      <section className="py-16 bg-[#05080f] border-b border-[#0d3d54]">
+      <section id="realestate" className="py-16 bg-[#05080f] border-b border-[#0d3d54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader domain="realestate" />
 
@@ -277,7 +277,7 @@ export default function ShotsPage() {
       </section>
 
       {/* Landscape */}
-      <section className="py-16 bg-[#05080f]">
+      <section id="landscape" className="py-16 bg-[#05080f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader domain="landscape" />
 

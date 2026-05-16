@@ -1,5 +1,11 @@
 import Link from 'next/link';
 import { Camera, Home, Video, Compass, ArrowRight } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Services | Kodner Aerial Services',
+  description: 'Drone photography and videography services — landscape, real estate, aerial video, and events coverage. FAA Part 107 certified, Bay Area.',
+};
 
 interface Service {
   icon: React.ElementType;

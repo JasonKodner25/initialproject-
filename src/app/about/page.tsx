@@ -1,4 +1,10 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About | Kodner Aerial Services',
+  description: 'Learn about Jason Kodner — Bay Area drone pilot, FAA Part 107 certified, and Aviation Management graduate from San José State University.',
+};
 
 export default function AboutPage() {
   return (
@@ -19,14 +25,14 @@ export default function AboutPage() {
 
             {/* Left: stacked photos */}
             <div className="flex flex-col gap-4">
-              <div className="relative rounded-2xl border-2 border-[#0d3d54] overflow-hidden bg-[#0d1628]">
+              <div className="relative aspect-[3/4] rounded-2xl border-2 border-[#0d3d54] overflow-hidden bg-[#0d1628]">
                 <Image
                   src="/DSC00605.jpeg"
                   alt="Jason Kodner"
-                  width={600}
-                  height={900}
-                  className="w-full h-auto object-contain"
+                  fill
+                  className="object-cover"
                   priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl" />
                 <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-2xl" />

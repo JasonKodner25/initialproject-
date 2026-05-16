@@ -137,7 +137,7 @@ export default function HomePage() {
                 </p>
               </div>
               <Link
-                href="/shots"
+                href="/shots#realestate"
                 className="mt-auto flex items-center gap-2 text-[#1a8fbf] text-sm font-semibold hover:gap-3 transition-all"
               >
                 Explore Shots <ArrowRight size={15} />
@@ -150,13 +150,13 @@ export default function HomePage() {
                 <Mountain size={24} className="text-[#e8701a]" />
               </div>
               <div>
-                <h3 className="text-white font-black text-xl mb-2">Landscape Cinematography</h3>
+                <h3 className="text-white font-black text-xl mb-2">Landscape</h3>
                 <p className="text-[#7a99b8] text-sm leading-relaxed">
                   Sweeping aerial coverage of coastlines, parks, trails, natural terrain, and much more! Types of shots include Bird&apos;s eye views, orbital shots, hyperlapse, and cinematic landscape sequences.
                 </p>
               </div>
               <Link
-                href="/shots"
+                href="/shots#landscape"
                 className="mt-auto flex items-center gap-2 text-[#e8701a] text-sm font-semibold hover:gap-3 transition-all"
               >
                 Explore Shots <ArrowRight size={15} />

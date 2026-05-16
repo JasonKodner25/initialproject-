@@ -75,12 +75,6 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              className="ml-4 px-5 py-2 bg-[#e8701a] text-white text-sm font-semibold rounded tracking-wide hover:bg-[#f4952a] transition-colors glow-blue"
-            >
-              Book Now
-            </Link>
           </div>
 
           {/* Mobile hamburger */}
