@@ -12,7 +12,6 @@ const navLinks = [
   { href: '/shots', label: 'Types of Shots' },
   { href: '/services', label: 'Services' },
   { href: '/equipment', label: 'Equipment' },
-  { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact' },
 ];
 
