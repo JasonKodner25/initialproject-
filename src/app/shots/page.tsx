@@ -35,10 +35,10 @@ const data: Record<Domain, Record<MediaType, Shot[]>> = {
       { id: 're-twilight',    label: 'Twilight / Blue Hour',media: null },
     ],
     photo: [
-      { id: 're-facade',    label: 'Facade Approach',     media: null },
-      { id: 're-lot',       label: 'Elevated Lot View',   media: null },
-      { id: 're-context',   label: 'Neighborhood Context',media: null },
-      { id: 're-bluehour',  label: 'Twilight / Blue Hour',media: null },
+      { id: 're-straightdown', label: 'Straight Down',       media: null },
+      { id: 're-sideview',     label: 'Side View',           media: null },
+      { id: 're-lot',          label: 'Elevated Lot View',   media: null },
+      { id: 're-context',      label: 'Neighborhood Context',media: null },
     ],
   },
 };
