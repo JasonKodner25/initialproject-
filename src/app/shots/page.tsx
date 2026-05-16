@@ -25,7 +25,7 @@ const realEstateShots: Shot[] = [
   {
     label: 'Elevated Lot View',
     type: 'photo',
-    media: '/DJI_20260416065653_0188_D.jpeg',
+    media: null,
     desc: 'Mid-altitude angle showing the full lot, landscaping, and immediate surroundings.',
   },
   {
@@ -88,26 +88,26 @@ const landscapeShots: Shot[] = [
   {
     label: 'Straight Down',
     type: 'photo',
-    media: '/calip1.jpg',
+    media: null,
     desc: 'Nadir perspective turning land and water into striking abstract compositions.',
   },
   {
     label: 'Golden Hour',
     type: 'photo',
-    media: '/calip2.jpg',
+    media: null,
     desc: 'Warm-light photography capturing landscapes at sunrise or sunset.',
   },
   {
     label: 'Elevated Panorama',
     type: 'photo',
-    media: '/calip3.jpg',
+    media: null,
     desc: 'High-altitude wide-angle frames showing sweeping vistas and horizon lines.',
   },
   {
-    label: 'Coastal / Trail',
+    label: '3x Wideshot',
     type: 'photo',
-    media: '/calip4.jpg',
-    desc: 'Detail shots of coastlines, trails, and terrain features from a compelling angle.',
+    media: '/DJI_20260416065653_0188_D.jpeg',
+    desc: 'Triple-width aerial frame capturing expansive coastal and terrain scenes in full context.',
   },
 ];
 
