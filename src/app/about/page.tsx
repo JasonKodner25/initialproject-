@@ -25,12 +25,13 @@ export default function AboutPage() {
 
             {/* Left: stacked photos */}
             <div className="flex flex-col gap-4">
-              <div className="relative aspect-[3/4] rounded-2xl border-2 border-[#0d3d54] overflow-hidden bg-[#0d1628]">
+              <div className="relative rounded-2xl border-2 border-[#0d3d54] overflow-hidden bg-[#0d1628]">
                 <Image
                   src="/DSC00605.jpeg"
                   alt="Jason Kodner"
-                  fill
-                  className="object-cover"
+                  width={600}
+                  height={900}
+                  className="w-full h-auto object-contain"
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
