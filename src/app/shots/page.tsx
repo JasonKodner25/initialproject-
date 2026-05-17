@@ -22,13 +22,13 @@ const realEstatePhotos: Shot[] = [
   {
     label: 'Side View',
     type: 'photo',
-    media: '/sideshotphoto.jpg',
+    media: '/ELEVATED.jpg',
     desc: 'Eye-level facade perspective highlighting architectural detail and curb appeal.',
   },
   {
     label: 'Elevated Lot View',
     type: 'photo',
-    media: '/useonwebsite.jpg',
+    media: '/sideshotphoto.jpg',
     desc: 'Mid-altitude angle showing the full lot, landscaping, and immediate surroundings.',
   },
   {
