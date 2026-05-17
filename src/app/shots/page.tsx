@@ -86,9 +86,10 @@ const landscapeVideos: Shot[] = [
     desc: 'Time-compressed aerial movement creating dynamic, high-energy motion sequences.',
   },
   {
-    label: "Bird's Eye",
+    label: 'Golden Hour',
     type: 'video',
-    media: null,
+    media: '/kodneraerialhomepage.mp4',
+    poster: '/poster-goldenhour.jpg',
     desc: 'Straight-down shot revealing natural patterns and scale from directly above.',
   },
 ];
@@ -101,7 +102,7 @@ const landscapePhotos: Shot[] = [
     desc: 'Nadir perspective turning land and water into striking abstract compositions.',
   },
   {
-    label: 'Golden Hour',
+    label: 'Horizon',
     type: 'photo',
     media: null,
     desc: 'Warm-light photography capturing landscapes at sunrise or sunset.',
