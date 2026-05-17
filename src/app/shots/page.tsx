@@ -32,7 +32,7 @@ const realEstatePhotos: Shot[] = [
   {
     label: 'Neighborhood Context',
     type: 'photo',
-    media: null,
+    media: '/DJI_20260515184651_0247_D.jpg',
     desc: 'Wide aerial frame placing the property within the surrounding neighborhood.',
   },
 ];
