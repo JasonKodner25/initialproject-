@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Camera, Video, Mountain, Building2, Aperture, Clapperboard } from 'lucide-react';
 import Link from 'next/link';
+import ClickToPlayCard from '@/components/ClickToPlayCard';
 
 interface Shot {
   label: string;
@@ -124,17 +125,7 @@ function ShotCard({ shot }: { shot: Shot }) {
   return (
     <div className="bg-[#0d1628] border border-[#0d3d54] rounded-xl overflow-hidden flex flex-col group hover:border-[#1a8fbf]/40 transition-all duration-300">
       <div className="relative w-full aspect-[4/3] bg-[#080e1a]">
-        {hasMedia && isVideo ? (
-          <video
-            src={shot.media!}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="w-full h-full object-cover"
-          />
-        ) : hasMedia ? (
+        {hasMedia && isVideo ? null : hasMedia ? (
           <Image
             src={shot.media!}
             alt={shot.label}
@@ -272,7 +263,11 @@ export default function ShotsPage() {
 
           <MediaDivider type="video" accentColor="#1a8fbf" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {realEstateVideos.map((s) => <ShotCard key={s.label} shot={s} />)}
+            {realEstateVideos.map((s) =>
+              s.media
+                ? <ClickToPlayCard key={s.label} src={s.media} label={s.label} desc={s.desc} />
+                : <ShotCard key={s.label} shot={s} />
+            )}
           </div>
         </div>
       </section>
@@ -284,7 +279,11 @@ export default function ShotsPage() {
 
           <MediaDivider type="video" accentColor="#1a8fbf" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-            {landscapeVideos.map((s) => <ShotCard key={s.label} shot={s} />)}
+            {landscapeVideos.map((s) =>
+              s.media
+                ? <ClickToPlayCard key={s.label} src={s.media} label={s.label} desc={s.desc} />
+                : <ShotCard key={s.label} shot={s} />
+            )}
           </div>
 
           <MediaDivider type="photo" accentColor="#1a8fbf" />
