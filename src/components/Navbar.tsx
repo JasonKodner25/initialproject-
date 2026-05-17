@@ -12,6 +12,7 @@ const navLinks = [
   { href: '/shots', label: 'Showcase' },
   { href: '/services', label: 'Services' },
   { href: '/equipment', label: 'Equipment' },
+  { href: '/media', label: 'Socials' },
   { href: '/contact', label: 'Contact' },
 ];
 
