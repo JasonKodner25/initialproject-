@@ -56,9 +56,9 @@ const realEstateVideos: Shot[] = [
     desc: 'Sweeping clip showing proximity to streets, parks, and nearby amenities.',
   },
   {
-    label: 'Twilight / Blue Hour',
+    label: 'Horizontal',
     type: 'video',
-    media: null,
+    media: '/OfficialSideways1.mp4',
     desc: 'Golden or blue-hour footage shot during ideal lighting to make listings stand out.',
   },
 ];
