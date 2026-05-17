@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronDown, Play, Award, Camera, Video, Shield, Radio, Mountain, Building2, ArrowRight } from 'lucide-react';
+import { ChevronDown, Award, Camera, Video, Shield, Radio, Mountain, Building2, ArrowRight } from 'lucide-react';
 
 const highlights = [
   { icon: Camera, label: 'Photography', desc: 'Stunning aerial stills' },
@@ -48,14 +48,10 @@ export default function HomePage() {
             <Link href="/services" className="px-8 py-4 bg-[#e8701a] text-white font-bold tracking-wide rounded hover:bg-[#f4952a] transition-all glow-blue text-sm sm:text-base">
               Explore Services
             </Link>
-            <Link href="/gallery" className="flex items-center gap-2 px-8 py-4 border border-[#0d3d54] text-[#7a99b8] font-semibold rounded hover:border-[#1a8fbf] hover:text-white transition-all text-sm sm:text-base">
-              <Play size={16} />
-              View Gallery
-            </Link>
           </div>
         </div>
 
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 animate-bounce">
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
           <span className="text-[#e8701a] text-xs tracking-widest uppercase">Scroll</span>
           <ChevronDown size={16} className="text-[#e8701a]" />
         </div>
