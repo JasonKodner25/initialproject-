@@ -95,7 +95,7 @@ const landscapePhotos: Shot[] = [
   {
     label: 'Straight Down',
     type: 'photo',
-    media: null,
+    media: '/IMG_3513.jpeg',
     desc: 'Nadir perspective turning land and water into striking abstract compositions.',
   },
   {
