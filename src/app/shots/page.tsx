@@ -40,7 +40,7 @@ const realEstateVideos: Shot[] = [
   {
     label: 'Facade Approach',
     type: 'video',
-    media: null,
+    media: '/officalrealestate_2approach.mp4',
     desc: 'Smooth cinematic reveal flying toward and rising up the front of the home.',
   },
   {
@@ -131,6 +131,7 @@ function ShotCard({ shot }: { shot: Shot }) {
             loop
             muted
             playsInline
+            preload="auto"
             className="w-full h-full object-cover"
           />
         ) : hasMedia ? (
