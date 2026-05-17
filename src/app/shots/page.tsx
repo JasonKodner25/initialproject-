@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Camera, Video, Mountain, Building2, Aperture, Clapperboard } from 'lucide-react';
 import Link from 'next/link';
 import ClickToPlayCard from '@/components/ClickToPlayCard';
+import PhotoCard from '@/components/PhotoCard';
 
 interface Shot {
   label: string;
@@ -261,7 +262,11 @@ export default function ShotsPage() {
 
           <MediaDivider type="photo" accentColor="#1a8fbf" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-            {realEstatePhotos.map((s) => <ShotCard key={s.label} shot={s} />)}
+            {realEstatePhotos.map((s) =>
+              s.media
+                ? <PhotoCard key={s.label} src={s.media} label={s.label} desc={s.desc} />
+                : <ShotCard key={s.label} shot={s} />
+            )}
           </div>
 
           <MediaDivider type="video" accentColor="#1a8fbf" />
@@ -283,7 +288,11 @@ export default function ShotsPage() {
 
           <MediaDivider type="photo" accentColor="#1a8fbf" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-            {landscapePhotos.map((s) => <ShotCard key={s.label} shot={s} />)}
+            {landscapePhotos.map((s) =>
+              s.media
+                ? <PhotoCard key={s.label} src={s.media} label={s.label} desc={s.desc} />
+                : <ShotCard key={s.label} shot={s} />
+            )}
           </div>
 
           <MediaDivider type="video" accentColor="#1a8fbf" />
