@@ -90,7 +90,7 @@ const landscapeVideos: Shot[] = [
     type: 'video',
     media: '/kodneraerialhomepage.mp4',
     poster: '/poster-goldenhour.jpg',
-    desc: 'Straight-down shot revealing natural patterns and scale from directly above.',
+    desc: 'Aerial footage captured during golden hour — warm tones, long shadows, and cinematic light.',
   },
 ];
 
@@ -105,7 +105,7 @@ const landscapePhotos: Shot[] = [
     label: 'Horizon',
     type: 'photo',
     media: null,
-    desc: 'Warm-light photography capturing landscapes at sunrise or sunset.',
+    desc: 'Subject aligned to the horizon line for a clean, dramatic composition with sky and terrain in balance.',
   },
   {
     label: 'Elevated Panorama',
