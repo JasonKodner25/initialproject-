@@ -47,7 +47,7 @@ const realEstateVideos: Shot[] = [
   {
     label: 'Driveway Reveal',
     type: 'video',
-    media: null,
+    media: '/drivewayreveal_official.mp4',
     desc: 'Low-altitude track following the driveway to the entrance for a dramatic arrival.',
   },
   {
