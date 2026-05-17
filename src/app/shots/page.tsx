@@ -8,6 +8,7 @@ interface Shot {
   desc: string;
   type: 'photo' | 'video';
   media: string | null;
+  poster?: string;
 }
 
 const realEstatePhotos: Shot[] = [
@@ -75,6 +76,7 @@ const landscapeVideos: Shot[] = [
     label: 'Cinematic Landscape',
     type: 'video',
     media: '/Aerial_Website0.mp4',
+    poster: '/poster-cinematic.jpg',
     desc: 'Wide sweeping flyovers capturing coastlines, trails, parks, and open terrain.',
   },
   {
@@ -265,7 +267,7 @@ export default function ShotsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {realEstateVideos.map((s) =>
               s.media
-                ? <ClickToPlayCard key={s.label} src={s.media} label={s.label} desc={s.desc} />
+                ? <ClickToPlayCard key={s.label} src={s.media} label={s.label} desc={s.desc} poster={s.poster} />
                 : <ShotCard key={s.label} shot={s} />
             )}
           </div>
@@ -287,7 +289,7 @@ export default function ShotsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {landscapeVideos.map((s) =>
               s.media
-                ? <ClickToPlayCard key={s.label} src={s.media} label={s.label} desc={s.desc} />
+                ? <ClickToPlayCard key={s.label} src={s.media} label={s.label} desc={s.desc} poster={s.poster} />
                 : <ShotCard key={s.label} shot={s} />
             )}
           </div>

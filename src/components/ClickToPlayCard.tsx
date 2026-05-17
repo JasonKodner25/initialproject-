@@ -7,9 +7,10 @@ interface Props {
   src: string;
   label: string;
   desc: string;
+  poster?: string;
 }
 
-export default function ClickToPlayCard({ src, label, desc }: Props) {
+export default function ClickToPlayCard({ src, label, desc, poster }: Props) {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -33,8 +34,8 @@ export default function ClickToPlayCard({ src, label, desc }: Props) {
       >
         <video
           ref={videoRef}
-          /* #t=0.001 forces first-frame thumbnail on iOS Safari */
           src={`${src}#t=0.001`}
+          poster={poster}
           preload="metadata"
           muted
           playsInline
