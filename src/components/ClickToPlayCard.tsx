@@ -15,7 +15,14 @@ export default function ClickToPlayCard({ src, label, desc }: Props) {
 
   function handlePlay() {
     setPlaying(true);
-    videoRef.current?.play();
+    const video = videoRef.current;
+    if (!video) return;
+    video.currentTime = 0;
+    video.play();
+  }
+
+  function handleEnded() {
+    setPlaying(false);
   }
 
   return (
@@ -29,9 +36,9 @@ export default function ClickToPlayCard({ src, label, desc }: Props) {
           /* #t=0.001 forces first-frame thumbnail on iOS Safari */
           src={`${src}#t=0.001`}
           preload="metadata"
-          loop
           muted
           playsInline
+          onEnded={handleEnded}
           className="w-full h-full object-cover"
         />
 
