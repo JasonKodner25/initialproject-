@@ -28,7 +28,7 @@ const realEstatePhotos: Shot[] = [
   {
     label: 'Elevated Lot View',
     type: 'photo',
-    media: null,
+    media: '/useonwebsite.jpg',
     desc: 'Mid-altitude angle showing the full lot, landscaping, and immediate surroundings.',
   },
   {
