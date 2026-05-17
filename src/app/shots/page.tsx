@@ -53,9 +53,10 @@ const realEstateVideos: Shot[] = [
     desc: 'Low-altitude track following the driveway to the entrance for a dramatic arrival.',
   },
   {
-    label: 'Neighborhood Flyover',
+    label: 'Backyard View',
     type: 'video',
-    media: null,
+    media: '/Backyard.mp4',
+    poster: '/poster-backyard.jpg',
     desc: 'Sweeping clip showing proximity to streets, parks, and nearby amenities.',
   },
   {
