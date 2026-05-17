@@ -72,10 +72,32 @@ const equipment: EquipItem[] = [
     name: 'Remote Controller',
     category: 'Accessory',
     description:
-      '[Controller placeholder] — extended-range controller providing real-time HD monitoring and precise aircraft control.',
+      'DJI Air 3S extended-range controller providing real-time HD monitoring and precise aircraft control.',
     icon: Cpu,
     src: '/djiremote.jpg',
-    specs: ['Display: — inch', 'Range: — km', 'Battery: — min', 'Transmission: —'],
+    specGroups: [
+      {
+        title: 'Display & Storage',
+        specs: [
+          'Built-in 5.5-inch 1080p touchscreen',
+          '32 GB onboard storage',
+        ],
+      },
+      {
+        title: 'Power',
+        specs: [
+          'Battery life: up to 3 hours',
+          'Charge time: 1.5 hours',
+        ],
+      },
+      {
+        title: 'Transmission',
+        specs: [
+          'OcuSync 4.0 — 1080p live video @ 60 fps up to 12.4 miles',
+        ],
+      },
+    ],
+    specs: [],
   },
   {
     id: 8,
