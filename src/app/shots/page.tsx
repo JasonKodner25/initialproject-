@@ -167,7 +167,7 @@ function MediaDivider({ type, accentColor }: { type: 'photo' | 'video'; accentCo
         style={{ background: `${accentColor}12`, border: `1px solid ${accentColor}30`, color: accentColor }}
       >
         {isPhoto ? <Aperture size={13} /> : <Clapperboard size={13} />}
-        {isPhoto ? 'Photography' : 'Videography'}
+        {isPhoto ? 'Photo' : 'Video'}
       </div>
       <div className="flex-1 h-px" style={{ background: `linear-gradient(to right, ${accentColor}30, transparent)` }} />
     </div>
@@ -269,6 +269,7 @@ export default function ShotsPage() {
                 : <ShotCard key={s.label} shot={s} />
             )}
           </div>
+
         </div>
       </section>
 
@@ -277,18 +278,18 @@ export default function ShotsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader domain="landscape" />
 
-          <MediaDivider type="video" accentColor="#1a8fbf" />
+          <MediaDivider type="photo" accentColor="#1a8fbf" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+            {landscapePhotos.map((s) => <ShotCard key={s.label} shot={s} />)}
+          </div>
+
+          <MediaDivider type="video" accentColor="#1a8fbf" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {landscapeVideos.map((s) =>
               s.media
                 ? <ClickToPlayCard key={s.label} src={s.media} label={s.label} desc={s.desc} />
                 : <ShotCard key={s.label} shot={s} />
             )}
-          </div>
-
-          <MediaDivider type="photo" accentColor="#1a8fbf" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {landscapePhotos.map((s) => <ShotCard key={s.label} shot={s} />)}
           </div>
         </div>
       </section>
