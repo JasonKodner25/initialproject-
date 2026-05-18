@@ -135,6 +135,7 @@ function ShotCard({ shot }: { shot: Shot }) {
             src={shot.media!}
             alt={shot.label}
             fill
+            loading="lazy"
             className="object-cover"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />

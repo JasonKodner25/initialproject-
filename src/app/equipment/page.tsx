@@ -162,6 +162,7 @@ export default function EquipmentPage() {
                         src={item.src}
                         alt={item.name}
                         fill
+                        loading="lazy"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 640px) 100vw, 50vw"
                       />

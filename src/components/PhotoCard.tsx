@@ -22,6 +22,7 @@ export default function PhotoCard({ src, label, desc }: Props) {
             src={src}
             alt={label}
             fill
+            loading="lazy"
             className="object-cover"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />

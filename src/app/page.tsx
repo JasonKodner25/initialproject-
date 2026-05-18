@@ -81,7 +81,7 @@ export default function HomePage() {
               <div className="absolute -top-1 -left-1 w-5 h-5 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl z-10" />
               <div className="absolute -bottom-1 -right-1 w-5 h-5 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-2xl z-10" />
               <div className="bg-[#05080f] rounded-[14px] overflow-hidden" style={{ aspectRatio: '2/1' }}>
-                <video src="/edit1.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover block" />
+                <video src="/edit1.mp4" autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover block" />
               </div>
             </div>
           </div>
@@ -167,7 +167,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#0d3d54]">
-              <Image src="/air3s.webp" alt="DJI Air 3S" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <Image src="/air3s.webp" alt="DJI Air 3S" fill loading="lazy" className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a1220]/60 to-transparent" />
               <div className="absolute bottom-4 left-4 flex gap-2">
                 <span className="flex items-center gap-1 px-2.5 py-1 bg-[#05080f]/80 backdrop-blur-sm border border-[#e8701a]/40 text-[#e8701a] text-xs font-semibold rounded">

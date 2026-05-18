@@ -39,7 +39,7 @@ export default function AboutPage() {
                 <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-2xl" />
               </div>
               <div className="relative aspect-[16/9] rounded-xl border border-[#0d3d54] overflow-hidden bg-[#0d1628]">
-                <Image src="/aboutmepart2.jpg" alt="Jason Kodner in front of a Cessna 172" fill className="object-cover" />
+                <Image src="/aboutmepart2.jpg" alt="Jason Kodner in front of a Cessna 172" fill loading="lazy" className="object-cover" />
                 <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#e8701a] rounded-tl-xl" />
                 <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-xl" />
               </div>
