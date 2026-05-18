@@ -10,6 +10,7 @@ interface Shot {
   type: 'photo' | 'video';
   media: string | null;
   poster?: string;
+  seekTo?: number;
 }
 
 const realEstatePhotos: Shot[] = [
@@ -44,6 +45,7 @@ const realEstateVideos: Shot[] = [
     label: 'Full Property View',
     type: 'video',
     media: '/fullpropertyview.mp4',
+    seekTo: 3,
     desc: 'Comprehensive aerial overview capturing the entire property, grounds, and surrounding context in one shot.',
   },
   {
@@ -247,7 +249,7 @@ export default function ShotsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {realEstateVideos.map((s) =>
               s.media
-                ? <ClickToPlayCard key={s.label} src={s.media} label={s.label} desc={s.desc} poster={s.poster} />
+                ? <ClickToPlayCard key={s.label} src={s.media} label={s.label} desc={s.desc} poster={s.poster} seekTo={s.seekTo} />
                 : <ShotCard key={s.label} shot={s} />
             )}
           </div>
@@ -270,7 +272,7 @@ export default function ShotsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {landscapeVideos.map((s) =>
               s.media
-                ? <ClickToPlayCard key={s.label} src={s.media} label={s.label} desc={s.desc} poster={s.poster} />
+                ? <ClickToPlayCard key={s.label} src={s.media} label={s.label} desc={s.desc} poster={s.poster} seekTo={s.seekTo} />
                 : <ShotCard key={s.label} shot={s} />
             )}
           </div>
