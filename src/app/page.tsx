@@ -31,8 +31,8 @@ export default function HomePage() {
             backgroundSize: '60px 60px',
           }}
         />
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#e8701a]/10 rounded-full blur-[130px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#1a8fbf]/10 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-[#e8701a]/8 rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-[#1a8fbf]/8 rounded-full blur-[80px] pointer-events-none" />
 
         <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 max-w-5xl mx-auto pt-16">
           <div className="relative w-56 h-56 sm:w-72 sm:h-72 mb-6 drop-shadow-2xl">
@@ -68,8 +68,8 @@ export default function HomePage() {
             backgroundSize: '60px 60px',
           }}
         />
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#e8701a]/10 rounded-full blur-[130px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#1a8fbf]/10 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-[#e8701a]/8 rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-[#1a8fbf]/8 rounded-full blur-[80px] pointer-events-none" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Video first */}
