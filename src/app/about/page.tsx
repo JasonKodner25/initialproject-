@@ -27,7 +27,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-4">
               <div className="relative rounded-2xl border-2 border-[#0d3d54] overflow-hidden bg-[#0d1628]">
                 <Image
-                  src="/DSC00605.jpeg"
+                  src="/withdrone.webp"
                   alt="Jason Kodner"
                   width={600}
                   height={900}
