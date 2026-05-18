@@ -53,6 +53,13 @@ const realEstateVideos: Shot[] = [
     desc: 'Smooth cinematic reveal flying toward and rising up the front of the home.',
   },
   {
+    label: 'Side Profile',
+    type: 'video',
+    media: '/SideOrbitShot.mp4',
+    poster: '/sideshotphoto.jpg',
+    desc: 'Lateral aerial pass revealing the full side of the property, depth, and outdoor space.',
+  },
+  {
     label: 'Driveway Reveal',
     type: 'video',
     media: '/drivewayreveal_official.mp4',
@@ -237,7 +244,7 @@ export default function ShotsPage() {
             )}
           </div>
           <MediaDivider type="video" accentColor="#1a8fbf" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {realEstateVideos.map((s) =>
               s.media
                 ? <ClickToPlayCard key={s.label} src={s.media} label={s.label} desc={s.desc} poster={s.poster} />
