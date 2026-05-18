@@ -8,11 +8,18 @@ interface Props {
   label: string;
   desc: string;
   poster?: string;
+  seekTo?: number;
 }
 
-export default function ClickToPlayCard({ src, label, desc, poster }: Props) {
+export default function ClickToPlayCard({ src, label, desc, poster, seekTo }: Props) {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  function handleMetadata() {
+    const video = videoRef.current;
+    if (!video || playing) return;
+    video.currentTime = seekTo ?? 0.001;
+  }
 
   function handlePlay() {
     setPlaying(true);
@@ -34,11 +41,12 @@ export default function ClickToPlayCard({ src, label, desc, poster }: Props) {
       >
         <video
           ref={videoRef}
-          src={`${src}#t=0.001`}
+          src={src}
           poster={poster}
           preload="metadata"
           muted
           playsInline
+          onLoadedMetadata={handleMetadata}
           onEnded={handleEnded}
           className="w-full h-full object-cover"
         />
