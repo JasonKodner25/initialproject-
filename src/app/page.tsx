@@ -81,7 +81,7 @@ export default function HomePage() {
               <div className="absolute -top-1 -left-1 w-5 h-5 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl z-10" />
               <div className="absolute -bottom-1 -right-1 w-5 h-5 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-2xl z-10" />
               <div className="bg-[#05080f] rounded-[14px] overflow-hidden" style={{ aspectRatio: '2/1' }}>
-                <video src="/Edit1HD_reduced.mp4" autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover block" />
+                <video src="/edit1.mp4" autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover block" />
               </div>
             </div>
           </div>
