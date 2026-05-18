@@ -41,6 +41,12 @@ const realEstatePhotos: Shot[] = [
 
 const realEstateVideos: Shot[] = [
   {
+    label: 'Full Property View',
+    type: 'video',
+    media: '/fullpropertyview.mp4',
+    desc: 'Comprehensive aerial overview capturing the entire property, grounds, and surrounding context in one shot.',
+  },
+  {
     label: 'Facade Approach',
     type: 'video',
     media: '/officalrealestate_2approach.mp4',
@@ -124,37 +130,24 @@ const landscapePhotos: Shot[] = [
 ];
 
 function ShotCard({ shot }: { shot: Shot }) {
-  const hasMedia = shot.media !== null;
   const isVideo = shot.type === 'video';
-
   return (
     <div className="bg-[#0d1628] border border-[#0d3d54] rounded-xl overflow-hidden flex flex-col group hover:border-[#1a8fbf]/40 transition-all duration-300">
       <div className="relative w-full aspect-[4/3] bg-[#080e1a]">
-        {hasMedia && isVideo ? null : hasMedia ? (
-          <Image
-            src={shot.media!}
-            alt={shot.label}
-            fill
-            loading="lazy"
-            className="object-cover"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+        <div className="w-full h-full flex flex-col items-center justify-center gap-2 relative">
+          <div
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage:
+                'linear-gradient(#1a8fbf 1px, transparent 1px), linear-gradient(90deg, #1a8fbf 1px, transparent 1px)',
+              backgroundSize: '32px 32px',
+            }}
           />
-        ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center gap-2 relative">
-            <div
-              className="absolute inset-0 opacity-[0.03]"
-              style={{
-                backgroundImage:
-                  'linear-gradient(#1a8fbf 1px, transparent 1px), linear-gradient(90deg, #1a8fbf 1px, transparent 1px)',
-                backgroundSize: '32px 32px',
-              }}
-            />
-            {isVideo
-              ? <Video size={32} className="text-[#1a3a54]" strokeWidth={1} />
-              : <Camera size={32} className="text-[#1a3a54]" strokeWidth={1} />}
-            <span className="text-[#1a3040] text-[10px] tracking-[0.3em] uppercase">Coming Soon</span>
-          </div>
-        )}
+          {isVideo
+            ? <Video size={32} className="text-[#1a3a54]" strokeWidth={1} />
+            : <Camera size={32} className="text-[#1a3a54]" strokeWidth={1} />}
+          <span className="text-[#1a3040] text-[10px] tracking-[0.3em] uppercase">Coming Soon</span>
+        </div>
       </div>
       <div className="p-4 flex flex-col gap-1">
         <div className="text-white font-bold text-sm">{shot.label}</div>
@@ -182,7 +175,6 @@ function MediaDivider({ type, accentColor }: { type: 'photo' | 'video'; accentCo
 
 function SectionHeader({ domain }: { domain: 'realestate' | 'landscape' }) {
   const isRE = domain === 'realestate';
-
   return (
     <div className="flex items-center gap-6 mb-10">
       <div className="relative flex-shrink-0">
