@@ -36,7 +36,7 @@ export default function HomePage() {
 
         <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 max-w-5xl mx-auto pt-16">
           <div className="relative w-56 h-56 sm:w-72 sm:h-72 mb-6 drop-shadow-2xl">
-            <Image src="/kodneraeriallogoofficial.png" alt="Kodner Aerial Services" fill priority className="object-contain mix-blend-multiply" />
+            <Image src="/kodneraeriallogoofficial.webp" alt="Kodner Aerial Services" fill priority className="object-contain mix-blend-multiply" />
           </div>
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-none mb-4">
             AERIAL PERSPECTIVE,&nbsp;<span className="text-[#e8701a]">CINEMATIC PRECISION</span>
@@ -81,7 +81,7 @@ export default function HomePage() {
               <div className="absolute -top-1 -left-1 w-5 h-5 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl z-10" />
               <div className="absolute -bottom-1 -right-1 w-5 h-5 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-2xl z-10" />
               <div className="bg-[#05080f] rounded-[14px] overflow-hidden" style={{ aspectRatio: '2/1' }}>
-                <video src="/edit1.mp4" autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover block" />
+                <video src="/Edit1HD_reduced.mp4" autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover block" />
               </div>
             </div>
           </div>
