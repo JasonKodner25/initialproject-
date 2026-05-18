@@ -3,11 +3,6 @@ import { Camera, Cpu, Radio, Shield, Video } from 'lucide-react';
 
 type EquipCategory = 'Drone' | 'Camera' | 'Accessory' | 'Software';
 
-interface SpecGroup {
-  title: string;
-  specs: string[];
-}
-
 interface EquipItem {
   id: number;
   name: string;
@@ -15,7 +10,6 @@ interface EquipItem {
   description: string;
   icon: React.ElementType;
   specs: string[];
-  specGroups?: SpecGroup[];
   src?: string;
   badges?: string[];
 }
@@ -30,20 +24,14 @@ const equipment: EquipItem[] = [
     icon: Radio,
     src: '/air3s.webp',
     badges: ['4K Video', 'Obstacle Detection'],
-    specs: [],
-    specGroups: [
-      {
-        title: 'Aircraft',
-        specs: [
-          'Max Speed: 47 mph (60 mph w/ tailwind)',
-          'Ascent / Descent: 22 mph',
-          'Max Altitude: 19,700 ft (6,000 m)',
-          'Flight Time: 41 min / ~2 hrs (3 batteries)',
-          'Max Range: 19.8 miles (32 km)',
-          'GPS: GPS + Galileo + BeiDou',
-          'Onboard Storage: 42 GB',
-        ],
-      },
+    specs: [
+      'Max Speed: 47 mph (60 mph w/ tailwind)',
+      'Ascent / Descent: 22 mph',
+      'Max Altitude: 19,700 ft (6,000 m)',
+      'Flight Time: 41 min / ~2 hrs (3 batteries)',
+      'Max Range: 19.8 miles (32 km)',
+      'GPS: GPS + Galileo + BeiDou',
+      'Onboard Storage: 42 GB',
     ],
   },
   {
@@ -54,17 +42,11 @@ const equipment: EquipItem[] = [
       'Dual-lens imaging system integrated into the DJI Air 3S — a 1-inch CMOS wide sensor paired with a 1/1.3-inch tele sensor, delivering 50 MP stills and cinema-quality 4K/6K video.',
     icon: Camera,
     src: '/djicamera.jpg',
-    specs: [],
-    specGroups: [
-      {
-        title: 'Camera',
-        specs: [
-          'Wide: 1" CMOS · 50 MP · 24mm f/1.8',
-          'Tele: 1/1.3" CMOS · 48 MP · 70mm f/2.8',
-          'Wide FOV: 84° · Focus: 0.5 m – ∞',
-          'Tele FOV: 35° · Focus: 3 m – ∞',
-        ],
-      },
+    specs: [
+      'Wide: 1" CMOS · 50 MP · 24mm f/1.8',
+      'Tele: 1/1.3" CMOS · 48 MP · 70mm f/2.8',
+      'Wide FOV: 84° · Focus: 0.5 m – ∞',
+      'Tele FOV: 35° · Focus: 3 m – ∞',
     ],
   },
   {
@@ -75,29 +57,13 @@ const equipment: EquipItem[] = [
       'DJI Air 3S extended-range controller providing real-time HD monitoring and precise aircraft control.',
     icon: Cpu,
     src: '/djiremote.jpg',
-    specGroups: [
-      {
-        title: 'Display & Storage',
-        specs: [
-          'Built-in 5.5-inch 1080p touchscreen',
-          '32 GB onboard storage',
-        ],
-      },
-      {
-        title: 'Power',
-        specs: [
-          'Battery life: up to 3 hours',
-          'Charge time: 1.5 hours',
-        ],
-      },
-      {
-        title: 'Transmission',
-        specs: [
-          'OcuSync 4.0 — 1080p live video @ 60 fps up to 12.4 miles',
-        ],
-      },
+    specs: [
+      'Built-in 5.5-inch 1080p touchscreen',
+      '32 GB onboard storage',
+      'Battery life: up to 3 hours',
+      'Charge time: 1.5 hours',
+      'OcuSync 4.0 — 1080p live video @ 60 fps up to 12.4 miles',
     ],
-    specs: [],
   },
   {
     id: 8,
@@ -201,35 +167,14 @@ export default function EquipmentPage() {
                     <p className="text-[#7a99b8] text-xs leading-relaxed mb-4">
                       {item.description}
                     </p>
-
-                    {item.specGroups ? (
-                      <div className="space-y-4 mt-auto">
-                        {item.specGroups.map((group) => (
-                          <div key={group.title}>
-                            <div className="text-[#e8701a] text-[10px] font-bold uppercase tracking-widest mb-2">
-                              {group.title}
-                            </div>
-                            <div className="space-y-1.5">
-                              {group.specs.map((spec) => (
-                                <div key={spec} className="flex items-start gap-2 text-xs">
-                                  <div className="w-1 h-1 bg-[#e8701a] rounded-full flex-shrink-0 mt-1.5" />
-                                  <span className="text-[#7a99b8]">{spec}</span>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    ) : (
-                      <div className="space-y-1.5 mt-auto">
-                        {item.specs.map((spec) => (
-                          <div key={spec} className="flex items-center gap-2 text-xs">
-                            <div className="w-1 h-1 bg-[#e8701a] rounded-full flex-shrink-0" />
-                            <span className="text-[#7a99b8]">{spec}</span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
+                    <ul className="mt-auto space-y-2">
+                      {item.specs.map((spec) => (
+                        <li key={spec} className="flex items-start gap-2 text-xs">
+                          <div className="w-1 h-1 bg-[#e8701a] rounded-full flex-shrink-0 mt-1.5" />
+                          <span className="text-[#7a99b8]">{spec}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               );
