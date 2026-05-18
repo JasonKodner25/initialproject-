@@ -55,9 +55,9 @@ const realEstateVideos: Shot[] = [
   {
     label: 'Backyard View',
     type: 'video',
-    media: '/Backyard.mp4',
+    media: '/backyardofficial.mp4',
     poster: '/poster-backyard.jpg',
-    desc: 'Sweeping clip showing proximity to streets, parks, and nearby amenities.',
+    desc: 'Sweeping clip showing the backyard, outdoor space, and surrounding grounds.',
   },
   {
     label: 'Horizontal',
@@ -180,16 +180,11 @@ function MediaDivider({ type, accentColor }: { type: 'photo' | 'video'; accentCo
   );
 }
 
-function SectionHeader({
-  domain,
-}: {
-  domain: 'realestate' | 'landscape';
-}) {
+function SectionHeader({ domain }: { domain: 'realestate' | 'landscape' }) {
   const isRE = domain === 'realestate';
 
   return (
     <div className="flex items-center gap-6 mb-10">
-      {/* Icon block */}
       <div className="relative flex-shrink-0">
         <div
           className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex items-center justify-center"
@@ -198,38 +193,19 @@ function SectionHeader({
               ? 'linear-gradient(135deg, #0d2a3d 0%, #0a1f35 50%, #061525 100%)'
               : 'linear-gradient(135deg, #2a1400 0%, #1f1000 50%, #150a00 100%)',
             border: '1px solid #1a8fbf40',
-            boxShadow: isRE
-              ? '0 0 32px #1a8fbf18, inset 0 1px 0 #1a8fbf20'
-              : '0 0 32px #1a8fbf18, inset 0 1px 0 #1a8fbf20',
+            boxShadow: '0 0 32px #1a8fbf18, inset 0 1px 0 #1a8fbf20',
           }}
         >
           {isRE ? (
-            <Building2 size={32} className="sm:hidden" color="#1a8fbf" strokeWidth={1.5} />
+            <><Building2 size={32} className="sm:hidden" color="#1a8fbf" strokeWidth={1.5} /><Building2 size={38} className="hidden sm:block" color="#1a8fbf" strokeWidth={1.5} /></>
           ) : (
-            <Mountain size={32} className="sm:hidden" color="#1a8fbf" strokeWidth={1.5} />
-          )}
-          {isRE ? (
-            <Building2 size={38} className="hidden sm:block" color="#1a8fbf" strokeWidth={1.5} />
-          ) : (
-            <Mountain size={38} className="hidden sm:block" color="#1a8fbf" strokeWidth={1.5} />
+            <><Mountain size={32} className="sm:hidden" color="#1a8fbf" strokeWidth={1.5} /><Mountain size={38} className="hidden sm:block" color="#1a8fbf" strokeWidth={1.5} /></>
           )}
         </div>
-        {/* Glow dot */}
-        <div
-          className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full"
-          style={{
-            background: '#1a8fbf',
-            boxShadow: '0 0 8px #1a8fbf',
-          }}
-        />
+        <div className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full" style={{ background: '#1a8fbf', boxShadow: '0 0 8px #1a8fbf' }} />
       </div>
-
-      {/* Text */}
       <div>
-        <div
-          className="text-xs tracking-[0.3em] uppercase font-semibold mb-1"
-          style={{ color: '#1a8fbf' }}
-        >
+        <div className="text-xs tracking-[0.3em] uppercase font-semibold mb-1" style={{ color: '#1a8fbf' }}>
           {isRE ? 'Listings & Properties' : 'Nature & Terrain'}
         </div>
         <h2 className="text-2xl sm:text-3xl font-black text-white leading-none">
@@ -248,7 +224,6 @@ function SectionHeader({
 export default function ShotsPage() {
   return (
     <main className="pt-20">
-      {/* Page header */}
       <section className="py-16 bg-gradient-to-b from-[#0a1220] to-[#05080f] border-b border-[#0d3d54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-[#1a8fbf] text-xs tracking-[0.3em] uppercase font-medium mb-3">Portfolio</div>
@@ -261,7 +236,6 @@ export default function ShotsPage() {
       <section id="realestate" className="py-16 bg-[#05080f] border-b border-[#0d3d54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader domain="realestate" />
-
           <MediaDivider type="photo" accentColor="#1a8fbf" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
             {realEstatePhotos.map((s) =>
@@ -270,7 +244,6 @@ export default function ShotsPage() {
                 : <ShotCard key={s.label} shot={s} />
             )}
           </div>
-
           <MediaDivider type="video" accentColor="#1a8fbf" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {realEstateVideos.map((s) =>
@@ -279,7 +252,6 @@ export default function ShotsPage() {
                 : <ShotCard key={s.label} shot={s} />
             )}
           </div>
-
         </div>
       </section>
 
@@ -287,7 +259,6 @@ export default function ShotsPage() {
       <section id="landscape" className="py-16 bg-[#05080f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader domain="landscape" />
-
           <MediaDivider type="photo" accentColor="#1a8fbf" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
             {landscapePhotos.map((s) =>
@@ -296,7 +267,6 @@ export default function ShotsPage() {
                 : <ShotCard key={s.label} shot={s} />
             )}
           </div>
-
           <MediaDivider type="video" accentColor="#1a8fbf" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {landscapeVideos.map((s) =>
@@ -314,10 +284,7 @@ export default function ShotsPage() {
           <p className="text-[#7a99b8] text-sm sm:text-base font-bold mb-5">
             Interested in a specific shot type? Get in touch to discuss your project.
           </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-3 bg-[#2d7a50] text-white text-sm font-bold tracking-wide rounded hover:bg-[#3a9463] transition-all"
-          >
+          <Link href="/contact" className="inline-block px-8 py-3 bg-[#2d7a50] text-white text-sm font-bold tracking-wide rounded hover:bg-[#3a9463] transition-all">
             Book a Session
           </Link>
         </div>
