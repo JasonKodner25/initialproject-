@@ -20,10 +20,10 @@ const realEstatePhotos: Shot[] = [
     desc: 'Overhead nadir shot showing the full roof, property footprint, and surrounding lot.',
   },
   {
-    label: 'Side View',
+    label: 'Rear View',
     type: 'photo',
-    media: '/ELEVATED.jpg',
-    desc: 'Eye-level facade perspective highlighting architectural detail and curb appeal.',
+    media: '/backyardphoto.jpg',
+    desc: 'Aerial perspective of the rear of the property, showcasing the backyard, outdoor space, and grounds.',
   },
   {
     label: 'Elevated Lot View',
