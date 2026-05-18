@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown, Award, Camera, Video, Shield, Radio, Mountain, Building2, ArrowRight } from 'lucide-react';
+import LazyVideo from '@/components/LazyVideo';
 
 const highlights = [
   { icon: Camera, label: 'Photography', desc: 'Stunning aerial stills' },
@@ -81,7 +82,7 @@ export default function HomePage() {
               <div className="absolute -top-1 -left-1 w-5 h-5 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl z-10" />
               <div className="absolute -bottom-1 -right-1 w-5 h-5 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-2xl z-10" />
               <div className="bg-[#05080f] rounded-[14px] overflow-hidden" style={{ aspectRatio: '2/1' }}>
-                <video src="/edit1.mp4" autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover block" />
+                <LazyVideo src="/edit1.mp4" className="w-full h-full object-cover block" />
               </div>
             </div>
           </div>
