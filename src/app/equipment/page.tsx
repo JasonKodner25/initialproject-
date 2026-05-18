@@ -182,24 +182,6 @@ export default function EquipmentPage() {
           </div>
         </div>
       </section>
-
-      {/* ── CTA */}
-      <section className="py-16 bg-[#0a1220] border-t border-[#3d2010]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-2xl sm:text-3xl font-black text-white mb-4">
-            The Right Tool for Every Shot
-          </h2>
-          <p className="text-[#7a99b8] text-sm sm:text-base mb-7">
-            Professional equipment is only part of the equation. Experience, creativity, and safety make all the difference.
-          </p>
-          <a
-            href="/contact"
-            className="inline-block px-8 py-3 bg-[#e8701a] text-white text-sm font-bold rounded hover:bg-[#f4952a] transition-all glow-blue tracking-wide"
-          >
-            Discuss Your Project
-          </a>
-        </div>
-      </section>
     </main>
   );
 }
