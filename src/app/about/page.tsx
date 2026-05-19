@@ -12,9 +12,7 @@ export default function AboutPage() {
       {/* ── Page Header */}
       <section className="py-16 bg-gradient-to-b from-[#0a1220] to-[#05080f] border-b border-[#0d3d54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Get to Know Me</div>
           <h1 className="text-4xl sm:text-5xl font-black text-white">About Me</h1>
-          <div className="section-divider mt-4" />
         </div>
       </section>
 
@@ -51,7 +49,6 @@ export default function AboutPage() {
                 <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-2">My Story</div>
                 <h2 className="text-3xl sm:text-4xl font-black text-white mb-1">Jason Kodner</h2>
                 <div className="text-[#1a8fbf] text-sm font-medium mb-5">Founder &amp; Lead Pilot</div>
-                <div className="section-divider" />
               </div>
 
               <p className="text-[#7a99b8] text-sm sm:text-base leading-relaxed">
@@ -71,7 +68,6 @@ export default function AboutPage() {
       <section className="py-20 bg-[#0a1220] border-y border-[#0d3d54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="section-divider mx-auto mb-8" />
             <div className="max-w-3xl mx-auto bg-[#0d1628] border border-[#0d3d54] rounded-2xl p-8 sm:p-12 relative overflow-hidden">
               <div className="absolute top-4 left-6 text-[#1a8fbf]/10 text-[8rem] font-serif leading-none select-none">&ldquo;</div>
               <div className="relative">
