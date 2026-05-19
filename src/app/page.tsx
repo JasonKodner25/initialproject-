@@ -43,7 +43,7 @@ export default function HomePage() {
             AERIAL PERSPECTIVE,&nbsp;<span className="text-[#e8701a]">CINEMATIC PRECISION</span>
           </h1>
           <p className="text-[#7a99b8] text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-            Professional drone photography &amp; videography — capturing breathtaking perspectives for real estate, landscapes, events, and beyond.
+            Professional 4K drone photography &amp; videography — real estate, landscapes, and beyond.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 items-center">
             <Link href="/services" className="px-8 py-4 bg-[#e8701a] text-white font-bold tracking-wide rounded hover:bg-[#f4952a] transition-all glow-blue text-sm sm:text-base">
