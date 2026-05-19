@@ -25,7 +25,7 @@ export default function HomePage() {
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#020509] via-[#05080f] to-[#0a1220]" />
 
-        <BgVideo src="/Instagram_Reel.mp4" poster="/reel-poster.webp" />
+        <BgVideo src="/Instagram_Reel.mp4" poster="/reelsave.webp" />
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/65" />
 
