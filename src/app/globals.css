@@ -99,11 +99,11 @@ body {
   box-shadow: 0 0 35px rgba(26, 143, 191, 0.5);
 }
 
-/* Section divider — orange → lake blue */
+/* Section divider — professional dark blue */
 .section-divider {
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #e8701a, #1a8fbf);
+  width: 48px;
+  height: 2px;
+  background: #1a3a5c;
   border-radius: 2px;
 }
 

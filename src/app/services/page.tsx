@@ -13,7 +13,6 @@ export default function ServicesPage() {
       {/* ── Page Header */}
       <section className="py-16 bg-gradient-to-b from-[#0a1220] to-[#05080f] border-b border-[#0d3d54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">What I Offer</div>
           <h1 className="text-4xl sm:text-5xl font-black text-white">Services</h1>
           <div className="section-divider mt-4" />
         </div>
@@ -33,7 +32,6 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-white font-black text-xl mb-1">Real Estate</h3>
                 <div className="text-[#1a8fbf] text-xs font-medium mb-6">Listings &amp; Properties</div>
-
                 <div className="space-y-5 flex-1">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
@@ -62,7 +60,6 @@ export default function ServicesPage() {
                     </ul>
                   </div>
                 </div>
-
                 <div className="border-t border-[#0d3d54] pt-4 mt-6">
                   <Link href="/contact" className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold border rounded transition-all text-[#1a8fbf] border-[#1a8fbf]/40 hover:bg-[#1a8fbf] hover:text-white">
                     Contact for Pricing <ArrowRight size={12} />
@@ -80,7 +77,6 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-white font-black text-xl mb-1">Landscape</h3>
                 <div className="text-[#e8701a] text-xs font-medium mb-6">Nature &amp; Terrain</div>
-
                 <div className="space-y-5 flex-1">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
@@ -88,9 +84,9 @@ export default function ServicesPage() {
                       <span className="text-[#e8701a] text-[10px] font-bold uppercase tracking-widest">Photography</span>
                     </div>
                     <ul className="space-y-1.5">
-                      {['Golden hour &amp; blue hour shoots', 'RAW + edited files', 'Print-ready resolution'].map((f) => (
+                      {['Golden hour & blue hour shoots', 'RAW + edited files', 'Print-ready resolution'].map((f) => (
                         <li key={f} className="flex items-center gap-2 text-xs text-[#7a99b8]">
-                          <div className="w-1 h-1 rounded-full flex-shrink-0 bg-[#e8701a]" /><span dangerouslySetInnerHTML={{ __html: f }} />
+                          <div className="w-1 h-1 rounded-full flex-shrink-0 bg-[#e8701a]" />{f}
                         </li>
                       ))}
                     </ul>
@@ -109,7 +105,6 @@ export default function ServicesPage() {
                     </ul>
                   </div>
                 </div>
-
                 <div className="border-t border-[#3d2010] pt-4 mt-6">
                   <Link href="/contact" className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold border rounded transition-all text-[#e8701a] border-[#e8701a]/40 hover:bg-[#e8701a] hover:text-white">
                     Contact for Pricing <ArrowRight size={12} />
@@ -127,18 +122,12 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-white font-black text-xl mb-1">Events Coverage</h3>
                 <div className="text-[#7a99b8] text-xs font-medium mb-6">Aerial photo &amp; video for live events</div>
-
                 <div className="flex-1 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="inline-block px-3 py-1.5 bg-[#7a99b8]/10 border border-[#7a99b8]/20 rounded text-[#7a99b8] text-xs font-bold tracking-widest uppercase mb-3">
-                      In Progress
-                    </div>
-                    <p className="text-[#4a6a80] text-xs leading-relaxed">
-                      This service is currently being developed. Check back soon.
-                    </p>
+                    <div className="inline-block px-3 py-1.5 bg-[#7a99b8]/10 border border-[#7a99b8]/20 rounded text-[#7a99b8] text-xs font-bold tracking-widest uppercase mb-3">In Progress</div>
+                    <p className="text-[#4a6a80] text-xs leading-relaxed">This service is currently being developed. Check back soon.</p>
                   </div>
                 </div>
-
                 <div className="border-t border-[#0d3d54] pt-4 mt-6">
                   <Link href="/contact" className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold border rounded transition-all text-[#7a99b8] border-[#7a99b8]/30 hover:bg-[#7a99b8]/10">
                     Get Notified <ArrowRight size={12} />

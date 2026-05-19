@@ -90,7 +90,6 @@ export default function EquipmentPage() {
       {/* ── Page Header */}
       <section className="py-16 bg-gradient-to-b from-[#0a1220] to-[#05080f] border-b border-[#3d2010]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">The Arsenal</div>
           <h1 className="text-4xl sm:text-5xl font-black text-white">Equipment</h1>
           <div className="section-divider mt-4" />
           <p className="text-[#7a99b8] text-sm sm:text-base mt-4 max-w-xl">
@@ -121,7 +120,6 @@ export default function EquipmentPage() {
                   key={item.id}
                   className="bg-[#0d1628] border border-[#3d2010] rounded-xl overflow-hidden hover:border-[#e8701a]/40 transition-all group flex flex-col"
                 >
-                  {/* Photo */}
                   <div className="relative w-full aspect-[4/3] bg-[#0a1220] border-b border-[#3d2010] flex flex-col items-center justify-center gap-2 overflow-hidden">
                     {item.src ? (
                       <Image
@@ -158,8 +156,6 @@ export default function EquipmentPage() {
                       </div>
                     )}
                   </div>
-
-                  {/* Content */}
                   <div className="p-5 flex flex-col flex-1">
                     <h3 className="text-white font-bold text-base mb-2 group-hover:text-[#e8701a] transition-colors">
                       {item.name}

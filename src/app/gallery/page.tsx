@@ -18,7 +18,6 @@ interface GalleryItem {
 }
 
 const galleryItems: GalleryItem[] = [
-  // Santa Cruz 4/16/26
   { id: 1,  category: 'Landscape', label: 'Natural Bridges Aerial',   location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/DJI_20260416065653_0188_D.jpeg', aspect: 'aspect-[16/9]', album: 'Santa Cruz 4/16/26' },
   { id: 2,  category: 'Landscape', label: 'Coastal Dawn Flight',      location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/DJI_20260416070936_0204_D.jpeg', aspect: 'aspect-[4/3]',  album: 'Santa Cruz 4/16/26' },
   { id: 3,  category: 'Landscape', label: 'Shoreline from Above',     location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/DJI_20260416071343_0209_D.jpeg', aspect: 'aspect-[4/3]',  album: 'Santa Cruz 4/16/26' },
@@ -27,13 +26,11 @@ const galleryItems: GalleryItem[] = [
   { id: 6,  category: 'Landscape', label: 'Coastal View',             location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3510.jpeg',                  aspect: 'aspect-square', album: 'Santa Cruz 4/16/26' },
   { id: 7,  category: 'Landscape', label: 'Beach at Natural Bridges', location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3512.jpeg',                  aspect: 'aspect-[4/3]',  album: 'Santa Cruz 4/16/26' },
   { id: 8,  category: 'Landscape', label: 'Santa Cruz Shore',         location: 'Natural Bridges State Beach, Santa Cruz', date: 'April 16, 2026', src: '/IMG_3513.jpeg',                  aspect: 'aspect-[3/4]',  album: 'Santa Cruz 4/16/26' },
-
-  // Calibazas Bike Park 4/29/26
-  { id: 14, category: 'Events', label: 'Bike Park Shot 1', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/caliphoto5.jpg', aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
-  { id: 15, category: 'Events', label: 'Bike Park Shot 2', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/calip1.jpg',       aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
-  { id: 16, category: 'Events', label: 'Bike Park Shot 3', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/calip2.jpg',       aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
-  { id: 17, category: 'Events', label: 'Bike Park Shot 4', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/calip3.jpg',       aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
-  { id: 18, category: 'Events', label: 'Bike Park Shot 5', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/calip4.jpg',       aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
+  { id: 14, category: 'Events',    label: 'Bike Park Shot 1', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/caliphoto5.jpg', aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
+  { id: 15, category: 'Events',    label: 'Bike Park Shot 2', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/calip1.jpg',       aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
+  { id: 16, category: 'Events',    label: 'Bike Park Shot 3', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/calip2.jpg',       aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
+  { id: 17, category: 'Events',    label: 'Bike Park Shot 4', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/calip3.jpg',       aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
+  { id: 18, category: 'Events',    label: 'Bike Park Shot 5', location: 'Calibazas Bike Park · Santa Cruz Trails Stewardship Company', date: 'April 29, 2026', src: '/calip4.jpg',       aspect: 'aspect-[4/3]', album: 'Calibazas Bike Park Photoshoot' },
 ];
 
 function getAlbums() {
@@ -61,13 +58,11 @@ export default function GalleryPage() {
       {/* ── Page Header */}
       <section className="py-16 bg-gradient-to-b from-[#0a1220] to-[#05080f] border-b border-[#3d2010]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Portfolio</div>
           <h1 className="text-4xl sm:text-5xl font-black text-white">Gallery</h1>
           <div className="section-divider mt-4" />
         </div>
       </section>
 
-      {/* ── Back to Albums */}
       {openAlbum && (
         <section className="py-4 bg-[#05080f] border-b border-[#3d2010] sticky top-16 lg:top-20 z-30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,7 +73,6 @@ export default function GalleryPage() {
         </section>
       )}
 
-      {/* ── Albums Grid */}
       {!openAlbum && (
         <section className="py-12 bg-[#05080f]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,11 +80,7 @@ export default function GalleryPage() {
               {Array.from(albums.entries()).map(([name, items]) => {
                 const cover = items.find((i) => i.src);
                 return (
-                  <button
-                    key={name}
-                    onClick={() => setOpenAlbum(name)}
-                    className="group relative overflow-hidden rounded-xl border border-[#3d2010] hover:border-[#e8701a]/60 transition-all text-left bg-[#0d1628]"
-                  >
+                  <button key={name} onClick={() => setOpenAlbum(name)} className="group relative overflow-hidden rounded-xl border border-[#3d2010] hover:border-[#e8701a]/60 transition-all text-left bg-[#0d1628]">
                     <div className="relative aspect-[16/9] overflow-hidden">
                       {cover?.src ? (
                         <Image src={cover.src} alt={name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 100vw, 50vw" />
@@ -112,7 +102,6 @@ export default function GalleryPage() {
         </section>
       )}
 
-      {/* ── Album Photo Grid */}
       {openAlbum && (
         <section className="py-12 bg-[#05080f]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -130,13 +119,10 @@ export default function GalleryPage() {
         </section>
       )}
 
-      {/* ── Lightbox */}
       {lightbox !== null && lightboxItem && (
         <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur flex items-center justify-center p-4" onClick={() => setLightbox(null)}>
           <div className="relative max-w-4xl w-full flex flex-col items-center gap-4" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setLightbox(null)} className="absolute -top-10 right-0 text-[#7a99b8] hover:text-white transition-colors">
-              <X size={24} />
-            </button>
+            <button onClick={() => setLightbox(null)} className="absolute -top-10 right-0 text-[#7a99b8] hover:text-white transition-colors"><X size={24} /></button>
             {lightboxItem.src ? (
               <div className="relative w-full max-h-[75vh] aspect-video rounded-xl overflow-hidden">
                 <Image src={lightboxItem.src} alt={lightboxItem.label} fill className="object-contain" sizes="100vw" />
@@ -161,10 +147,7 @@ export default function GalleryPage() {
 
 function PhotoCard({ item, onOpen }: { item: GalleryItem; onOpen: () => void }) {
   return (
-    <div
-      className={`masonry-item relative overflow-hidden rounded-lg border border-[#3d2010] cursor-pointer group hover:border-[#e8701a]/50 transition-all ${item.aspect} ${item.src ? 'bg-black' : 'bg-[#0d1628]'}`}
-      onClick={onOpen}
-    >
+    <div className={`masonry-item relative overflow-hidden rounded-lg border border-[#3d2010] cursor-pointer group hover:border-[#e8701a]/50 transition-all ${item.aspect} ${item.src ? 'bg-black' : 'bg-[#0d1628]'}`} onClick={onOpen}>
       {item.src ? (
         <Image src={item.src} alt={item.label} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 50vw, 25vw" />
       ) : (
