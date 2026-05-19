@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Camera, Home, Video, Compass, ArrowRight } from 'lucide-react';
+import { Camera, Home, Video, Mountain, ArrowRight, Aperture, Clapperboard } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -7,63 +7,55 @@ export const metadata: Metadata = {
   description: 'Drone photography and videography services — landscape, real estate, aerial video, and events coverage. FAA Part 107 certified, Bay Area.',
 };
 
-interface Service {
-  icon: React.ElementType;
-  title: string;
-  tagline: string;
-  features: string[];
-  accent: 'orange' | 'blue';
-}
-
-const services: Service[] = [
+const realEstateServices = [
   {
-    icon: Compass,
-    title: 'Landscape Photography',
-    tagline: 'Capturing California\'s terrain from coastal cliffs to mountainline ridges',
-    features: ['4K aerial stills', 'Golden hour shoots', 'RAW file delivery', 'Print-ready resolution'],
-    accent: 'orange',
+    icon: Aperture,
+    medium: 'Photography',
+    tagline: 'Aerial stills that make listings stand out',
+    features: [
+      'MLS-ready delivery',
+      'Nadir, elevated lot, and facade angles',
+      '24–48 hr turnaround',
+      'RAW + edited file delivery',
+    ],
   },
   {
-    icon: Home,
-    title: 'Real Estate Photography',
-    tagline: 'Exterior aerial stills',
-    features: ['MLS-ready delivery', '24–48 hr turnaround', 'Virtual tour support'],
-    accent: 'blue',
-  },
-  {
-    icon: Video,
-    title: 'Aerial Videography',
-    tagline: 'Cinematic motion from the sky',
-    features: ['4K / 6K video', 'Color graded delivery', 'Cinematic LUT styling', 'Custom music sync'],
-    accent: 'orange',
-  },
-  {
-    icon: Camera,
-    title: 'Events Coverage',
-    tagline: 'Capturing memorable events',
-    features: ['In-progress', 'Part 107 rules followed strictly in this domain'],
-    accent: 'blue',
+    icon: Clapperboard,
+    medium: 'Videography',
+    tagline: 'Cinematic property footage from the sky',
+    features: [
+      '4K aerial video',
+      'Facade approaches, driveway reveals, orbitals',
+      'Color graded delivery',
+      'Custom music sync available',
+    ],
   },
 ];
 
-const accentStyles = {
-  orange: {
-    bar: 'from-[#e8701a]',
-    iconBg: 'bg-[#e8701a]/10 border-[#e8701a]/30',
-    iconColor: 'text-[#e8701a]',
-    tagline: 'text-[#e8701a]',
-    dot: 'bg-[#e8701a]',
-    btn: 'text-[#e8701a] border-[#e8701a]/40 hover:bg-[#e8701a] hover:text-white hover:border-[#e8701a]',
+const landscapeServices = [
+  {
+    icon: Aperture,
+    medium: 'Photography',
+    tagline: "California's terrain from coastal cliffs to mountain ridges",
+    features: [
+      '4K aerial stills',
+      'Golden hour & blue hour shoots',
+      'RAW file delivery',
+      'Print-ready resolution',
+    ],
   },
-  blue: {
-    bar: 'from-[#1a8fbf]',
-    iconBg: 'bg-[#1a8fbf]/10 border-[#1a8fbf]/30',
-    iconColor: 'text-[#1a8fbf]',
-    tagline: 'text-[#1a8fbf]',
-    dot: 'bg-[#1a8fbf]',
-    btn: 'text-[#1a8fbf] border-[#1a8fbf]/40 hover:bg-[#1a8fbf] hover:text-white hover:border-[#1a8fbf]',
+  {
+    icon: Clapperboard,
+    medium: 'Videography',
+    tagline: 'Sweeping cinematic sequences over natural terrain',
+    features: [
+      '4K / 6K aerial video',
+      'Orbitals, hyperlapses, flyovers',
+      'Color graded with cinematic LUTs',
+      'Custom music sync available',
+    ],
   },
-};
+];
 
 export default function ServicesPage() {
   return (
@@ -77,48 +69,92 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ── Services Grid */}
-      <section className="py-16 sm:py-20 bg-[#05080f]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {services.map((svc) => {
+      {/* ── Real Estate */}
+      <section className="py-16 bg-[#05080f] border-b border-[#0d3d54]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-10 h-10 rounded-xl bg-[#1a8fbf]/10 border border-[#1a8fbf]/20 flex items-center justify-center">
+              <Home size={20} className="text-[#1a8fbf]" />
+            </div>
+            <div>
+              <div className="text-[#1a8fbf] text-xs tracking-[0.3em] uppercase font-semibold">Listings & Properties</div>
+              <h2 className="text-2xl font-black text-white">Real Estate</h2>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {realEstateServices.map((svc) => {
               const Icon = svc.icon;
-              const s = accentStyles[svc.accent];
               return (
-                <div
-                  key={svc.title}
-                  className="bg-[#0d1628] border border-[#0d3d54] rounded-xl overflow-hidden transition-all group flex flex-col"
-                >
-                  <div className={`h-1 w-full bg-gradient-to-r ${s.bar} to-transparent`} />
-
+                <div key={svc.medium} className="bg-[#0d1628] border border-[#0d3d54] rounded-xl overflow-hidden flex flex-col group hover:border-[#1a8fbf]/50 transition-all">
+                  <div className="h-1 w-full bg-gradient-to-r from-[#1a8fbf] to-transparent" />
                   <div className="p-7 flex flex-col flex-1">
-                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-5 border ${s.iconBg}`}>
-                      <Icon size={22} className={s.iconColor} />
+                    <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-5 border bg-[#1a8fbf]/10 border-[#1a8fbf]/30">
+                      <Icon size={22} className="text-[#1a8fbf]" />
                     </div>
-
-                    <h3 className="text-white font-black text-xl mb-1 group-hover:text-[#1a8fbf] transition-colors">
-                      {svc.title}
-                    </h3>
-                    <div className={`text-xs font-medium mb-5 ${s.tagline}`}>
-                      {svc.tagline}
-                    </div>
-
+                    <h3 className="text-white font-black text-xl mb-1">Real Estate {svc.medium}</h3>
+                    <div className="text-[#1a8fbf] text-xs font-medium mb-5">{svc.tagline}</div>
                     <ul className="space-y-2 mb-6 flex-1">
                       {svc.features.map((f) => (
                         <li key={f} className="flex items-center gap-2 text-xs text-[#7a99b8]">
-                          <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${s.dot}`} />
+                          <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[#1a8fbf]" />
                           {f}
                         </li>
                       ))}
                     </ul>
-
                     <div className="border-t border-[#0d3d54] pt-4 mt-auto">
                       <Link
                         href="/contact"
-                        className={`w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold border rounded transition-all ${s.btn}`}
+                        className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold border rounded transition-all text-[#1a8fbf] border-[#1a8fbf]/40 hover:bg-[#1a8fbf] hover:text-white"
                       >
-                        Contact for Pricing
-                        <ArrowRight size={12} />
+                        Contact for Pricing <ArrowRight size={12} />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Landscape */}
+      <section className="py-16 bg-[#05080f]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-10 h-10 rounded-xl bg-[#e8701a]/10 border border-[#e8701a]/20 flex items-center justify-center">
+              <Mountain size={20} className="text-[#e8701a]" />
+            </div>
+            <div>
+              <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-semibold">Nature & Terrain</div>
+              <h2 className="text-2xl font-black text-white">Landscape</h2>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {landscapeServices.map((svc) => {
+              const Icon = svc.icon;
+              return (
+                <div key={svc.medium} className="bg-[#0d1628] border border-[#3d2010] rounded-xl overflow-hidden flex flex-col group hover:border-[#e8701a]/50 transition-all">
+                  <div className="h-1 w-full bg-gradient-to-r from-[#e8701a] to-transparent" />
+                  <div className="p-7 flex flex-col flex-1">
+                    <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-5 border bg-[#e8701a]/10 border-[#e8701a]/30">
+                      <Icon size={22} className="text-[#e8701a]" />
+                    </div>
+                    <h3 className="text-white font-black text-xl mb-1">Landscape {svc.medium}</h3>
+                    <div className="text-[#e8701a] text-xs font-medium mb-5">{svc.tagline}</div>
+                    <ul className="space-y-2 mb-6 flex-1">
+                      {svc.features.map((f) => (
+                        <li key={f} className="flex items-center gap-2 text-xs text-[#7a99b8]">
+                          <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[#e8701a]" />
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="border-t border-[#3d2010] pt-4 mt-auto">
+                      <Link
+                        href="/contact"
+                        className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold border rounded transition-all text-[#e8701a] border-[#e8701a]/40 hover:bg-[#e8701a] hover:text-white"
+                      >
+                        Contact for Pricing <ArrowRight size={12} />
                       </Link>
                     </div>
                   </div>
@@ -140,8 +176,7 @@ export default function ServicesPage() {
             href="/contact"
             className="inline-flex items-center gap-2 px-8 py-3 bg-[#e8701a] text-white text-sm font-bold rounded hover:bg-[#f4952a] transition-all glow-blue tracking-wide"
           >
-            Get a Quote
-            <ArrowRight size={16} />
+            Get a Quote <ArrowRight size={16} />
           </Link>
         </div>
       </section>
