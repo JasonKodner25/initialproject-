@@ -107,15 +107,13 @@ body {
   border-radius: 2px;
 }
 
-/* Rotating gradient border on video frame */
-@keyframes spin-gradient {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Subtle slow-breathing border on video frame */
+@keyframes border-breathe {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
 }
 
 .animated-border {
-  background: linear-gradient(270deg, #e8701a, #1a8fbf, #0a1220, #e8701a);
-  background-size: 300% 300%;
-  animation: spin-gradient 6s ease infinite;
+  background: linear-gradient(145deg, #e8701a40, #1a3a5c, #1a8fbf40);
+  animation: border-breathe 5s ease-in-out infinite;
 }
