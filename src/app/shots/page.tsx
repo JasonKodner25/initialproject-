@@ -78,7 +78,7 @@ const realEstateVideos: Shot[] = [
     label: 'Horizontal',
     type: 'video',
     media: '/OfficialSideways1.mp4',
-    desc: 'Smooth lateral pass revealing the full width of the property and surrounding grounds.',
+    desc: 'Smooth lateral pass revealing the full width of the property and important details.',
   },
 ];
 
