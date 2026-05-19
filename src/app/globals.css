@@ -106,3 +106,16 @@ body {
   background: linear-gradient(90deg, #e8701a, #1a8fbf);
   border-radius: 2px;
 }
+
+/* Rotating gradient border on video frame */
+@keyframes spin-gradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-border {
+  background: linear-gradient(270deg, #e8701a, #1a8fbf, #0a1220, #e8701a);
+  background-size: 300% 300%;
+  animation: spin-gradient 6s ease infinite;
+}

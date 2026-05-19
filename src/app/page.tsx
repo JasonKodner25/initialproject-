@@ -75,10 +75,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Video first */}
           <div className="flex justify-center mb-12">
-            <div
-              className="relative p-[2px] rounded-2xl shadow-2xl w-full"
-              style={{ background: 'linear-gradient(145deg, #e8701a 0%, #0a1220 50%, #1a8fbf 100%)' }}
-            >
+            <div className="animated-border relative p-[2px] rounded-2xl shadow-2xl w-full">
               <div className="absolute -top-1 -left-1 w-5 h-5 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl z-10" />
               <div className="absolute -bottom-1 -right-1 w-5 h-5 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-2xl z-10" />
               <div className="bg-[#05080f] rounded-[14px] overflow-hidden" style={{ aspectRatio: '2/1' }}>
@@ -90,7 +87,7 @@ export default function HomePage() {
           {/* Heading + description */}
           <div className="text-center mb-10">
             <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Welcome</div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">Why Kodner Aerial?</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-5 leading-tight gradient-text">Why Kodner Aerial?</h2>
             <div className="section-divider mx-auto mb-6" />
             <p className="text-[#7a99b8] text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mb-8 text-left">
               Based in the Bay Area, I specialize in cinematic aerial photography and videography, offering a wide range of dynamic drone shots designed to showcase each subject from compelling perspective. One of the Bay Area&apos;s only drone operators with both an FAA Part 107 certificate and a Private Pilot License. Every project is planned and executed with a strong understanding of airspace, weather, and FAA regulations, with safety and precision at the core of every flight.
