@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef } from 'react';
 
-export default function BgVideo({ src }: { src: string }) {
+export default function BgVideo({ src, poster }: { src: string; poster?: string }) {
   const ref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -18,6 +18,7 @@ export default function BgVideo({ src }: { src: string }) {
       muted
       playsInline
       preload="none"
+      poster={poster}
       className="absolute inset-0 w-full h-full object-cover"
     />
   );

@@ -23,13 +23,10 @@ export default function HomePage() {
     <main>
       {/* ── Hero */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-        {/* Solid dark background — always present as fallback */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#020509] via-[#05080f] to-[#0a1220]" />
 
-        {/* Background video — all devices */}
-        <BgVideo src="/Instagram_Reel.mp4" />
+        <BgVideo src="/Instagram_Reel.mp4" poster="/reel-poster.webp" />
 
-        {/* Dark overlay so text stays readable over the video */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/65" />
 
         <div
