@@ -22,7 +22,7 @@ export default function HomePage() {
   return (
     <main>
       {/* ── Hero */}
-      <section className="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
         {/* Solid dark background — always present as fallback */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#020509] via-[#05080f] to-[#0a1220]" />
 
