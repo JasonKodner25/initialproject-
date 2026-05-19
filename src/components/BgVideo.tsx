@@ -18,7 +18,7 @@ export default function BgVideo({ src }: { src: string }) {
       muted
       playsInline
       preload="none"
-      className="absolute inset-0 w-full h-full object-contain md:object-cover"
+      className="absolute inset-0 w-full h-full object-cover"
     />
   );
 }
