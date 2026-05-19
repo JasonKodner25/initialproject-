@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown, Award, Camera, Video, Shield, Radio, Mountain, Building2, ArrowRight } from 'lucide-react';
 import LazyVideo from '@/components/LazyVideo';
+import BgVideo from '@/components/BgVideo';
 
 const highlights = [
   { icon: Camera, label: 'Photography', desc: 'Stunning aerial stills' },
@@ -23,7 +24,15 @@ export default function HomePage() {
     <main>
       {/* ── Hero */}
       <section className="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden">
+        {/* Solid dark background — always present, mobile fallback */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#020509] via-[#05080f] to-[#0a1220]" />
+
+        {/* Desktop-only background video */}
+        <BgVideo src="/Instagram_Reel.mp4" />
+
+        {/* Dark overlay so text stays readable over the video (desktop only) */}
+        <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-black/65 via-black/45 to-black/65" />
+
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -73,7 +82,6 @@ export default function HomePage() {
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-[#1a8fbf]/8 rounded-full blur-[80px] pointer-events-none" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Video first */}
           <div className="flex justify-center mb-12">
             <div className="animated-border relative p-[2px] rounded-2xl shadow-2xl w-full">
               <div className="absolute -top-1 -left-1 w-5 h-5 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl z-10" />
@@ -84,7 +92,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Heading + description */}
           <div className="text-center mb-10">
             <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Welcome</div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">Why Kodner Aerial?</h2>
@@ -97,7 +104,6 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* Highlight cards */}
           <div className="grid grid-cols-3 gap-4 max-w-lg mx-auto">
             {highlights.map(({ icon: Icon, label, desc }) => (
               <div key={label} className="bg-[#0d1628] border border-[#0d3d54] rounded-lg p-4 hover:border-[#1a8fbf]/60 transition-all group text-center">
@@ -119,7 +125,6 @@ export default function HomePage() {
             <div className="section-divider mx-auto mt-4" />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* Real Estate */}
             <div className="group bg-[#0d1628] border border-[#0d3d54] rounded-2xl p-8 hover:border-[#1a8fbf]/60 transition-all flex flex-col gap-5">
               <div className="w-12 h-12 rounded-xl bg-[#1a8fbf]/10 border border-[#1a8fbf]/20 flex items-center justify-center">
                 <Building2 size={24} className="text-[#1a8fbf]" />
@@ -130,15 +135,11 @@ export default function HomePage() {
                   I shoot a variety of exterior home footage that help real estate agents find their ideal look. Types of shots include facade approaches, elevated lot overviews, neighborhood context, and twilight photography designed to make listings stand out.
                 </p>
               </div>
-              <Link
-                href="/shots#realestate"
-                className="mt-auto flex items-center gap-2 text-[#1a8fbf] text-sm font-semibold hover:gap-3 transition-all"
-              >
+              <Link href="/shots#realestate" className="mt-auto flex items-center gap-2 text-[#1a8fbf] text-sm font-semibold hover:gap-3 transition-all">
                 Explore Shots <ArrowRight size={15} />
               </Link>
             </div>
 
-            {/* Landscape */}
             <div className="group bg-[#0d1628] border border-[#3d2010] rounded-2xl p-8 hover:border-[#e8701a]/60 transition-all flex flex-col gap-5">
               <div className="w-12 h-12 rounded-xl bg-[#e8701a]/10 border border-[#e8701a]/20 flex items-center justify-center">
                 <Mountain size={24} className="text-[#e8701a]" />
@@ -149,10 +150,7 @@ export default function HomePage() {
                   Sweeping aerial coverage of coastlines, parks, trails, natural terrain, and much more! Types of shots include Bird&apos;s eye views, orbital shots, hyperlapse, and cinematic landscape sequences.
                 </p>
               </div>
-              <Link
-                href="/shots#landscape"
-                className="mt-auto flex items-center gap-2 text-[#e8701a] text-sm font-semibold hover:gap-3 transition-all"
-              >
+              <Link href="/shots#landscape" className="mt-auto flex items-center gap-2 text-[#e8701a] text-sm font-semibold hover:gap-3 transition-all">
                 Explore Shots <ArrowRight size={15} />
               </Link>
             </div>
