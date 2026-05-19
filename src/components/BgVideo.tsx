@@ -4,11 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 export default function BgVideo({
   src,
   mobileSrc,
-  poster,
 }: {
   src: string;
   mobileSrc?: string;
-  poster?: string;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
@@ -22,25 +20,16 @@ export default function BgVideo({
   }, [src, mobileSrc]);
 
   return (
-    <>
-      {poster && (
-        <img
-          src={poster}
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      )}
-      <video
-        ref={ref}
-        loop
-        muted
-        playsInline
-        preload="none"
-        onPlaying={() => setPlaying(true)}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-          playing ? 'opacity-100' : 'opacity-0'
-        }`}
-      />
-    </>
+    <video
+      ref={ref}
+      loop
+      muted
+      playsInline
+      preload="none"
+      onPlaying={() => setPlaying(true)}
+      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+        playing ? 'opacity-100' : 'opacity-0'
+      }`}
+    />
   );
 }
