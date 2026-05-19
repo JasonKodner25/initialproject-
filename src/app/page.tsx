@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown, Play, Award, Camera, Video, Map } from 'lucide-react';
+import BgVideo from '@/components/BgVideo';
 
 const highlights = [
   { icon: Camera, label: 'Photography', desc: 'Stunning aerial stills' },
@@ -14,8 +15,14 @@ export default function HomePage() {
     <main>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-        {/* Background gradient */}
+        {/* Solid dark background — always present, mobile fallback */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#020509] via-[#05080f] to-[#0a1220]" />
+
+        {/* Desktop-only background video */}
+        <BgVideo src="/Instagram_Reel.mp4" />
+
+        {/* Dark overlay so text stays readable over the video (desktop only) */}
+        <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-black/65 via-black/45 to-black/65" />
 
         {/* Atmospheric grid overlay */}
         <div
