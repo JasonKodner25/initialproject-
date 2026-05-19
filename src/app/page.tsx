@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown, Award, Camera, Video, Shield, Radio, Mountain, Building2, ArrowRight } from 'lucide-react';
-import LazyVideo from '@/components/LazyVideo';
 import BgVideo from '@/components/BgVideo';
 
 const highlights = [
@@ -24,14 +23,14 @@ export default function HomePage() {
     <main>
       {/* ── Hero */}
       <section className="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden">
-        {/* Solid dark background — always present, mobile fallback */}
+        {/* Solid dark background — always present as fallback */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#020509] via-[#05080f] to-[#0a1220]" />
 
-        {/* Desktop-only background video */}
+        {/* Background video — all devices */}
         <BgVideo src="/Instagram_Reel.mp4" />
 
-        {/* Dark overlay so text stays readable over the video (desktop only) */}
-        <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-black/65 via-black/45 to-black/65" />
+        {/* Dark overlay so text stays readable over the video */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/65" />
 
         <div
           className="absolute inset-0 opacity-[0.04]"
@@ -82,16 +81,6 @@ export default function HomePage() {
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-[#1a8fbf]/8 rounded-full blur-[80px] pointer-events-none" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center mb-12">
-            <div className="animated-border relative p-[2px] rounded-2xl shadow-2xl w-full">
-              <div className="absolute -top-1 -left-1 w-5 h-5 border-t-2 border-l-2 border-[#e8701a] rounded-tl-2xl z-10" />
-              <div className="absolute -bottom-1 -right-1 w-5 h-5 border-b-2 border-r-2 border-[#1a8fbf] rounded-br-2xl z-10" />
-              <div className="bg-[#05080f] rounded-[14px] overflow-hidden" style={{ aspectRatio: '2/1' }}>
-                <LazyVideo src="/edit1.mp4" className="w-full h-full object-cover block" />
-              </div>
-            </div>
-          </div>
-
           <div className="text-center mb-10">
             <div className="text-[#e8701a] text-xs tracking-[0.3em] uppercase font-medium mb-3">Welcome</div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">Why Kodner Aerial?</h2>

@@ -5,8 +5,6 @@ export default function BgVideo({ src }: { src: string }) {
   const ref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Only load & play on desktop — mobile never fetches the file
-    if (!window.matchMedia('(min-width: 768px)').matches) return;
     const video = ref.current;
     if (!video) return;
     video.src = src;
@@ -20,7 +18,7 @@ export default function BgVideo({ src }: { src: string }) {
       muted
       playsInline
       preload="none"
-      className="absolute inset-0 w-full h-full object-cover hidden md:block"
+      className="absolute inset-0 w-full h-full object-cover"
     />
   );
 }
