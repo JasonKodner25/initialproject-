@@ -46,7 +46,7 @@ const realEstateVideos: Shot[] = [
     type: 'video',
     media: '/fullpropertyview.mp4',
     seekTo: 3,
-    desc: 'Comprehensive aerial overview capturing the entire property, grounds, and surrounding context in one shot.',
+    desc: 'Aerial overview capturing the entire property, grounds, and surrounding context.',
   },
   {
     label: 'Facade Approach',
@@ -65,7 +65,7 @@ const realEstateVideos: Shot[] = [
     label: 'Driveway Reveal',
     type: 'video',
     media: '/drivewayreveal_official.mp4',
-    desc: 'Low-altitude track following the driveway to the entrance for a dramatic arrival.',
+    desc: 'Low-altitude track following the driveway to the entrance or desired location.',
   },
   {
     label: 'Backyard View',
@@ -78,7 +78,7 @@ const realEstateVideos: Shot[] = [
     label: 'Horizontal',
     type: 'video',
     media: '/OfficialSideways1.mp4',
-    desc: 'Golden or blue-hour footage shot during ideal lighting to make listings stand out.',
+    desc: 'Smooth lateral pass revealing the full width of the property and surrounding grounds.',
   },
 ];
 
