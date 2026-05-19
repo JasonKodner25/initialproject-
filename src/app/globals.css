@@ -107,13 +107,6 @@ body {
   border-radius: 2px;
 }
 
-/* Subtle slow-breathing border on video frame */
-@keyframes border-breathe {
-  0%, 100% { opacity: 0.5; }
-  50%       { opacity: 1; }
-}
-
 .animated-border {
   background: linear-gradient(145deg, #e8701a40, #1a3a5c, #1a8fbf40);
-  animation: border-breathe 5s ease-in-out infinite;
 }
