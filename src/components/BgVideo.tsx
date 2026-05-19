@@ -1,20 +1,28 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 
-export default function BgVideo({ src, poster }: { src: string; poster?: string }) {
+export default function BgVideo({
+  src,
+  mobileSrc,
+  poster,
+}: {
+  src: string;
+  mobileSrc?: string;
+  poster?: string;
+}) {
   const ref = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
-    video.src = src;
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    video.src = isMobile && mobileSrc ? mobileSrc : src;
     video.play().catch(() => {});
-  }, [src]);
+  }, [src, mobileSrc]);
 
   return (
     <>
-      {/* Static poster — visible immediately, no JS needed */}
       {poster && (
         <img
           src={poster}
@@ -22,7 +30,6 @@ export default function BgVideo({ src, poster }: { src: string; poster?: string 
           className="absolute inset-0 w-full h-full object-cover"
         />
       )}
-      {/* Video fades in only once it's actually playing */}
       <video
         ref={ref}
         loop
