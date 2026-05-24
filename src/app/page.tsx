@@ -36,7 +36,7 @@ export default function HomePage() {
 
         <BgVideo
           src="/Instagram_Reel.mp4"
-          mobileSrc="/Instagram_Reel (1) (1).mp4"
+          mobileSrc="/Instagram_Reel (1).mp4"
         />
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/65" />
