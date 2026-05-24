@@ -39,7 +39,7 @@ const landscapeVideos: Shot[] = [
 const landscapePhotos: Shot[] = [
   { label: 'Straight Down', type: 'photo', media: '/IMG_3513.jpeg', desc: 'Nadir perspective turning land and water into striking abstract compositions.' },
   { label: 'Horizon', type: 'photo', media: null, desc: 'Subject aligned to the horizon line for a clean, dramatic composition with sky and terrain in balance.' },
-  { label: 'Elevated Panorama', type: 'photo', media: null, desc: 'High-altitude wide-angle frames showing sweeping vistas and horizon lines.' },
+  { label: 'Elevated Panorama', type: 'photo', media: '/DJI_20260511121125_0205_D.webp', desc: 'High-altitude wide-angle frames showing sweeping vistas and horizon lines.' },
   { label: '3x Wideshot', type: 'photo', media: '/DJI_20260416065653_0188_D.jpeg', desc: 'Triple-width aerial frame capturing expansive coastal and terrain scenes in full context.' },
 ];
 
