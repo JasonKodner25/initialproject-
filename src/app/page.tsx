@@ -23,10 +23,8 @@ export default function HomePage() {
     <main>
       {/* ── Hero */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-        {/* Dark fallback — always present */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#020509] via-[#05080f] to-[#0a1220]" />
 
-        {/* Poster image — server-rendered with priority so browser preloads it immediately */}
         <Image
           src="/reelsave.webp"
           alt=""
@@ -36,13 +34,11 @@ export default function HomePage() {
           sizes="100vw"
         />
 
-        {/* Video fades in on top once buffered */}
         <BgVideo
           src="/Instagram_Reel.mp4"
-          mobileSrc="/Instagram_Reel (1).mp4"
+          mobileSrc="/Instagram_Reel (1) (1).mp4"
         />
 
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/65" />
 
         <div
