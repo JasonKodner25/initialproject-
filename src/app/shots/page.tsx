@@ -21,7 +21,7 @@ const realEstatePhotos: Shot[] = [
 ];
 
 const realEstateVideos: Shot[] = [
-  { label: 'Full Property View', type: 'video', media: '/fullpropertyview.mp4', seekTo: 3, desc: 'Aerial overview capturing the entire property, grounds, and surrounding context.' },
+  { label: 'Full Property View', type: 'video', media: '/fullpropertyview (1).mp4', seekTo: 3, desc: 'Aerial overview capturing the entire property, grounds, and surrounding context.' },
   { label: 'Facade Approach', type: 'video', media: '/officalrealestate_2approach.mp4', desc: 'Smooth cinematic reveal flying toward and rising up the front of the home.' },
   { label: 'Side Profile', type: 'video', media: '/SideOrbitShot.mp4', poster: '/sideshotphoto.jpg', desc: 'Lateral aerial pass revealing the full side of the property, depth, and outdoor space.' },
   { label: 'Driveway Reveal', type: 'video', media: '/drivewayreveal_official.mp4', desc: 'Low-altitude track following the driveway to the entrance or desired location.' },
