@@ -14,7 +14,7 @@ interface Shot {
 }
 
 const realEstatePhotos: Shot[] = [
-  { label: 'Front View', type: 'photo', media: '/DJI_20260606121229_0149_D (1).webp', desc: 'Aerial front-facing shot of the home.' },
+  { label: 'Front View', type: 'photo', media: '/frontview.webp', desc: 'Aerial front-facing shot of the home.' },
   { label: 'Straight Down', type: 'photo', media: '/birdseyephoto.jpg', desc: 'Overhead nadir shot showing the full roof, property footprint, and surrounding lot.' },
   { label: 'Rear View', type: 'photo', media: '/backyardphoto.jpg', desc: 'Aerial perspective of the rear of the property, showcasing the backyard, outdoor space, and grounds.' },
   { label: 'Elevated Lot View', type: 'photo', media: '/sideshotphoto.jpg', desc: 'Mid-altitude angle showing the full lot, landscaping, and immediate surroundings.' },
