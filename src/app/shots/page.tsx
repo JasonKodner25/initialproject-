@@ -14,12 +14,11 @@ interface Shot {
 }
 
 const realEstatePhotos: Shot[] = [
-  { label: 'Front View', type: 'photo', media: '/frontview.webp', desc: 'Aerial front-facing shot of the home.' },
-  { label: 'Side View', type: 'photo', media: '/sideview.webp', desc: 'Aerial side-facing shot of the home.' },
+  { label: 'Front View', type: 'photo', media: '/frontview.webp', desc: 'Aerial shot facing the front of the home.' },
+  { label: 'Side View', type: 'photo', media: '/sideview.webp', desc: 'Aerial shot along the side of the home.' },
+  { label: 'Rear View', type: 'photo', media: '/backview.webp', desc: 'Aerial perspective of the rear of the property, showcasing the backyard, outdoor space, and grounds.' },
   { label: 'Straight Down', type: 'photo', media: '/birdseyephoto.jpg', desc: 'Overhead nadir shot showing the full roof, property footprint, and surrounding lot.' },
-  { label: 'Rear View', type: 'photo', media: '/backyardphoto.jpg', desc: 'Aerial perspective of the rear of the property, showcasing the backyard, outdoor space, and grounds.' },
   { label: 'Elevated Lot View', type: 'photo', media: '/sideshotphoto.jpg', desc: 'Mid-altitude angle showing the full lot, landscaping, and immediate surroundings.' },
-  { label: 'Neighborhood Context', type: 'photo', media: '/DJI_20260515184651_0247_D.jpg', desc: 'Wide aerial frame placing the property within the surrounding neighborhood.' },
 ];
 
 const realEstateVideos: Shot[] = [
